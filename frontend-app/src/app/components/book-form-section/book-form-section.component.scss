@@ -1,0 +1,44 @@
+*{
+  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.row{
+  margin: 20px;
+}
+
+.icon-from {
+  padding-left: 25px;
+  background: url("../../../assets/icon/noun-plane-4849684.png") no-repeat left;
+  background-size: 20px;
+}
+.icon-to {
+  padding-left: 25px;
+  background: url("../../../assets/icon/noun-plane-4849688.png") no-repeat left;
+  background-size: 20px;
+}
+.icon-adult {
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-left: 25px;
+  background: url("../../../assets/icon/noun-persons-1416395.png") no-repeat left;
+  background-size: 20px;
+}
+.icon-kids {
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-left: 25px;
+  background: url("../../../assets/icon/children-solid.svg") no-repeat left;
+  background-size: 20px;
+}
+
+form h3{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+form p{
+  text-align: center;
+}
+form .btn{
+  background-color: rgb(36, 109, 226);
+}

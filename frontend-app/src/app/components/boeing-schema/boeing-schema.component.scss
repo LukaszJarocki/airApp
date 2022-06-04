@@ -1,0 +1,49 @@
+.container{
+  margin: 0;
+}
+
+.Linie{
+
+  background: red;
+padding-bottom: 10px;
+}
+.place{
+  display: flex;
+flex-direction: row;
+justify-content:space-around ;
+align-items: center;
+  padding:0.5% 5% 2% 5%;
+  margin-bottom: 10%;
+  background:red;
+.route{flex-direction: column;
+    .arrows{padding-left: 50%;
+      padding-top:2%;
+      padding-bottom:5%;}}
+path .greenAtlatna{
+  color: pink;
+  background-color: pink;
+  fill: pink;
+}
+}
+.free{
+  fill: green;
+}
+.checked{
+  fill: blue;
+}
+
+svg{
+  width: 60vw;
+}
+
+.seat{
+  stroke: grey;
+  cursor: pointer;
+  fill: #fff;
+  transition: all 250ms;
+  stroke-width: 4;
+  &.selected{
+    fill: #19e619;
+    stroke-width: 1;
+  }
+}
