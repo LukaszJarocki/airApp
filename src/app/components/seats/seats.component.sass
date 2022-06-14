@@ -1,0 +1,20 @@
+$successColour: #19e619
+
+
+:host
+
+    svg
+
+        .seat
+            transition: all 250ms
+            stroke-width: 4
+            &.selected
+                fill: $successColour
+                stroke-width: 1
+
+        .fixed
+            fill: pink
+        .nofixed
+            fill: green
+        .toggled
+            fill: red

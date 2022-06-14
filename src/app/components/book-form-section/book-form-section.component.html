@@ -1,0 +1,63 @@
+
+<form class="row g-3" [formGroup]="visitorDataForm" (ngSubmit)="addVisitDetails()">
+
+  <h3>Book a flight</h3>
+  <p>Book a flight with Long Wings. Find best fares to destinations around the world and explore the world with safety.
+    <br>* Please check the latest travel regulations before your fly.
+    </p>
+  <div class="col-md-4">
+    <label for="inputFrom"  class="form-label">From:</label>
+    <select id="inputFrom"  formControlName="cityFrom" class="form-select icon-from">
+      <option>Katowice</option>
+      <option>Warsaw</option>
+    </select>
+  </div>
+  <div class="col-md-1">
+    <br>
+    <img src="assets/icon/noun-exchange-arrows-4852493.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
+  </div>
+  <div class="col-md-4">
+    <label for="inputTo" class="form-label">To:</label>
+    <select id="inputTo" formControlName="cityTo" class="form-select icon-to">
+      <option>London</option>
+      <option>Boston</option>
+      <option>Beijing</option>
+      <option>Tokyo</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="inputDate" class="form-label">Departure date:</label>
+    <input type="date" formControlName="dateDepar" class="form-control"
+    id="inputDate">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="inputDate" class="form-label">Adult travelers:</label>
+    <input type="number" formControlName="adults" class="form-control icon-adult"
+    id="inputDate">
+  </div>
+  <div class="col-md-4">
+    <label for="inputDate" class="form-label ">Kids:</label>
+    <input type="number" formControlName="kids" class="form-control icon-kids"
+    id="inputDate">
+  </div>
+  <div class="col-md-4">
+    <label for="inputClass" class="form-label">Class:</label>
+    <select id="inputClass" formControlName="class" class="form-select">
+      <option>Economy</option>
+      <option>Business</option>
+    </select>
+  </div>
+
+
+  <button type="submit" [disabled]="visitorDataForm.invalid">
+    Dodaj formularz
+  </button>
+
+
+</form>
+
+
+
+
