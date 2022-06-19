@@ -5,36 +5,22 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'seat-list',
     templateUrl: './seat.component.html',
-    styleUrls: ['./seat.component.css']
+    styleUrls: ['./seat.component.scss']
 })
 export class SeatComponent {
   public settings: any;
-  private reservedSeat: any[] = [];
-  private rowLength: number;
+  public numOfSeats = [];
 
 
-  constructor(private route: Router) {
-    this.settings = {
-      rows: [1],
-      cols: [1, 1, 1, 1, 1, 1, 1, 1, 1],
-      rowCssPrefix: 'row-',
-      colCssPrefix: 'col-',
-      seatWidth: 5,
-      seatHeight: 5,
-      seatCss: 'seat',
-      selectedSeatCss: 'selectedSeat',
-      selectingSeatCss: 'selectingSeat'
-    };}
     //variable declarations
-    movieTitle:string = "Captain America: The Winter Soldier";
-    screen: string = "LUXE CINEMAS";
-    time: string = "FRI, 6:45PM"
+    planeName:string = "Airbus";
 
-    rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-    cols: number[]  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G' ];
+    cols: number[]  = [1, 2, 3, 4, 5];
 
-    reserved: string[] = ['A2', 'A3', 'F5', 'F1', 'F2','F6', 'F7', 'F8', 'H1', 'H2', 'H3', 'H4'];
+    reserved: string[] = ['A1', 'A2', 'B1', 'F1', 'F2','F6', 'F7', 'F8', 'H1', 'H2'];
     selected: string[] = [];
+    seats: boolean[][] = [];
 
     ticketPrice: number = 120;
     convFee: number = 30;
@@ -76,17 +62,6 @@ export class SeatComponent {
         }
     }
 
-    getSeatNo(i: any, j: any) {
-      return (i + j * this.rowLength + 1);
-    }
 
-    getClassName(i: any, j: any) {
-      let id = this.settings.rowCssPrefix + i.toString() + ' ' + this.settings.colCssPrefix + j.toString();
-      let className = this.settings.seatCss + ' ' + id;
-      if (this.reservedSeat.length > 0 && this.reservedSeat.indexOf(this.getSeatNo(i, j)) != -1) {
-        className += (' ' + this.settings.selectedSeatCss);
-      }
 
-      return className;
-    }
 }

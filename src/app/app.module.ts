@@ -29,6 +29,7 @@ import { ProgressStepComponent } from './components/progress/progress-step/progr
 import { ProgressStepDirective } from './components/progress/progress-step.directive';
 import { ProgressComponent } from './components/progress/progress.component';
 import { BookSectionComponent } from './components/book-section/book-section.component';
+import { PlaneSeatComponent } from './components/plane-seat/plane-seat.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BookSectionComponent } from './components/book-section/book-section.com
     ProgressComponent,
     BookSectionComponent,
     SeatsComponent,
-    SeatComponent
+    SeatComponent,
+    PlaneSeatComponent
   ],
   imports: [
     BrowserModule,
