@@ -5,6 +5,11 @@
   margin: 20px;
 }
 
+.form-select{
+  border: none;
+  border-bottom: solid 2px black;
+}
+
 .icon-from {
   padding-left: 25px;
   background: url("../../../assets/icon/noun-plane-4849684.png") no-repeat left;
@@ -42,3 +47,35 @@ form p{
 form .btn{
   background-color: rgb(36, 109, 226);
 }
+
+//////SVG/////
+
+svg{
+  max-height: 800px;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+.occupied {
+  fill: #00FF6C;
+}
+
+.free {
+  fill: transparent;
+}
+.empty-background
+{
+fill:transparent
+}
+
+.noSeat{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .selected-seat{
+    margin: 0;
+  }
+}
+

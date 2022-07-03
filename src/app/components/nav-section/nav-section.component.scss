@@ -1,41 +1,258 @@
-// Navigation Variables
-$content-width: 1000px;
-$nav-height: 70px;
-$nav-background: #262626;
-$nav-font-color: #ffffff;
-$link-hover-color: #2581DC;
-
-.navbar{
-  height: $nav-height;
-  padding: 0 50px;
-  background-color: red;
-
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  z-index: 500;
 }
 
-.navbar-custom {
-  background-color: lightgreen;
+body { font-family:Arial, Helvetica, sans-serif }
+  nav {
+      background: rgba(0, 0, 0, 0.5);
+      height: 80px;
+      width: 100%;
+
+  }
+  .container{
+    padding: 0px 0px 0 50px;
+    width: 100%;
+  }
+  .navbar-brand {
+    color: #fff;
+    padding: 0 20px 0px 20px;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    font-size: 20px;
+    text-transform: uppercase
+
+      }
+      nav ul{
+          float: right;
+          margin-right:20px;
+      }
+          nav ul li{
+              display: inline-block;
+              line-height:80px;
+              margin: 0 5px;
+          }
+              nav ul li a{
+                  color: white;
+                  font-size: 17px;
+                  padding: 7px 13px;
+                  border-radius: 3px;
+              }
+                  a.active,a:hover{
+                      background-color: #1b9bff;
+                      transition: .5s;
+                  }
+  .checkbtn{
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+  }
+      #check{
+         display: none;
+      }
+
+/*--------------------------*/
+/*----- MEDIA QUERRY -----*/
+/*--------------------------*/
+
+@media (max-width: 952px){
+  label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+  }
+  nav ul li a{
+      font-size: 16px;
+  }
 }
 
-// Page content
-article {
-  max-width: $content-width;
-  margin: 0 auto;
-  padding: 10px;
+@media (max-width: 858px){
+  .checkbtn{
+      display: block;
+  }
+  ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 80px;
+      left: -100%;
+      top: 80px;
+      transition: all .5s;
+      text-align: center;
+      background-color: #2c3e50;
+  }
+      nav ul li{
+          display: block;
+          margin: 50px 0;
+          line-height: 30px;
+          justify-content: end;
+      }
+          nav ul li a{
+              font-size: 20px;
+          }
+              a:hover,a.active{
+                  background: none;
+                  color: #0082e6;
+              }
+
+      #check:checked ~ ul{
+          left: 0;
+      }
 }
+
+.navbar-brand .word {
+  color: #1B9BFF;
+  background-color: #fff;
+  padding: 5px 0 2px 5px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.word-small{
+  color: white;
+  font-size: 15px;
+}
+
+
+
 
 .fixed{
   position: fixed;
   width: 100%;
   transition: 0.2s linear;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   z-index: 500;
 }
 
-.nofixed{
-  position: sticky;
-  transition: 0.2s linear;
-  top: -50%;
+.nav-color{
+  color: white;
 }
 
+
+/////button////
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      border-radius: 1.625rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #1b9bff;
+            border-right: 0.125rem solid #1b9bff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: #1b9bff;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+        background: #1b9bff;
+        transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: $white;
+    }
+  }
+}
+
+@supports (display: grid) {
+  body {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.625rem;
+  grid-template-areas: ". main main ." ". main main .";
+  }
+
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
 
 

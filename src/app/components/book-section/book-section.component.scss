@@ -1,44 +1,204 @@
-*{
-  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-.row{
-  margin: 20px;
-}
 
-.icon-from {
-  padding-left: 25px;
-  background: url("../../../assets/icon/noun-plane-4849684.png") no-repeat left;
-  background-size: 20px;
-}
-.icon-to {
-  padding-left: 25px;
-  background: url("../../../assets/icon/noun-plane-4849688.png") no-repeat left;
-  background-size: 20px;
-}
-.icon-adult {
-  margin-left: 5px;
-  padding-left: 5px;
-  padding-left: 25px;
-  background: url("../../../assets/icon/noun-persons-1416395.png") no-repeat left;
-  background-size: 20px;
-}
-.icon-kids {
-  margin-left: 5px;
-  padding-left: 5px;
-  padding-left: 25px;
-  background: url("../../../assets/icon/children-solid.svg") no-repeat left;
-  background-size: 20px;
-}
-
-form h3{
-  text-align: center;
-  font-size: 40px;
+h1 {
+  font-size: 2em;
   font-weight: bold;
-  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-form p{
   text-align: center;
+  padding: 70px 0 0 0;
+  color: black;
+  letter-spacing: 1px;
 }
-form .btn{
-  background-color: rgb(36, 109, 226);
+
+
+
+
+
+
+
+/* Button Styles */
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+.btn-container{
+  display: flex;
+	justify-content: center;
+	align-items: center;
+  margin: 30px 0 0 0;
+  margin-bottom: -100px;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.button-next {
+    width: 12rem;
+    height: auto;
+    .circle-next {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      border-radius: 1.625rem;
+      .icon-next {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+        &.arrow-next {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #1b9bff;
+            border-right: 0.125rem solid #1b9bff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text-next {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: #1b9bff;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle-next {
+      width: 100%;
+      .icon {
+        &.arrow {
+        background: #1b9bff;
+        transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text-next {
+      color: $white;
+    }
+  }
+  &.button-preve {
+    width: 12rem;
+    height: auto;
+    transform: rotate(180deg);
+    .circle-preve {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      margin: 0;
+      left: 0rem;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      transform: rotate(180deg);
+      border-radius: 1.625rem;
+      .icon-preve {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+        &.arrow-preve {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #1b9bff;
+            border-right: 0.125rem solid #1b9bff;
+            transform: rotate(225deg);
+          }
+        }
+      }
+    }
+    .button-text-preve {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      transform: rotate(180deg);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: #1b9bff;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+      z-index: 500;
+    }
+  }
+  &:hover {
+    .circle-preve {
+      width: 100%;
+      .icon {
+        &.arrow {
+        background: #1b9bff;
+        transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text-preve {
+      color: $white;
+    }
+  }
+}
+
+@supports (display: grid) {
+  body {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.625rem;
+  grid-template-areas: ". main main ." ". main main .";
+  }
+
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
 }

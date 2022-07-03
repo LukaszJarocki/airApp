@@ -2,7 +2,7 @@
   margin-top: 20px;
   user-select: none;
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 10px 1fr;
   grid-row-gap: 100px;
   justify-content: center;
   grid-template-columns: min-content;
@@ -10,7 +10,6 @@
   .step-progress {
     margin-top: 120px;
     padding: 15px 15px 60px 0;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, .1);
     border-radius: 15px;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
@@ -35,7 +34,7 @@
   svg#checkbox {
     width: 48px;
     height: 48px;
-    stroke: #23c274;
+    stroke: #1b9bff;
     stroke-width: 6;
 
     .circle {
@@ -82,12 +81,12 @@
     }
 
     span.progress-info.in-progress {
-      background-color: #234dc2;
+      background-color: #EF8354;
       color: #fff;
     }
 
     span.progress-info.completed {
-      background-color: #23c274;
+      background-color: #1b9bff;
       color: #fff;
     }
 
@@ -104,7 +103,7 @@
 }
 
 .progress-line {
-  width: 140px;
+  width: 300px;
   margin: 0 10px;
   height: 4px;
   overflow: hidden;
@@ -121,7 +120,7 @@
 
 .progress-line.active {
   .progress-percent {
-    background: #234dc2;
+    background: #EF8354;
     width: 50%;
   }
 }
@@ -129,14 +128,14 @@
 .progress-line.complete {
   .progress-percent {
     width: 100%;
-    background: #23c274;
+    background: #1b9bff;
   }
 }
 
 .check-box.active {
   svg#checkbox {
     .circle {
-      fill: #234dc2;
+      fill: #EF8354;
     }
   }
 }
@@ -144,7 +143,7 @@
   svg#checkbox {
     .circle {
       stroke-dashoffset: 0;
-      fill: #23c274;
+      fill: #1b9bff;
     }
 
     .check {

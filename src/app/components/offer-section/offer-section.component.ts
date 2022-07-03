@@ -1,13 +1,13 @@
-import { AirbusInfoSectionComponent } from './../airbus-info-section/airbus-info-section.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AirbusInfoSectionComponent } from '../airbus-info-section/airbus-info-section.component';
 
 @Component({
-  selector: 'app-about-section',
-  templateUrl: './about-section.component.html',
-  styleUrls: ['./about-section.component.scss']
+  selector: 'app-offer-section',
+  templateUrl: './offer-section.component.html',
+  styleUrls: ['./offer-section.component.scss']
 })
-export class AboutSectionComponent implements OnInit {
+export class OfferSectionComponent implements OnInit {
 
   constructor(private dialogRef: MatDialog) { }
 
@@ -21,5 +21,3 @@ export class AboutSectionComponent implements OnInit {
     });
   }
 }
-
-

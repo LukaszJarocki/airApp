@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlaneSeatComponent } from './plane-seat.component';
+import { AirbusInfoSectionComponent } from './airbus-info-section.component';
 
-describe('PlaneSeatComponent', () => {
-  let component: PlaneSeatComponent;
-  let fixture: ComponentFixture<PlaneSeatComponent>;
+describe('AirbusInfoSectionComponent', () => {
+  let component: AirbusInfoSectionComponent;
+  let fixture: ComponentFixture<AirbusInfoSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlaneSeatComponent ]
+      declarations: [ AirbusInfoSectionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlaneSeatComponent);
+    fixture = TestBed.createComponent(AirbusInfoSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

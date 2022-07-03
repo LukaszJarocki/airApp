@@ -1,7 +1,3 @@
-
-import { SeatsComponent } from './components/seats/seats.component';
-import { SeatComponent } from './components/seat/seat.component';
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog'
@@ -29,8 +25,9 @@ import { ProgressStepComponent } from './components/progress/progress-step/progr
 import { ProgressStepDirective } from './components/progress/progress-step.directive';
 import { ProgressComponent } from './components/progress/progress.component';
 import { BookSectionComponent } from './components/book-section/book-section.component';
-import { PlaneSeatComponent } from './components/plane-seat/plane-seat.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
+import { OfferSectionComponent } from './components/offer-section/offer-section.component';
+import { AirbusInfoSectionComponent } from './components/airbus-info-section/airbus-info-section.component';
 
 
 @NgModule({
@@ -49,10 +46,9 @@ import { AboutSectionComponent } from './components/about-section/about-section.
     ProgressStepDirective,
     ProgressComponent,
     BookSectionComponent,
-    SeatsComponent,
-    SeatComponent,
-    PlaneSeatComponent,
-    AboutSectionComponent
+    AboutSectionComponent,
+    OfferSectionComponent,
+    AirbusInfoSectionComponent
   ],
   imports: [
     BrowserModule,
