@@ -169,7 +169,11 @@ fieldset[disabled] .btn-xl.active {
 
 
 mat-dialog-container {
-  background-color: rgba(214, 214, 214, 0.9) !important;
+
+  background-color: rgba(189, 186, 186, 0.954) !important;
+  background-image: url(./assets/photos/aircraft.jpg) !important;
+  background-size: cover !important;
+  background-position: center important;
   padding: 0px 0px 0px 0px !important;
 
 }

@@ -18,7 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookFormSectionComponent } from './components/book-form-section/book-form-section.component';
 import { InfoSectionComponent } from './components/info-section/info-section.component';
-import { EmbraerSchemaComponent } from './components/embraer-schema/embraer-schema.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AirbusSchemaComponent } from './components/airbus-schema/airbus-schema.component';
 import { ProgressStepComponent } from './components/progress/progress-step/progress-step.component';
@@ -39,7 +38,6 @@ import { AirbusInfoSectionComponent } from './components/airbus-info-section/air
     DestinationSectionComponent,
     BookFormSectionComponent,
     InfoSectionComponent,
-    EmbraerSchemaComponent,
     AirbusSchemaComponent,
     ProgressStepComponent,
     ProgressStepComponent,

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { Component, ElementRef} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AirportDataService } from 'src/app/service/airport-data.service';
 
@@ -13,11 +13,11 @@ import { AirportDataService } from 'src/app/service/airport-data.service';
 export class BookFormSectionComponent {
   visitorDataForm: FormGroup;
   allVisitorsDataArray: any = [];
-
+  showMyContainer: boolean = false;
 
   constructor(
     private airportDataService: AirportDataService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ) {
     this.visitorDataForm = this.fb.group({
       cityFrom: ['', Validators.required], //sprawdza czy input jest obowiązkowy
@@ -67,10 +67,10 @@ export class BookFormSectionComponent {
       }
     );
 
-    if(this.selected.length > 0 && this.selectedOption === 'Economy' ) {
-      this.seatEconomy = ("Selected Seats: " + this.selected + "\n Total price: "+(this.economyTicketPrice * this.selected.length  + this.convFee + this.currency));
-      console.log(this.class);
-    } else if(this.selected.length > 0 && this.selectedOption === 'Business'){
+    if(this.selected.length > 0 && this.selectedOptionClass === 'Economy' ) {
+      this.seatEconomy = ("Selected Seats: " + this.selected + "\n" + "Total price: "+(this.economyTicketPrice * this.selected.length  + this.convFee + this.currency));
+
+    } else if(this.selected.length > 0 && this.selectedOptionClass === 'Business'){
       this.seatBusiness =("Selected Seats: " + this.selected + "\n Total price: "+(this.BusinessTicketPrice  * this.selected.length   + this.convFee + this.currency ));
   }
   else {
@@ -86,6 +86,8 @@ export class BookFormSectionComponent {
       console.log(data);
     });
   }
+
+
 
   ////////////CHECK SEATS////////////////////////
   filas = [
@@ -126,10 +128,24 @@ export class BookFormSectionComponent {
     'free',
   ]);
   selected: string[];
-  selectedOption: string;
-  options =[
+  selectedOptionClass: string;
+  optionsClass =[
     {class: "Economy", value:1},
     {class: "Business", value:2}
+  ]
+  selectedOptionCityFrom: string;
+  optionsCityFrom =[
+    {from: "Katowice", value:'katowice'},
+    {from: "Warszawa", value:'warszawa'},
+    {from: "Gdańsk", value:'warszawa'},
+    {from: "Poznań", value:'warszawa'}
+  ]
+  selectedOptionCityTo: string;
+  optionsCityTo =[
+    {to: "London", value:'london'},
+    {to: "Boston", value:'boston'},
+    {to: "Beijing", value:'beijing'},
+    {to: "PoznTokyoań", value:'tokyo'}
   ]
 
   economyTicketPrice: number = 1000;
@@ -138,6 +154,8 @@ export class BookFormSectionComponent {
   totalPrice: number = 0;
   currency: string = 'zł';
   class: string = '';
+  from: string = '';
+  to: string = '';
 
   click(fila: any, column: any) {
     if (this.status[fila][column] == 'free' && this.count() < 9)
@@ -162,6 +180,7 @@ export class BookFormSectionComponent {
     });
     return seats;
   }
+
 
 
 }
