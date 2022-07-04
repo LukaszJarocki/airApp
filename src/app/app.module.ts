@@ -27,6 +27,7 @@ import { BookSectionComponent } from './components/book-section/book-section.com
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { OfferSectionComponent } from './components/offer-section/offer-section.component';
 import { AirbusInfoSectionComponent } from './components/airbus-info-section/airbus-info-section.component';
+import { TestComponent } from './components/test/test.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AirbusInfoSectionComponent } from './components/airbus-info-section/air
     BookSectionComponent,
     AboutSectionComponent,
     OfferSectionComponent,
-    AirbusInfoSectionComponent
+    AirbusInfoSectionComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
