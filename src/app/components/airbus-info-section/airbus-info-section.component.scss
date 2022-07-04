@@ -1,63 +1,32 @@
-:root {
-  --black: black;
-  --white: white;
-  --gold: #fcba3a;
+:host {
+  background-color: rgba(0, 0, 0, 0.397);
 }
-
-body {
-  padding:0;
-  margin:0;
-  font-family:sans-serif;
-  text-align:center;
-  background:var(--black);
-  perspective:50vw;
+.plane-container {
+  width: 100%;
+  height: 80vh;
+  padding: 60px;
+  background-color: rgba(156, 156, 156, 0.548);
+  .row-plane{
+    padding-top: 10px;
+    padding-bottom: 30px;
+    .plane-name {
+      margin: auto 0;
+      .name {
+        font-size: 3rem;
+        font-weight: bold;
+        padding: 5px;
+      }
+      .model {
+        font-size: 1.5rem;
+        padding: 5px;
+      }
+    }
+    .plane-modal{
+      width: 20vw;
+    }
+  }
+  .plane-info{
+    font-size: 1rem;
+    text-align: justify;
+  }
 }
-
-#box {
-  width:100%;
-  margin:auto;
-  position:relative;
-}
-
-video {
-  width:100%;
-  position:absolute;
-  left:0;
-  top:38px;
-  z-index:-1;
-}
-
-img {
-  width:100%;
-  height:auto;
-  padding:0;
-}
-
-a {
-  text-decoration:none;
-  color:inherit;
-  width:fit-content;
-}
-
-.row {
-  padding:0 15%;
-  max-width:1200px;
-}
-.item {
-/*   background:red; */
-  padding:10px;
-  flex-grow:1;
-/*   outline:1px solid limegreen; */
-}
-
-.cd {
-  background:var(--black);
-  color:var(--white);
-}
-
-.cn {
-  text-align:left;
-  max-width:50%;
-  font-weight: bold;
-}
-
