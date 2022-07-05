@@ -28,6 +28,8 @@ import { AboutSectionComponent } from './components/about-section/about-section.
 import { OfferSectionComponent } from './components/offer-section/offer-section.component';
 import { AirbusInfoSectionComponent } from './components/airbus-info-section/airbus-info-section.component';
 import { TestComponent } from './components/test/test.component';
+import { EmbraerInfoSectionComponent } from './components/embraer-info-section/embraer-info-section.component';
+import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { TestComponent } from './components/test/test.component';
     AboutSectionComponent,
     OfferSectionComponent,
     AirbusInfoSectionComponent,
-    TestComponent
+    TestComponent,
+    EmbraerInfoSectionComponent,
+    BoeingInfoSectionComponent
   ],
   imports: [
     BrowserModule,
