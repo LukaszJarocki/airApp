@@ -30,6 +30,7 @@ import { AirbusInfoSectionComponent } from './components/airbus-info-section/air
 import { TestComponent } from './components/test/test.component';
 import { EmbraerInfoSectionComponent } from './components/embraer-info-section/embraer-info-section.component';
 import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
+import { BannerSectionComponent } from './components/banner-section/banner-section.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { BoeingInfoSectionComponent } from './components/boeing-info-section/boe
     AirbusInfoSectionComponent,
     TestComponent,
     EmbraerInfoSectionComponent,
-    BoeingInfoSectionComponent
+    BoeingInfoSectionComponent,
+    BannerSectionComponent
   ],
   imports: [
     BrowserModule,

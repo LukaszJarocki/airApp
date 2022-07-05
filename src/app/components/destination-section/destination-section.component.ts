@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-destination-section',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class DestinationSectionComponent  {
 
 
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images1 = ("../../../assets/photos/boston.jpg");
+  images2 = ("../../../assets/photos/london.jpg");
+  images3 = ("../../../assets/photos/tokyo.jpg");
+  images4 = ("../../../assets/photos/pekin.jpg");
+  constructor() {
 
-
+  }
 }

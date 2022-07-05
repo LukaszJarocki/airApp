@@ -99,122 +99,15 @@
     max-width: 1200px;
   }
 }
-.cms-body .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -8px;
-  margin-left: -8px;
-}
-.cms-body .col-md-3,
-.cms-body .col-md-4,
-.cms-body .col-md-6,
-.cms-body .col-md-8,
-.cms-body .col-sm-6 {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 8px;
-  padding-left: 8px;
-}
-@media (min-width: 576px) {
-  .cms-body .col-sm-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-@media (min-width: 768px) {
-  .cms-body .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-  .cms-body .col-md-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-  .cms-body .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  .cms-body .col-md-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
-  }
-}
-.cms-body .close {
-  float: right;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
-}
-.cms-body .close:focus,
-.cms-body .close:hover {
-  color: #000;
-  text-decoration: none;
-  opacity: 0.75;
-}
-.cms-body .close:not(:disabled):not(.disabled) {
-  cursor: pointer;
-}
-.cms-body button.close {
-  padding: 0;
-  background-color: transparent;
-  border: 0;
-  -webkit-appearance: none;
-}
-.cms-body .modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  overflow: hidden;
-  outline: 0;
-}
-.cms-body .modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-.cms-body .modal-dialog-centered {
-  display: flex;
-  align-items: center;
-  min-height: calc(100% - 1rem);
-}
-.cms-body .modal-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
-  outline: 0;
-}
-.cms-body .modal-body {
-  position: relative;
-  flex: 1 1 auto;
-  padding: 1rem;
-}
-@media (min-width: 576px) {
-  .cms-body .modal-dialog {
-    max-width: 500px;
-    margin: 1.75rem auto;
-  }
-  .cms-body .modal-dialog-centered {
-    min-height: calc(100% - 3.5rem);
-  }
-}
-.cms-body .flex-column {
-  flex-direction: column !important;
-}
+
+
+
+
+
+
+
+
+
 @media print {
   .cms-body *,
   .cms-body :after,
