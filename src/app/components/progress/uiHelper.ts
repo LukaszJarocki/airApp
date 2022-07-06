@@ -6,7 +6,7 @@ export enum UiState {
 }
 
 export enum Status {
-  PENDING = 'pending',
+  PENDING = '',
   IN_PROGRESS = 'in progress',
   COMPLETED = 'completed',
 }

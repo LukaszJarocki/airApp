@@ -40,7 +40,7 @@
     .circle {
       stroke-dasharray: 320;
       stroke-dashoffset: 320;
-      fill: #d2d2d2;
+      fill: #959595;
       transition: stroke-dashoffset 0.5s,
         fill 0.5s 0.3s cubic-bezier(0.45, 0, 0.55, 1);
     }
@@ -81,13 +81,13 @@
     }
 
     span.progress-info.in-progress {
-      background-color: #EF8354;
-      color: #fff;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
     }
 
     span.progress-info.completed {
-      background-color: #1b9bff;
-      color: #fff;
+      background-color: #095EB9;
+      color: rgb(0, 0, 0);
     }
 
     span.step {
@@ -96,7 +96,7 @@
       font-weight: normal;
       letter-spacing: 0.5px;
       font-size: 11px;
-      color: #777;
+      color: #ffffff;
     }
   }
 
@@ -108,7 +108,7 @@
   height: 4px;
   overflow: hidden;
   display: inline-block;
-  background: #d2d2d2;
+  background: #959595;
   border-radius: 10px;
 
   .progress-percent {
@@ -120,7 +120,7 @@
 
 .progress-line.active {
   .progress-percent {
-    background: #EF8354;
+    background: #ffffff;
     width: 50%;
   }
 }
@@ -128,14 +128,14 @@
 .progress-line.complete {
   .progress-percent {
     width: 100%;
-    background: #1b9bff;
+    background: #095EB9;
   }
 }
 
 .check-box.active {
   svg#checkbox {
     .circle {
-      fill: #EF8354;
+      fill: #ffffff;
     }
   }
 }
@@ -143,7 +143,7 @@
   svg#checkbox {
     .circle {
       stroke-dashoffset: 0;
-      fill: #1b9bff;
+      fill: #095EB9;
     }
 
     .check {

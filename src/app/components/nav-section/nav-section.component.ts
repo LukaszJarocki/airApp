@@ -25,7 +25,7 @@ export class NavSectionComponent {
   openDialog() {
     this.dialogRef.open(BookSectionComponent, {
       width: '70vw',
-      maxHeight: '700px',
+      height: '100vh',
       autoFocus: false,
 
     });
