@@ -1,0 +1,817 @@
+
+/*! CSS Used from: https://tjwlcdn.com/cms/assets/v1/live/tjwl/css/cms.bundle.css?v=1555677461 */
+.cms-body *,
+.cms-body :after,
+.cms-body :before {
+  box-sizing: border-box;
+}
+.cms-body [tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+.cms-body h3,
+.cms-body h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.cms-body p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.cms-body a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+.cms-body a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+.cms-body img {
+  vertical-align: middle;
+  border-style: none;
+}
+.cms-body button {
+  border-radius: 0;
+}
+.cms-body button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+.cms-body button {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.cms-body button {
+  overflow: visible;
+}
+.cms-body button {
+  text-transform: none;
+}
+.cms-body button {
+  -webkit-appearance: button;
+}
+.cms-body [type="button"]::-moz-focus-inner,
+.cms-body button::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+.cms-body h3,
+.cms-body h4 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+.cms-body h3 {
+  font-size: 1.75rem;
+}
+.cms-body h4 {
+  font-size: 1.5rem;
+}
+.cms-body .container {
+  width: 100%;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .cms-body .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .cms-body .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .cms-body .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .cms-body .container {
+    max-width: 1200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media print {
+  .cms-body *,
+  .cms-body :after,
+  .cms-body :before {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .cms-body a:not(.btn) {
+    text-decoration: underline;
+  }
+  .cms-body img {
+    page-break-inside: avoid;
+  }
+  .cms-body h3,
+  .cms-body p {
+    orphans: 3;
+    widows: 3;
+  }
+  .cms-body h3 {
+    page-break-after: avoid;
+  }
+  .cms-body .container {
+    min-width: 992px !important;
+  }
+}
+@media (min-width: 576px) {
+  .home-inspiration-popup-wrap .modal-dialog-centered {
+    min-height: calc(100% - 3.5rem);
+  }
+  .home-inspiration-popup-wrap .modal-dialog {
+    max-width: 750px;
+    margin: 1.75rem auto;
+  }
+  .home-inspiration-popup-wrap .modal-dialog-centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+  }
+  .home-inspiration-popup-wrap .modal-dialog {
+    position: relative;
+    pointer-events: none;
+  }
+}
+.home-inspiration-popup-wrap .modal-body {
+  padding: 0;
+}
+.home-inspiration-popup-wrap .modal-body iframe {
+  border: none;
+  max-width: 100%;
+}
+.home-inspiration-popup-wrap .modal {
+  z-index: 1072;
+  background-color: rgba(51, 51, 51, 0.8);
+  overflow: hidden !important;
+}
+.home-inspiration-popup-wrap .modal-content {
+  border: 1px solid #fff;
+  border-radius: 0;
+}
+.cms-body {
+  background-color: #f4f6f8;
+  float: left;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+}
+.cms-body,
+.cms-body * {
+  font-family: Open Sans, Noto Naskh;
+}
+.cms-body a {
+  color: #337ab7;
+}
+.cms-body p {
+  margin-bottom: 10px;
+}
+.cms-body .view-more-link:hover {
+  color: #eb614d;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .cms-body .view-more-link {
+    margin-top: 40px;
+  }
+}
+.cms-body .subtitle,
+.cms-body .widget-title {
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.cms-body .subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+  position: relative;
+}
+.cms-body .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.cms-body .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.cms-body .slick-list:focus {
+  outline: 0;
+}
+.cms-body .slick-slider .slick-list,
+.cms-body .slick-slider .slick-track {
+  transform: translateZ(0);
+}
+.cms-body .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cms-body .slick-track:before {
+  display: table;
+  content: "";
+}
+.cms-body .slick-track:after {
+  clear: both;
+}
+.cms-body .slick-slide {
+  display: none;
+  float: left;
+  min-height: 1px;
+}
+.cms-body .slick-slide img {
+  display: block;
+}
+.cms-body .slick-initialized .slick-slide {
+  display: block;
+}
+.cms-body .slick-next,
+.cms-body .slick-prev {
+  font-size: 0;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 20px;
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+}
+.cms-body .slick-next:active,
+.cms-body .slick-next:focus,
+.cms-body .slick-prev:active,
+.cms-body .slick-prev:focus {
+  border: none;
+  outline: none;
+}
+.cms-body.cms-ltr .slick-next {
+  background-image: url(//tjwlcdn.com/cms/assets/ver2.0/images/icon-black-arrow-r.png?v=1);
+  right: -20px;
+}
+@media screen and (max-width: 768px) {
+  .cms-body .slick-slide img {
+    max-width: 100%;
+  }
+}
+.cms-body .inspiration-home-wrap {
+  margin-bottom: 50px;
+  float: left;
+  width: 100%;
+}
+.cms-body .inspiration-home-wrap .insp-row {
+  height: 370px;
+}
+.cms-body .inspiration-home-wrap .insp-row .insp-item-wrap:first-child {
+  flex: 0 0 100%;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:first-child
+  .insp-hd {
+  font-size: 34px;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:first-child
+  .insp-btn {
+  left: 15px;
+}
+.cms-body .inspiration-home-wrap .insp-row .insp-item-wrap:not(:first-child) {
+  height: 185px;
+  flex: 0 0 50%;
+}
+.cms-body .inspiration-home-wrap .insp-row .insp-item-wrap:nth-child(2) {
+  padding-bottom: 8px;
+  text-align: right;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-hd {
+  font-size: 23px;
+  float: right;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-tag-line
+  * {
+  float: right;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-btn {
+  right: 15px;
+}
+.cms-body .inspiration-home-wrap .insp-row .insp-item-wrap:last-child {
+  padding-top: 8px;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:last-child
+  .insp-btn {
+  right: 15px;
+}
+.cms-body .inspiration-home-wrap .insp-row .insp-item-wrap:last-child .insp-hd {
+  font-size: 23px;
+}
+.cms-body .inspiration-home-wrap .insp-row .insp-item-wrap .insp-img-link-wrap {
+  display: table;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  position: relative;
+  display: table;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box {
+  min-height: 175px;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-hd {
+  color: #fff;
+  font-weight: 600;
+  max-width: 70%;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line {
+  clear: both;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line {
+  width: 55%;
+}
+.cms-body.cms-ltr.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line {
+  float: right;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line
+  * {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  width: 55%;
+}
+.cms-body
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-btn {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  min-width: 140px;
+  background-color: #e7412a;
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 2px solid #ad1a06;
+  border-radius: 3px;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: normal;
+  position: absolute;
+  bottom: 15px;
+}
+@media screen and (max-width: 992px) {
+  .cms-body .inspiration-home-wrap {
+    display: none;
+  }
+}
+.cms-body .widget-travel-offers {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.cms-body .widget-travel-offers .offer-box-wrap {
+  width: 100%;
+  margin-top: 15px;
+}
+.cms-body .widget-travel-offers .offer-box-wrap .offer-card-listing {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing.slick-initialized {
+  overflow: inherit;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-full-head {
+  position: relative;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-full-head
+  .offer-card-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #ff8d19;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  font-weight: 600;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-full-head
+  .offer-card-tag.custom-label {
+  background-color: #eb614d;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  min-height: 150px;
+  position: relative;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body
+  .offer-card-content-wrap {
+  margin-bottom: 20px;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body
+  .offer-card-content-wrap
+  .offer-card-hd {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.5;
+}
+@media screen and (min-width: 992px) {
+  .cms-body
+    .widget-travel-offers
+    .offer-box-wrap
+    .offer-card-listing
+    .offer-slider-box
+    .offer-card-body
+    .offer-card-content-wrap
+    .offer-card-hd {
+    min-height: 65px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cms-body
+    .widget-travel-offers
+    .offer-box-wrap
+    .offer-card-listing
+    .offer-slider-box
+    .offer-card-body
+    .offer-card-content-wrap
+    .offer-card-hd {
+    margin-bottom: 15px;
+  }
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body
+  .offer-card-footer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 90%;
+  bottom: 16px;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body
+  .offer-card-footer
+  .offer-card-valid {
+  font-size: 13px;
+  color: #777;
+  flex: 2;
+  margin-bottom: 0;
+  line-height: 21px;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body
+  .offer-card-footer
+  .offer-card-valid.offer-valid-icon {
+  position: relative;
+  padding-left: 25px;
+}
+.cms-body .widget-travel-offers .offer-box-wrap .offer-card-listing .label-new {
+  position: absolute;
+  background: #fbc808;
+  color: #333;
+  font-size: 10px;
+  padding: 3px;
+  top: -10px;
+  right: -12px;
+  border-radius: 3px;
+}
+@media screen and (min-width: 601px) {
+  .cms-body .widget-travel-offers .offer-box-wrap .offer-card-img {
+    min-height: 140px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .slick-initialized.slick-slider
+  .offer-slider-item {
+  max-width: 100%;
+}
+.cms-body .seo-block-home {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.cms-body .seo-block-home .seo-block-box {
+  display: flex;
+  flex-direction: column;
+}
+.cms-body .seo-block-home .seo-block-box .seo-block-img-wrap {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.cms-body .seo-block-home .seo-block-box .seo-block-hd {
+  font-size: 15px;
+  padding-bottom: 10px;
+  margin: 0;
+  line-height: 1.8;
+  color: #3a3a3a;
+  font-weight: 600;
+}
+@media screen and (min-width: 992px) {
+  .cms-body .seo-block-home .seo-block-box .seo-block-hd {
+    min-height: 65px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cms-body .seo-block-home .seo-block-box .seo-block-hd {
+    min-height: 40px;
+  }
+}
+.cms-body .seo-block-home .seo-block-box .seo-block-info {
+  color: #777;
+}
+.cms-body .seo-block-home .seo-block-box .seo-block-info p {
+  line-height: 20px;
+  font-size: 12px;
+}
+@media screen and (max-width: 992px) {
+  .cms-body .seo-block-home {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cms-body .seo-block-home .rb-seo-block-wrap {
+    flex-basis: calc(50% - 12px);
+    flex: auto;
+    max-width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 544px) {
+  .cms-body .seo-block-home .rb-seo-block-wrap {
+    flex-basis: calc(100% - 12px);
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cms-body .seo-block-home {
+    display: none;
+  }
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-hd {
+  max-width: 90% !important;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line
+  * {
+  max-width: 90% !important;
+  width: 100% !important;
+}
+.cms-body
+  .widget-travel-offers
+  .offer-box-wrap
+  .offer-card-listing
+  .offer-slider-box
+  .offer-card-body
+  .offer-card-footer
+  .offer-card-link {
+  font-weight: 600;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line
+  p {
+  width: 100%;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box {
+  min-height: 176px;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:last-child
+  .insp-hd,
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-hd {
+  font-size: 20px;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line {
+  width: 55%;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line {
+  width: 75%;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap
+  .insp-img-link-wrap
+  .insp-img-box
+  .insp-tag-line
+  p {
+  font-size: 14px;
+}
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:last-child
+  .insp-img-link-wrap
+  .insp-img-box,
+.cms-body.cms-tajawal-ae-wrap
+  .inspiration-home-wrap
+  .insp-row
+  .insp-item-wrap:nth-child(2)
+  .insp-img-link-wrap
+  .insp-img-box {
+  min-height: 176px;
+}

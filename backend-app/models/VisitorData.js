@@ -46,6 +46,10 @@ const VisitorDataSchema = new mongoose.Schema({
     },
     class:{
         type: String,
+    },
+    selected:{
+        type: String,
+        require: true   
     }
 }
 )

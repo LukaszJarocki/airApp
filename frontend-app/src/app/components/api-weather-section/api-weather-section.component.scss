@@ -1,0 +1,173 @@
+.bg {
+	width:100%;
+    height:100%;
+    overflow:hidden;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size: cover;
+    -webkit-background-size: cover;
+ 	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+a, a:visited {
+	color: gray;
+	text-decoration: none;
+}
+
+a:hover {
+    color: darkgray;
+}
+
+/********** WEATHER SECTION **********/
+
+.flexbox-container {
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+
+	justify-content: center;
+	align-items: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+}
+
+.container {
+	height: 100%;
+}
+
+.circle {
+	background: white;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 50%;
+	transition:background 1s;
+	opacity: 0.5;
+}
+
+.circle:hover {
+	opacity: 1;
+}
+
+
+.location {
+  font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+  color:black;
+}
+.condition{
+  font-size: 1.2rem;
+  color: black;
+  text-transform: uppercase;
+  margin: -10px;
+}
+
+.temp{
+  font-size: 3rem;
+  color:black;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+
+
+///// SEARCH INPUT //////
+
+.group        {
+  position:relative;
+  margin-bottom:45px;
+}
+input         {
+  font-size:1.3rem;
+  padding:10px 10px 10px 5px;
+  display:block;
+  background-color: rgba(255, 255, 255, 0);
+  width:200px;
+  border:none;
+  color: white;
+  border-bottom:2px solid #000000;
+}
+input:focus     { outline:none; }
+
+/* LABEL ======================================= */
+label          {
+  color: white;
+  font-size:1rem;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label    {
+  top:-20px;
+  font-size:14px;
+  color:#095EB9;
+}
+
+/* BOTTOM BARS ================================= */
+.bar  { position:relative; display:block; width:300px; }
+.bar:before, .bar:after   {
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#095EB9;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from { background:#095EB9; }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#095EB9; }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#095EB9; }
+  to  { width:0; background:transparent; }
+}

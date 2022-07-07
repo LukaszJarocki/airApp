@@ -1,61 +1,62 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AirportDataService } from 'src/app/service/airport-data.service';
+
 
 
 @Component({
   selector: 'app-airbus-schema',
   templateUrl: './airbus-schema.component.html',
-  styleUrls: ['./airbus-schema.component.scss'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => AirbusSchemaComponent),
-      multi: true,
-    },]
+  styleUrls: ['./airbus-schema.component.scss']
 })
-export class AirbusSchemaComponent implements ControlValueAccessor {
-  public onTouched = () => {};
-  public onChange = (value: string) => {};
-  public touched: boolean = false;
-  public isDisabled: boolean = false;
-  public value: string = '';
+export class AirbusSchemaComponent  {
 
-  public select(option: string): void {
-    if (!this.isDisabled) {
-      if (this.isSelected(option)) {
-        this.value = '';
-      } else {
-        this.value = option;
-      }
-      this.onChange(this.value);
-      this.markAsTouched();
+ visitorDataForm:FormGroup;
+  allVisitorsDataArray: any = [];
+
+  constructor(
+    private airportDataService:AirportDataService,
+    private fb: FormBuilder
+  ){
+    this.visitorDataForm = this.fb.group({
+      seatNumber: ['']
+    })
+
+  }
+
+  ngOnInit(){
+    this.getVisitorsData();
+
+  }
+
+  addVisitDetails(){
+    const dataForm: any ={
+      seatNumber: this.visitorDataForm.get('seatNumber')?.value,
+
     }
-  }
-
-  public isSelected(option: string): boolean {
-    return option === this.value;
-  }
-
-  writeValue(value: string): void {
-    this.value = value;
-  }
-  markAsTouched(): void {
-    if (!this.touched) {
-      this.onTouched();
-      this.touched = true;
-    }
-  }
-  registerOnChange(onChange: any): void {
-    this.onChange = onChange;
-  }
-  registerOnTouched(onTouched: any): void {
-    this.onTouched = onTouched;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
-  }
 
 
 
+    console.log(dataForm);
+
+
+
+  this.airportDataService.createVisit(dataForm).subscribe((data: any) =>{
+    console.log(data);
+    alert('Dane zostały dodane do bazy');
+    this.getVisitorsData() //resetuje formularz
+  }, err => {
+    console.log('Wystąpił błąd', err);
+  })
+
+
+  }
+
+  getVisitorsData(){
+    this.airportDataService.getAllVisitors().subscribe((data:any)=>{
+      this.allVisitorsDataArray = data;
+      console.log(data);
+
+    })
+  }
 }

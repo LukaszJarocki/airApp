@@ -1,0 +1,61 @@
+<app-progress  class="form" #progress (stateChange)="onStateChange($event)">
+  <app-progress-step>
+    <h3>Book a flight</h3>
+    <p>
+      Book a flight with Long Wings. Find best fares to destinations around the
+      world and explore the world with safety.
+      <br />* Please check the latest travel regulations before your fly.
+    </p>
+    <div class="btn-container">
+      <button type="button" class="button-next" (click)="goNext(progress)">
+        <span class="circle-next" aria-hidden="true">
+          <span class="icon-next arrow-next"></span>
+        </span>
+        <span class="button-text-next">NEXT</span>
+      </button>
+    </div>
+
+  </app-progress-step>
+  <app-progress-step>
+    <form>
+      <h3>Book a flight</h3>
+      <p>
+        Book a flight with Long Wings. Find best fares to destinations around the
+        world and explore the world with safety.
+        <br />* Please check the latest travel regulations before your fly.
+      </p>
+      <app-book-form-section></app-book-form-section>
+      <div class="btn-container">
+        <button type="button" class="button-preve" progressStepPrev>
+          <span class="button-text-preve">PREVE</span>
+          <span class="circle-preve" aria-hidden="true">
+            <span class="icon-preve arrow-preve"></span>
+          </span>
+        </button>
+        <button type="button" class="button-next" (click)="goNext(progress)">
+          <span class="circle-next" aria-hidden="true">
+            <span class="icon-next arrow-next"></span>
+          </span>
+          <span class="button-text-next">NEXT</span>
+        </button>
+      </div>
+
+    </form>
+  </app-progress-step>
+
+  <app-progress-step>
+    <h3>Thank you for taking advantage of our offer</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sint
+      consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
+    </p>
+    <div class="btn-container">
+      <button type="button" class="button-preve" progressStepPrev>
+        <span class="button-text-preve">PREVE</span>
+        <span class="circle-preve" aria-hidden="true">
+          <span class="icon-preve arrow-preve"></span>
+        </span>
+      </button>
+    </div>
+  </app-progress-step>
+</app-progress>

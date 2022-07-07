@@ -1,11 +1,19 @@
 header {
+  position: relative;
   text-align: center;
   color: #fff;
   background-attachment: scroll;
   background-image: url(../../../assets/photos/travel-5219496_1920.jpg);
-  background-position: center center;
+  background-position: center;
   background-repeat: none;
   background-size: cover;
+  margin-top: -80px;
+}
+
+.flex-item {
+  position: absolute;
+  left: 50px;
+  top: 120px;
 }
 header .dark-window{
   position: relative;

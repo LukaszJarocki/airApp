@@ -1,0 +1,21 @@
+<div class="bg" *ngIf="weatherData">
+	<div class="flexbox-container container" >
+		<div class="flexbox-container circle">
+			<div class="weather">
+				<p class="temp">{{ weatherData.main.temp| number: '1.0-0'}}°C</p>
+				<p class="condition">{{ weatherData.weather[0].description }}</p>
+				<p class="location">{{weatherData.name}}</p>
+			</div>
+		</div>
+    <form #form="ngForm" (submit)="onSubmit()" class="search ">
+      <div class="group">
+        <input type="text" required name="city"
+        [(ngModel)]="cityName">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Search city</label>
+      </div>
+    </form>
+	</div>
+</div>
+

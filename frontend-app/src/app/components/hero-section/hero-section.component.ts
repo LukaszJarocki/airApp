@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'
-import { BookFormSectionComponent } from '../book-form-section/book-form-section.component';
+import { BookSectionComponent } from '../book-section/book-section.component';
+
 
 @Component({
   selector: 'app-hero-section',
@@ -15,7 +16,7 @@ export class HeroSectionComponent implements OnInit {
   }
 
   openDialog(){
-    this.dialogRef.open(BookFormSectionComponent, {
+    this.dialogRef.open(BookSectionComponent, {
       "width": '70vw',
       "maxHeight": '100vh',
       "autoFocus": false})

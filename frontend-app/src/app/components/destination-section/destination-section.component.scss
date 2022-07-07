@@ -1,19 +1,11 @@
-.Linie{
-
-  background: red;
-padding-bottom: 10px;
+h5 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #095eb9;
+  margin: 40px 0;
 }
-.place{
-  display: flex;
-flex-direction: row;
-justify-content:space-around ;
-align-items: center;
-  padding:0.5% 5% 2% 5%;
-  margin-bottom: 10%;
-  background:red;
-.route{flex-direction: column;
-    .arrows{padding-left: 50%;
-      padding-top:2%;
-      padding-bottom:5%;}}
-
+.shadow {
+  background-color: rgba(0, 0, 0, 0.372);
+  padding: 20px;
 }
