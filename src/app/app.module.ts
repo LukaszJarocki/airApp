@@ -31,6 +31,7 @@ import { TestComponent } from './components/test/test.component';
 import { EmbraerInfoSectionComponent } from './components/embraer-info-section/embraer-info-section.component';
 import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
 import { BannerSectionComponent } from './components/banner-section/banner-section.component';
+import { APIWeatherSectionComponent } from './components/api-weather-section/api-weather-section.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { BannerSectionComponent } from './components/banner-section/banner-secti
     TestComponent,
     EmbraerInfoSectionComponent,
     BoeingInfoSectionComponent,
-    BannerSectionComponent
+    BannerSectionComponent,
+    APIWeatherSectionComponent
   ],
   imports: [
     BrowserModule,

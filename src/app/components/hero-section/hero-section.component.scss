@@ -9,6 +9,12 @@ header {
   background-size: cover;
   margin-top: -80px;
 }
+
+.flex-item {
+  position: absolute;
+  left: 50px;
+  top: 120px;
+}
 header .dark-window{
   position: relative;
   width: 100vw;
