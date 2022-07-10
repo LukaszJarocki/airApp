@@ -14,6 +14,38 @@
   </section>
 
 <div class="container">
+   <!--NAME ... LAST NAME-->
+   <div class="row-icon row">
+    <div class="col-sm-6">
+      <label for="inputFrom" class="text icon">Name:</label>
+    </div>
+    <div class="col-sm-6">
+      <label for="inputTo" class="text icon">Last name:</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <input
+      type="text"
+      formControlName="passengerName"
+      class="textForm"
+      [(ngModel)]="passengerName"
+      #passengerNameData
+      placeholder="Name"
+      id="passengerName">
+    </div>
+    <div class="col-sm-6">
+      <input
+      type="text"
+      formControlName="passengerFamilyName"
+      [(ngModel)]="passengerFamilyName"
+      #passengerFamilyNameData
+      class="textForm"
+      placeholder="Family name"
+      id="passengerFamilyName">
+    </div>
+  </div>
+
    <!--FROM ... TO-->
    <div class="row-icon row">
     <div class="col-sm-6">
@@ -25,11 +57,17 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
+      <!-- <input type="text"
+      #cityFromDataValue
+      id="cityFromData-input"
+      class="textForm"> -->
       <select
         id="inputFrom"
         [(ngModel)]="selectedOptionCityFrom"
         formControlName="cityFrom"
+        #cityFromDataValue
         class="textForm"
+        id="cityFrom"
         [value]="from"
       >
         <option *ngFor="let cityFrom of optionsCityFrom">
@@ -41,6 +79,7 @@
       <select
         [(ngModel)]="selectedOptionCityTo"
         id="inputTo"
+        #cityToDataValue
         formControlName="cityTo"
         class="textForm"
         [value]="to"
@@ -62,7 +101,9 @@
       <div class="col-sm-6">
         <input
           type="date"
+          [(ngModel)]="dateDepar"
           formControlName="dateDepar"
+          #dateBordValue
           class="textForm"
           id="inputDate"
         />
@@ -115,79 +156,97 @@
   class="btn btn-primary"
   [disabled]="visitorDataForm.invalid"
   (click)="showMyContainer = !showMyContainer"
+  (click)="addPassengerFamilyName(passengerFamilyNameData.value)"
+  (click)="addPassengerName(passengerNameData.value)"
+  (click)="addCityFromValue(cityFromDataValue.value)"
+  (click)="addCityToValue(cityToDataValue.value)"
+  (click)="addDateBord(dateBordValue.value)"
 >
+
+
   RESERVE A SEAT
 </button>
 </div>
 
 </form>
-<div *ngIf="showMyContainer">
-  <div class="book-info">
-    <div class="box">
-      <ul class="left">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+<!-- <div *ngIf="showMyContainer">
+    <div class="book-info">
+      <img src="../../../assets/photos/boston.jpg" style="width:500px;" *ngIf="selectedOptionCityTo ==='Boston'">
+        <img src="../../../assets/photos/london.jpg" *ngIf="selectedOptionCityTo ==='London'">
+        <img src="../../../assets/photos/pekin.jpg" *ngIf="selectedOptionCityTo ==='Beijing'">
+        <img src="../../../assets/photos/tokyo.jpg" *ngIf="selectedOptionCityTo ==='Tokyo'">
+      <div class="box">
 
-      <ul class="right">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="ticket">
-        <span class="airline"><span style="color: #1B9BFF;">LO</span>NG WINGS</span>
-        <span class="airline airlineslip">Long Wings</span>
-        <span class="boarding">Boarding pass</span>
-        <div class="content">
-          <span class="jfk">{{selectedOptionCityFrom}}</span>
-          <span class="plane"><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-          <span class="sfo">{{selectedOptionCityTo}}</span>
 
-          <span class="jfk jfkslip">{{selectedOptionCityFrom}}</span>
-          <span class="plane planeslip"><svg clip-rule="evenodd" fill-rule="evenodd" height="40" width="40" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-          <span class="sfo sfoslip">{{selectedOptionCityTo}}</span>
-          <div class="sub-content">
-            <span class="watermark">Lufthansa</span>
-            <span class="name">PASSENGER NAME<br><span>Rex, Anonasaurus</span></span>
-            <span class="flight">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-            <span class="gate">GATE<br><span>11B</span></span>
-            <span class="seat">SEAT<br><span>45A</span></span>
-            <span class="boardingtime">BOARDING TIME<br><span>8:25PM ON AUGUST 2013</span></span>
 
-             <span class="flight flightslip">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-              <span class="seat seatslip">SEAT<br><span>45A</span></span>
-             <span class="name nameslip">PASSENGER NAME<br><span>Rex, Anonasaurus</span></span>
+        <ul class="left">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <ul class="right">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="ticket">
+          <span class="airline"><span style="color: #1B9BFF;">LO</span>NG WINGS</span>
+          <span class="airline airlineslip">Long Wings</span>
+          <span class="boarding">Boarding pass</span>
+          <div class="content">
+            <span class="jfk">{{selectedOptionCityFrom}}</span>
+            <span class="plane"><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+            <span class="sfo">{{selectedOptionCityTo}}</span>
+
+            <span class="jfk jfkslip">{{selectedOptionCityFrom}}</span>
+            <span class="plane planeslip"><svg clip-rule="evenodd" fill-rule="evenodd" height="40" width="40" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+            <span class="sfo sfoslip">{{selectedOptionCityTo}}</span>
+            <div class="sub-content">
+              <span class="watermark">Lufthansa</span>
+              <span class="name">PASSENGER NAME<br><span>{{passengerName}}, {{passengerFamilyName}}</span></span>
+              <span class="flight">FLIGHT N&deg;<br><span>X3-65C3</span></span>
+              <span class="gate">PRICE<br><span>{{ seatEconomy }}{{seatBusiness}} </span></span>
+              <span class="seat">SEAT<br><span>45A</span></span>
+              <span class="boardingtime">BOARDING TIME<br><span>{{dateDepar}}</span></span>
+
+               <span class="flight flightslip">FLIGHT N&deg;<br><span>X3-65C3</span></span>
+                <span class="seat seatslip">SEAT<br><span>45A</span></span>
+               <span class="name nameslip">PASSENGER NAME<br><span>{{passengerName}}, {{passengerFamilyName}}</span></span>
+            </div>
           </div>
+          <div class="barcode"></div>
+          <div class="barcode slip"></div>
         </div>
-        <div class="barcode"></div>
-        <div class="barcode slip"></div>
       </div>
-    </div>
+      <div class="ticket-h">
+        <h3>Thank you for using our application</h3>
+        <span>You will soon receive information related to your flight by email</span>
+      </div>
   </div>
-</div>
+</div> -->
     </div>
     <div class="col-sm-7">
       <svg

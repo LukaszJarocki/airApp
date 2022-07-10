@@ -1,5 +1,6 @@
-import { Component, ElementRef} from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { AirportDataService } from 'src/app/service/airport-data.service';
 
 @Component({
@@ -14,13 +15,30 @@ export class BookFormSectionComponent {
   visitorDataForm: FormGroup;
   allVisitorsDataArray: any = [];
   showMyContainer: boolean = false;
+  dateDepar: any = [];
+  passengerName: string = '';
+  passengerFamilyName: string = '';
+
+  @Output()  newPassengerNameEvent = new EventEmitter<string>();
+  @Output()  newPassengerFamilyNameEvent = new EventEmitter<string>();
+  @Output()  newCityFromEvent = new EventEmitter<string>();
+  @Output()  newCityToEvent = new EventEmitter<string>();
+  @Output()  newDateBord = new EventEmitter<string>();
+  @Output()  newPriceEvent = new EventEmitter<string>();
+
+  childData: string = 'From child components'
+
+  value: boolean;
 
   constructor(
     private airportDataService: AirportDataService,
     private fb: FormBuilder,
   ) {
+
     this.visitorDataForm = this.fb.group({
-      cityFrom: ['', Validators.required], //sprawdza czy input jest obowiązkowy
+      passengerName: ['', Validators.required],
+      passengerFamilyName: ['', Validators.required],
+      cityFrom: [''],
       cityTo: ['', Validators.required],
       dateDepar: ['', Validators.required],
       class: ['', Validators.required],
@@ -30,6 +48,7 @@ export class BookFormSectionComponent {
     });
   }
 
+
   ngOnInit() {
     this.getVisitorsData();
     const booked = ['1A', '2D', '5D', '7A', '15F', '26B'];
@@ -38,13 +57,36 @@ export class BookFormSectionComponent {
         this.letras.findIndex((l) => l == x.slice(-1))
       ] = 'booked';
     });
-  }
 
+  }
   seatEconomy: string = '';
   seatBusiness: string = '';
 
+  addPassengerName(value: string){
+    this.newPassengerNameEvent.emit(value)
+  }
+  addPassengerFamilyName(value: string){
+    this.newPassengerFamilyNameEvent.emit(value)
+  }
+  addCityFromValue(value: string){
+    this.newCityFromEvent.emit(value)
+  }
+  addCityToValue(value: string){
+    this.newCityToEvent.emit(value)
+  }
+  addDateBord(value: string){
+    this.newDateBord.emit(value)
+  }
+  addPriceValue(value: string){
+    this.newPriceEvent.emit(value)
+  }
+
+
+
   addVisitDetails() {
     const dataForm: any = {
+      passengerName: this.visitorDataForm.get('passengerName')?.value,
+      passengerFamilyName: this.visitorDataForm.get('passengerFamilyName')?.value,
       cityFrom: this.visitorDataForm.get('cityFrom')?.value,
       cityTo: this.visitorDataForm.get('cityTo')?.value,
       dateDepar: this.visitorDataForm.get('dateDepar')?.value,
@@ -67,15 +109,28 @@ export class BookFormSectionComponent {
       }
     );
 
-    if(this.selected.length > 0 && this.selectedOptionClass === 'Economy' ) {
-      this.seatEconomy = ("Selected Seats: " + this.selected + "\n" + "Total price: "+(this.economyTicketPrice * this.selected.length  + this.convFee + this.currency));
 
-    } else if(this.selected.length > 0 && this.selectedOptionClass === 'Business'){
-      this.seatBusiness =("Selected Seats: " + this.selected + "\n Total price: "+(this.BusinessTicketPrice  * this.selected.length   + this.convFee + this.currency ));
-  }
-  else {
-      alert("No seats selected!");
-  }
+     if(this.selected.length > 0 && this.selectedOptionClass === 'Economy' ) {
+        this.seatEconomy = (this.economyTicketPrice  * this.selected.length  + this.convFee + this.currency);
+
+      } else if(this.selected.length > 0 && this.selectedOptionClass === 'Business'){
+        this.seatBusiness =(this.BusinessTicketPrice  * this.selected.length   + this.convFee + this.currency );
+    }
+    else {
+        alert("No seats selected!");
+    }
+/*
+     if(this.selected.length > 0 && this.selectedOptionClass === 'Economy' ) {
+        this.seatEconomy = (this.selected + "\n" +((this.economyTicketPrice ) * this.selected.length  + this.convFee + this.currency));
+
+      } else if(this.selected.length > 0 && this.selectedOptionClass === 'Business'){
+        this.seatBusiness =(this.selected + "\n"  +(this.BusinessTicketPrice  * this.selected.length   + this.convFee + this.currency ));
+    }
+    else {
+        alert("No seats selected!");
+    } */
+
+
 
 
   }
@@ -141,11 +196,11 @@ export class BookFormSectionComponent {
     {from: "Poznań", value:'warszawa'}
   ]
   selectedOptionCityTo: string;
-  optionsCityTo =[
-    {to: "London", value:'london'},
-    {to: "Boston", value:'boston'},
-    {to: "Beijing", value:'beijing'},
-    {to: "PoznTokyoań", value:'tokyo'}
+  optionsCityTo: any[] =[
+    {to: "London", value:'1500'},
+    {to: "Boston", value:'3000'},
+    {to: "Beijing", value:'2700'},
+    {to: "Tokyo", value:'4000'}
   ]
 
   economyTicketPrice: number = 1000;
