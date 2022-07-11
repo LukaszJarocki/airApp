@@ -69,8 +69,10 @@ export class BookFormSectionComponent {
   addDateBord(value: string) {
     this.newDateBord.emit(value);
   }
-  addPriceValue(seatEconomy: string) {
-    this.newPriceEvent.emit(seatEconomy);
+  addPriceValue(seatEco: string) {
+    this.newPriceEvent.emit(seatEco);
+    console.log(seatEco);
+
   }
 
   addVisitDetails() {
@@ -105,7 +107,6 @@ export class BookFormSectionComponent {
         this.economyTicketPrice * this.selected.length +
         this.convFee +
         this.currency;
-      this.seatEconomy.emit();
     } else if (
       this.selected.length > 0 &&
       this.selectedOptionClass === 'Business'
@@ -117,16 +118,7 @@ export class BookFormSectionComponent {
     } else {
       alert('No seats selected!');
     }
-    /*
-     if(this.selected.length > 0 && this.selectedOptionClass === 'Economy' ) {
-        this.seatEconomy = (this.selected + "\n" +((this.economyTicketPrice ) * this.selected.length  + this.convFee + this.currency));
 
-      } else if(this.selected.length > 0 && this.selectedOptionClass === 'Business'){
-        this.seatBusiness =(this.selected + "\n"  +(this.BusinessTicketPrice  * this.selected.length   + this.convFee + this.currency ));
-    }
-    else {
-        alert("No seats selected!");
-    } */
   }
 
   getVisitorsData() {
@@ -139,6 +131,30 @@ export class BookFormSectionComponent {
   goNext(progress: ProgressComponent) {
     progress.next();
   }
+
+  ////////////////////
+
+ /*  priceFlight(){
+    if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
+      let seatEco = String
+      this.seatEconomy =
+        this.economyTicketPrice * this.selected.length +
+        this.convFee +
+        this.currency;
+      this.seatEconomy = seatEco
+    } else if (
+      this.selected.length > 0 &&
+      this.selectedOptionClass === 'Business'
+    ) {
+      this.seatBusiness =
+        this.BusinessTicketPrice * this.selected.length +
+        this.convFee +
+        this.currency;
+    } else {
+      alert('No seats selected!');
+    }
+  } */
+
   ////////////CHECK SEATS////////////////////////
   filas = [
     { y: 250, x: [154.8, 175.2, 195.5, 0, 0, 0] },
