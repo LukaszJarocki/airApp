@@ -1,4 +1,4 @@
-<app-progress  class="form" #progress (stateChange)="onStateChange($event)">
+<app-progress class="form" #progress (stateChange)="onStateChange($event)">
   <app-progress-step>
     <h3>Book a flight</h3>
     <p>
@@ -14,24 +14,24 @@
         <span class="button-text-next">NEXT</span>
       </button>
     </div>
-
   </app-progress-step>
   <app-progress-step>
     <form>
       <h3>Book a flight</h3>
       <p>
-        Book a flight with Long Wings. Find best fares to destinations around the
-        world and explore the world with safety.
+        Book a flight with Long Wings. Find best fares to destinations around
+        the world and explore the world with safety.
         <br />* Please check the latest travel regulations before your fly.
       </p>
       <app-book-form-section
-      (newPassengerNameEvent)="addPassengerName($event)"
-      (newPassengerFamilyNameEvent)="addPassengerFamilyName($event)"
-      (newCityFromEvent)="addCityFrom($event)"
-      (newCityToEvent)="addCityTo($event)"
-      (newDateBord)="addDateBord($event)"
-      (newPriceEvent)="addPriceEconomy($event)">
-    </app-book-form-section>
+        (newPassengerNameEvent)="addPassengerName($event)"
+        (newPassengerFamilyNameEvent)="addPassengerFamilyName($event)"
+        (newCityFromEvent)="addCityFrom($event)"
+        (newCityToEvent)="addCityTo($event)"
+        (newDateBord)="addDateBord($event)"
+        (newPriceEvent)="addPriceEconomy($event)"
+      >
+      </app-book-form-section>
 
       <div class="btn-container">
         <button type="button" class="button-preve" progressStepPrev>
@@ -47,7 +47,6 @@
           <span class="button-text-next">NEXT</span>
         </button>
       </div>
-
     </form>
   </app-progress-step>
 
@@ -58,90 +57,191 @@
       consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
     </p>
     <div class="btn-container">
+      <div>
+        <div class="book-info">
+          <img
+            src="../../../assets/photos/boston3.jpg"
+            style="width: 60vw"
+            *ngIf="cityToArr.includes('Boston')"
+          />
+          <img
+            src="../../../assets/photos/londyn3.jpg"
+            *ngIf="cityToArr.includes('London')"
+          />
+          <img
+            src="../../../assets/photos/pekin3.jpg"
+            *ngIf="cityToArr.includes('Beijing')"
+          />
+          <img
+            src="../../../assets/photos/tokio3.jpg"
+            *ngIf="cityToArr.includes('Tokyo')"
+          />
+          <div class="box">
+            <ul class="left">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
 
+            <ul class="right">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <div class="ticket">
+              <span class="airline"
+                ><span style="color: #1b9bff">LO</span>NG WINGS</span
+              >
+              <span class="airline airlineslip">Long Wings</span>
+              <span class="boarding">Boarding pass</span>
+              <div class="content">
+                <span class="jfk" *ngFor="let bev of cityFromArr">{{
+                  cityFromArr
+                }}</span>
+                <span class="plane"
+                  ><svg
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    height="50"
+                    width="50"
+                    image-rendering="optimizeQuality"
+                    shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision"
+                    viewBox="0 0 500 500"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g stroke="#222">
+                      <line
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-width="30"
+                        x1="300"
+                        x2="55"
+                        y1="390"
+                        y2="390"
+                      />
+                      <path
+                        d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z"
+                        fill="#222"
+                        stroke-linejoin="round"
+                        stroke-width="10"
+                      />
+                    </g></svg
+                ></span>
+                <span class="sfo" *ngFor="let bev of cityToArr">{{
+                  cityToArr
+                }}</span>
 
+                <span class="jfk jfkslip" *ngFor="let bev of cityFromArr">{{
+                  cityFromArr
+                }}</span>
+                <span class="plane planeslip"
+                  ><svg
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    height="40"
+                    width="40"
+                    image-rendering="optimizeQuality"
+                    shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision"
+                    viewBox="0 0 500 500"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g stroke="#222">
+                      <line
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-width="30"
+                        x1="300"
+                        x2="55"
+                        y1="390"
+                        y2="390"
+                      />
+                      <path
+                        d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z"
+                        fill="#222"
+                        stroke-linejoin="round"
+                        stroke-width="10"
+                      />
+                    </g></svg
+                ></span>
+                <span class="sfo sfoslip" *ngFor="let bev of cityToArr">{{
+                  cityToArr
+                }}</span>
+                <div class="sub-content">
+                  <span class="watermark">Lufthansa</span>
+                  <span class="name"
+                    >PASSENGER NAME<br /><span
+                      *ngFor="let bev of passengerNameArr"
+                      >{{ passengerNameArr }},</span
+                    ><span *ngFor="let bev of passengerFamilyNameArr">
+                      {{ passengerFamilyNameArr }}</span
+                    ></span
+                  >
+                  <span class="flight"
+                    >FLIGHT N&deg;<br /><span>X3-65C3</span></span
+                  >
+                  <span class="gate"
+                    >PRICE<br /><span>
+                      <!-- {{ seatEconomy }}{{seatBusiness}} -->
+                    </span></span
+                  >
+                  <span class="seat">SEAT<br /><span>45A</span></span>
+                  <span class="boardingtime"
+                    >BOARDING TIME<br /><span *ngFor="let bev of dateBordArr">{{
+                      dateBordArr
+                    }}</span></span
+                  >
 
-<div >
-  <div class="book-info">
-    <img src="../../../assets/photos/boston3.jpg" style="width:60vw;" *ngIf="cityToArr.includes('Boston')">
-    <img src="../../../assets/photos/londyn3.jpg" *ngIf="cityToArr.includes('London')">
-    <img src="../../../assets/photos/pekin3.jpg" *ngIf="cityToArr.includes('Beijing')">
-    <img src="../../../assets/photos/tokio3.jpg" *ngIf="cityToArr.includes('Tokyo')">
-    <div class="box">
-
-
-
-      <ul class="left">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-
-      <ul class="right">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="ticket">
-        <span class="airline"><span style="color: #1B9BFF;">LO</span>NG WINGS</span>
-        <span class="airline airlineslip">Long Wings</span>
-        <span class="boarding">Boarding pass</span>
-        <div class="content">
-          <span class="jfk" *ngFor="let bev of  cityFromArr">{{cityFromArr}}</span>
-          <span class="plane"><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-          <span class="sfo" *ngFor="let bev of  cityToArr">{{cityToArr}}</span>
-
-          <span class="jfk jfkslip" *ngFor="let bev of  cityFromArr">{{cityFromArr}}</span>
-          <span class="plane planeslip"><svg clip-rule="evenodd" fill-rule="evenodd" height="40" width="40" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-          <span class="sfo sfoslip" *ngFor="let bev of  cityToArr">{{cityToArr}}</span>
-          <div class="sub-content">
-            <span class="watermark">Lufthansa</span>
-            <span class="name">PASSENGER NAME<br><span *ngFor="let bev of  passengerNameArr">{{passengerNameArr}},</span><span *ngFor="let bev of  passengerFamilyNameArr"> {{passengerFamilyNameArr}}</span></span>
-            <span class="flight">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-            <span class="gate">PRICE<br><span> <!-- {{ seatEconomy }}{{seatBusiness}} --> </span></span>
-            <span class="seat">SEAT<br><span>45A</span></span>
-            <span class="boardingtime">BOARDING TIME<br><span *ngFor="let bev of  dateBordArr">{{dateBordArr}}</span></span>
-
-             <span class="flight flightslip">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-              <span class="seat seatslip">SEAT<br><span>45A</span></span>
-             <span class="name nameslip">PASSENGER NAME<br><span *ngFor="let bev of  passengerNameArr">{{passengerNameArr}},</span><span *ngFor="let bev of  passengerFamilyNameArr"> {{passengerFamilyNameArr}}</span></span>
+                  <span class="flight flightslip"
+                    >FLIGHT N&deg;<br /><span>X3-65C3</span></span
+                  >
+                  <span class="seat seatslip">SEAT<br /><span>45A</span></span>
+                  <span class="name nameslip"
+                    >PASSENGER NAME<br /><span
+                      *ngFor="let bev of passengerNameArr"
+                      >{{ passengerNameArr }},</span
+                    ><span *ngFor="let bev of passengerFamilyNameArr">
+                      {{ passengerFamilyNameArr }}</span
+                    ></span
+                  >
+                </div>
+              </div>
+              <div class="barcode"></div>
+              <div class="barcode slip"></div>
+            </div>
+          </div>
+          <div class="ticket-h">
+            <h3>Thank you for using our application!</h3>
+            <span
+              >You will soon receive information related to your flight by
+              email</span
+            >
           </div>
         </div>
-        <div class="barcode"></div>
-        <div class="barcode slip"></div>
       </div>
-    </div>
-    <div class="ticket-h">
-      <h3>Thank you for using our application!</h3>
-      <span>You will soon receive information related to your flight by email</span>
-    </div>
-</div>
-</div>
     </div>
   </app-progress-step>
 </app-progress>
-
-
-

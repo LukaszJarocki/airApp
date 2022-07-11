@@ -17,9 +17,7 @@ import { DestinationSectionComponent } from './components/destination-section/de
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookFormSectionComponent } from './components/book-form-section/book-form-section.component';
-import { InfoSectionComponent } from './components/info-section/info-section.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AirbusSchemaComponent } from './components/airbus-schema/airbus-schema.component';
 import { ProgressStepComponent } from './components/progress/progress-step/progress-step.component';
 import { ProgressStepDirective } from './components/progress/progress-step.directive';
 import { ProgressComponent } from './components/progress/progress.component';
@@ -30,7 +28,6 @@ import { AirbusInfoSectionComponent } from './components/airbus-info-section/air
 import { TestComponent } from './components/test/test.component';
 import { EmbraerInfoSectionComponent } from './components/embraer-info-section/embraer-info-section.component';
 import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
-import { BannerSectionComponent } from './components/banner-section/banner-section.component';
 import { APIWeatherSectionComponent } from './components/api-weather-section/api-weather-section.component';
 
 
@@ -42,8 +39,6 @@ import { APIWeatherSectionComponent } from './components/api-weather-section/api
     FooterSectionComponent,
     DestinationSectionComponent,
     BookFormSectionComponent,
-    InfoSectionComponent,
-    AirbusSchemaComponent,
     ProgressStepComponent,
     ProgressStepComponent,
     ProgressStepDirective,
@@ -55,7 +50,6 @@ import { APIWeatherSectionComponent } from './components/api-weather-section/api
     TestComponent,
     EmbraerInfoSectionComponent,
     BoeingInfoSectionComponent,
-    BannerSectionComponent,
     APIWeatherSectionComponent
   ],
   imports: [

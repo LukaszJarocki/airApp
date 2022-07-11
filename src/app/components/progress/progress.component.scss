@@ -30,7 +30,6 @@
   padding: 130px;
   position: relative;
 
-
   svg#checkbox {
     width: 48px;
     height: 48px;
@@ -86,7 +85,7 @@
     }
 
     span.progress-info.completed {
-      background-color: #095EB9;
+      background-color: #095eb9;
       color: rgb(0, 0, 0);
     }
 
@@ -99,7 +98,6 @@
       color: #ffffff;
     }
   }
-
 }
 
 .progress-line {
@@ -128,7 +126,7 @@
 .progress-line.complete {
   .progress-percent {
     width: 100%;
-    background: #095EB9;
+    background: #095eb9;
   }
 }
 
@@ -143,7 +141,7 @@
   svg#checkbox {
     .circle {
       stroke-dashoffset: 0;
-      fill: #095EB9;
+      fill: #095eb9;
     }
 
     .check {
