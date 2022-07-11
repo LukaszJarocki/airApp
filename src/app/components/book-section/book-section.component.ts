@@ -8,7 +8,7 @@ interface PassengerName {string}
   templateUrl: './book-section.component.html',
   styleUrls: ['./book-section.component.scss']
 })
-export class BookSectionComponent implements OnInit, AfterViewInit {
+export class BookSectionComponent implements OnInit {
 
   @ViewChild(BookFormSectionComponent) child!: BookFormSectionComponent
 
@@ -52,9 +52,6 @@ export class BookSectionComponent implements OnInit, AfterViewInit {
     console.log(event);
   }
 
-  ngAfterViewInit() {
-    console.log(this.child.childData);
-  }
 
 
 

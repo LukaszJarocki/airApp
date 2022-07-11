@@ -24,7 +24,7 @@
         world and explore the world with safety.
         <br />* Please check the latest travel regulations before your fly.
       </p>
-      <app-book-form-section 
+      <app-book-form-section
       (newPassengerNameEvent)="addPassengerName($event)"
       (newPassengerFamilyNameEvent)="addPassengerFamilyName($event)"
       (newCityFromEvent)="addCityFrom($event)"
@@ -124,7 +124,7 @@
             <span class="watermark">Lufthansa</span>
             <span class="name">PASSENGER NAME<br><span *ngFor="let bev of  passengerNameArr">{{passengerNameArr}},</span><span *ngFor="let bev of  passengerFamilyNameArr"> {{passengerFamilyNameArr}}</span></span>
             <span class="flight">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-            <span class="gate">PRICE<br><span><!-- {{ seatEconomy }}{{seatBusiness}}  --></span></span>
+            <span class="gate">PRICE<br><span> <!-- {{ seatEconomy }}{{seatBusiness}} --> </span></span>
             <span class="seat">SEAT<br><span>45A</span></span>
             <span class="boardingtime">BOARDING TIME<br><span *ngFor="let bev of  dateBordArr">{{dateBordArr}}</span></span>
 

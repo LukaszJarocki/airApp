@@ -26,7 +26,6 @@ export class BookFormSectionComponent {
   @Output()  newDateBord = new EventEmitter<string>();
   @Output()  newPriceEvent = new EventEmitter<string>();
 
-  childData: string = 'From child components'
 
   value: boolean;
 
@@ -38,7 +37,7 @@ export class BookFormSectionComponent {
     this.visitorDataForm = this.fb.group({
       passengerName: ['', Validators.required],
       passengerFamilyName: ['', Validators.required],
-      cityFrom: [''],
+      cityFrom: ['', Validators.required],
       cityTo: ['', Validators.required],
       dateDepar: ['', Validators.required],
       class: ['', Validators.required],
@@ -57,6 +56,7 @@ export class BookFormSectionComponent {
         this.letras.findIndex((l) => l == x.slice(-1))
       ] = 'booked';
     });
+
 
   }
   seatEconomy: string = '';
