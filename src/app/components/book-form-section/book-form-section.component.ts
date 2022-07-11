@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { AirportDataService } from 'src/app/service/airport-data.service';
+import { ProgressComponent } from '../progress/progress.component';
 
 @Component({
   selector: 'app-book-form-section',
@@ -24,7 +25,7 @@ export class BookFormSectionComponent {
   @Output()  newCityFromEvent = new EventEmitter<string>();
   @Output()  newCityToEvent = new EventEmitter<string>();
   @Output()  newDateBord = new EventEmitter<string>();
-  @Output()  newPriceEvent = new EventEmitter<string>();
+  @Output()  newPriceEvent = new EventEmitter<any>();
 
 
   value: boolean;
@@ -59,7 +60,7 @@ export class BookFormSectionComponent {
 
 
   }
-  seatEconomy: string = '';
+  seatEconomy: any = '';
   seatBusiness: string = '';
 
   addPassengerName(value: string){
@@ -77,8 +78,8 @@ export class BookFormSectionComponent {
   addDateBord(value: string){
     this.newDateBord.emit(value)
   }
-  addPriceValue(value: string){
-    this.newPriceEvent.emit(value)
+  addPriceValue(seatEconomy: string){
+    this.newPriceEvent.emit(seatEconomy)
   }
 
 
@@ -112,7 +113,7 @@ export class BookFormSectionComponent {
 
      if(this.selected.length > 0 && this.selectedOptionClass === 'Economy' ) {
         this.seatEconomy = (this.economyTicketPrice  * this.selected.length  + this.convFee + this.currency);
-
+        this.seatEconomy.emit();
       } else if(this.selected.length > 0 && this.selectedOptionClass === 'Business'){
         this.seatBusiness =(this.BusinessTicketPrice  * this.selected.length   + this.convFee + this.currency );
     }
@@ -143,7 +144,9 @@ export class BookFormSectionComponent {
   }
 
 
-
+  goNext(progress: ProgressComponent) {
+    progress.next();
+  }
   ////////////CHECK SEATS////////////////////////
   filas = [
     { y: 250, x: [154.8, 175.2, 195.5, 0, 0, 0] },
@@ -185,11 +188,13 @@ export class BookFormSectionComponent {
   selected: string[];
   selectedOptionClass: string;
   optionsClass =[
+    {class: "change class", value:0},
     {class: "Economy", value:1},
     {class: "Business", value:2}
   ]
   selectedOptionCityFrom: string;
   optionsCityFrom =[
+    {from: "change city", value:'city'},
     {from: "Katowice", value:'katowice'},
     {from: "Warszawa", value:'warszawa'},
     {from: "Gdańsk", value:'warszawa'},
@@ -197,6 +202,7 @@ export class BookFormSectionComponent {
   ]
   selectedOptionCityTo: string;
   optionsCityTo: any[] =[
+    {to: "change city", value:'city'},
     {to: "London", value:'1500'},
     {to: "Boston", value:'3000'},
     {to: "Beijing", value:'2700'},

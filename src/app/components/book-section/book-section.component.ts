@@ -1,5 +1,5 @@
 import { BookFormSectionComponent } from './../book-form-section/book-form-section.component';
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProgressComponent } from '../progress/progress.component';
 
 interface PassengerName {string}
@@ -17,6 +17,7 @@ export class BookSectionComponent implements OnInit {
   cityFromArr = []
   cityToArr = []
   dateBordArr = []
+  seatEconomyArr = []
   passengerNameData = ""
   constructor()
   {  }
@@ -40,6 +41,9 @@ export class BookSectionComponent implements OnInit {
   }
   addDateBord(dateBord: string){
     this.dateBordArr.push(dateBord)
+  }
+  addPriceEconomy(dateBord: string){
+    this.seatEconomyArr.push(dateBord)
   }
 
   value=""

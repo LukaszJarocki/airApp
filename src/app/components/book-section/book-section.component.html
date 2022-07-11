@@ -29,8 +29,10 @@
       (newPassengerFamilyNameEvent)="addPassengerFamilyName($event)"
       (newCityFromEvent)="addCityFrom($event)"
       (newCityToEvent)="addCityTo($event)"
-      (newDateBord)="addDateBord($event)">
+      (newDateBord)="addDateBord($event)"
+      (newPriceEvent)="addPriceEconomy($event)">
     </app-book-form-section>
+
       <div class="btn-container">
         <button type="button" class="button-preve" progressStepPrev>
           <span class="button-text-preve">PREVE</span>
@@ -56,21 +58,15 @@
       consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
     </p>
     <div class="btn-container">
-      <button type="button" class="button-preve" progressStepPrev>
-        <span class="button-text-preve">PREVE</span>
-        <span class="circle-preve" aria-hidden="true">
-          <span class="icon-preve arrow-preve"></span>
-          {{passengerName}}
-        </span>
-      </button>
-      <div *ngFor="let bev of  passengerNameArr">{{ passengerNameArr}}</div>
+
+
 
 <div >
   <div class="book-info">
-<!--     <img src="../../../assets/photos/boston.jpg" style="width:500px;" *ngIf="selectedOptionCityTo ==='Boston'">
-      <img src="../../../assets/photos/london.jpg" *ngIf="selectedOptionCityTo ==='London'">
-      <img src="../../../assets/photos/pekin.jpg" *ngIf="selectedOptionCityTo ==='Beijing'">
-      <img src="../../../assets/photos/tokyo.jpg" *ngIf="selectedOptionCityTo ==='Tokyo'"> -->
+    <img src="../../../assets/photos/boston3.jpg" style="width:60vw;" *ngIf="cityToArr.includes('Boston')">
+    <img src="../../../assets/photos/londyn3.jpg" *ngIf="cityToArr.includes('London')">
+    <img src="../../../assets/photos/pekin3.jpg" *ngIf="cityToArr.includes('Beijing')">
+    <img src="../../../assets/photos/tokio3.jpg" *ngIf="cityToArr.includes('Tokyo')">
     <div class="box">
 
 
@@ -130,7 +126,7 @@
 
              <span class="flight flightslip">FLIGHT N&deg;<br><span>X3-65C3</span></span>
               <span class="seat seatslip">SEAT<br><span>45A</span></span>
-             <span class="name nameslip">PASSENGER NAME<br><span>{{passengerName}}, <!-- {{passengerFamilyName}} --></span></span>
+             <span class="name nameslip">PASSENGER NAME<br><span *ngFor="let bev of  passengerNameArr">{{passengerNameArr}},</span><span *ngFor="let bev of  passengerFamilyNameArr"> {{passengerFamilyNameArr}}</span></span>
           </div>
         </div>
         <div class="barcode"></div>
@@ -138,7 +134,7 @@
       </div>
     </div>
     <div class="ticket-h">
-      <h3>Thank you for using our application</h3>
+      <h3>Thank you for using our application!</h3>
       <span>You will soon receive information related to your flight by email</span>
     </div>
 </div>

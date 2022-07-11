@@ -217,30 +217,32 @@ button {
 
 
   .book-info{
-    position: absolute;
-    width: 64vw;
-    height: 100vh;
+    position: relative;
+    width: 60vw;
+    height: 80vh;
     background-color: rgb(202, 202, 202);
     top: 0;
     left: -20px;
     .ticket-h{
+      background-color: rgba(255, 254, 254, 0.37);
+      padding: 30px;
       position: absolute;
-      top: 80px;
+      top: 0px;
       left: calc(50% - 300px);
       left: -webkit-calc(50% - 300px);
       margin: 0 auto;
       h3{
-        margin: 0 auto;
-        color: white;
+        color: black;
         font-size: 1.6rem;
         font-weight: bold;
       }
       span{
-        margin: 0 auto;
+        text-align: center;
         font-size: 1rem;
       }
     }
     .box{
+      margin-top: 60px;
       position: absolute;
       top: calc(50% - 125px);
       top: -webkit-calc(50% - 125px);
@@ -736,5 +738,5 @@ button {
     }
 
   }
-  
+
 
