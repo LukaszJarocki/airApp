@@ -66,7 +66,7 @@ import { APIWeatherSectionComponent } from './components/api-weather-section/api
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,4 +30,20 @@ export class NavSectionComponent {
 
     });
   }
+  toHome(){
+    document.getElementById("home").scrollIntoView();
+  }
+  toAbout(){
+    document.getElementById("about").scrollIntoView();
+  }
+  toOffer(){
+    document.getElementById("offer").scrollIntoView();
+  }
+  toDestination(){
+    document.getElementById("destination").scrollIntoView();
+  }
+
+  onActive(){
+    window.scroll(0,0)
+  }
 }
