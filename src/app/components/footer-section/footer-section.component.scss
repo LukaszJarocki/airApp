@@ -60,6 +60,14 @@
 .copyright-text {
   margin: 0;
 }
+svg{
+  fill: #095EB9;
+}
+svg:hover{
+  fill: white;
+}
+
+////////////////////////////////////
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
     margin-bottom: 30px;
@@ -135,11 +143,9 @@
     margin-right: 0;
     font-weight: 600;
   }
+  .arrow-icon{
+    text-align: center;
+  }
 }
 
-svg{
-  fill: #095EB9;
-}
-svg:hover{
-  fill: white;
-}
+

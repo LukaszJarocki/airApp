@@ -18,6 +18,7 @@ export class BookSectionComponent implements OnInit {
   cityFromArr = [];
   cityToArr = [];
   dateBordArr = [];
+  selectedSeatArr = [];
   seatEconomyArr = [];
   passengerNameData = '';
   constructor() {}
@@ -39,6 +40,9 @@ export class BookSectionComponent implements OnInit {
   }
   addDateBord(dateBord: string) {
     this.dateBordArr.push(dateBord);
+  }
+  addSelectSeat(seat: string) {
+    this.selectedSeatArr.push(seat);
   }
   addPriceEconomy(dateBord: string) {
     this.seatEconomyArr.push(dateBord);

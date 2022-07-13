@@ -164,7 +164,7 @@
           </div>
         </div>
         <div class="row text-center">
-          <span style="color: white;">Price flight: {{ seatEconomy }}{{seatBusiness}}</span>
+          <span #seatSelectedData style="color: white;">Price flight: {{ seatEconomy }}{{seatBusiness}}</span>
         </div>
         <div class="row-btn row text-center">
           <button
@@ -177,6 +177,7 @@
             (click)="addCityFromValue(cityFromDataValue.value)"
             (click)="addCityToValue(cityToDataValue.value)"
             (click)="addDateBord(dateBordValue.value)"
+            (click)="addSelectSeat(seatSelectedData)"
           >
             RESERVE A SEAT
           </button>

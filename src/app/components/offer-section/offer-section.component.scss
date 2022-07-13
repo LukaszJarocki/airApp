@@ -1,167 +1,3 @@
-/*! CSS Used from: https://tjwlcdn.com/cms/assets/v1/live/tjwl/css/cms.bundle.css?v=1555677461 */
-.cms-body *,
-.cms-body :after,
-.cms-body :before {
-  box-sizing: border-box;
-}
-.cms-body [tabindex="-1"]:focus {
-  outline: 0 !important;
-}
-.cms-body h3,
-.cms-body h4 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-.cms-body p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-.cms-body a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-.cms-body a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-.cms-body img {
-  vertical-align: middle;
-  border-style: none;
-}
-.cms-body button {
-  border-radius: 0;
-}
-.cms-body button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-.cms-body button {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-.cms-body button {
-  overflow: visible;
-}
-.cms-body button {
-  text-transform: none;
-}
-.cms-body button {
-  -webkit-appearance: button;
-}
-.cms-body [type="button"]::-moz-focus-inner,
-.cms-body button::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-.cms-body h3,
-.cms-body h4 {
-  margin-bottom: 0.5rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
-}
-.cms-body h3 {
-  font-size: 1.75rem;
-}
-.cms-body h4 {
-  font-size: 1.5rem;
-}
-.cms-body .container {
-  width: 100%;
-  padding-right: 8px;
-  padding-left: 8px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 576px) {
-  .cms-body .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .cms-body .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .cms-body .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .cms-body .container {
-    max-width: 1200px;
-  }
-}
-
-@media print {
-  .cms-body *,
-  .cms-body :after,
-  .cms-body :before {
-    text-shadow: none !important;
-    box-shadow: none !important;
-  }
-  .cms-body a:not(.btn) {
-    text-decoration: underline;
-  }
-  .cms-body img {
-    page-break-inside: avoid;
-  }
-  .cms-body h3,
-  .cms-body p {
-    orphans: 3;
-    widows: 3;
-  }
-  .cms-body h3 {
-    page-break-after: avoid;
-  }
-  .cms-body .container {
-    min-width: 992px !important;
-  }
-}
-@media (min-width: 576px) {
-  .home-inspiration-popup-wrap .modal-dialog-centered {
-    min-height: calc(100% - 3.5rem);
-  }
-  .home-inspiration-popup-wrap .modal-dialog {
-    max-width: 750px;
-    margin: 1.75rem auto;
-  }
-  .home-inspiration-popup-wrap .modal-dialog-centered {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-height: calc(100% - 1rem);
-  }
-  .home-inspiration-popup-wrap .modal-dialog {
-    position: relative;
-    pointer-events: none;
-  }
-}
-.home-inspiration-popup-wrap .modal-body {
-  padding: 0;
-}
-.home-inspiration-popup-wrap .modal-body iframe {
-  border: none;
-  max-width: 100%;
-}
-.home-inspiration-popup-wrap .modal {
-  z-index: 1072;
-  background-color: rgba(51, 51, 51, 0.8);
-  overflow: hidden !important;
-}
-.home-inspiration-popup-wrap .modal-content {
-  border: 1px solid #fff;
-  border-radius: 0;
-}
 .cms-body {
   background-color: #f4f6f8;
   float: left;
@@ -183,10 +19,7 @@
 .cms-body p {
   margin-bottom: 10px;
 }
-.cms-body .view-more-link:hover {
-  color: #eb614d;
-  text-decoration: none;
-}
+
 @media screen and (min-width: 768px) {
   .cms-body .view-more-link {
     margin-top: 40px;
@@ -194,10 +27,10 @@
 }
 .cms-body .subtitle,
 .cms-body .widget-title {
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 .cms-body .subtitle {
   font-size: 14px;
@@ -242,13 +75,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.cms-body .slick-track:before {
-  display: table;
-  content: "";
-}
-.cms-body .slick-track:after {
-  clear: both;
-}
 .cms-body .slick-slide {
   display: none;
   float: left;
@@ -259,30 +85,6 @@
 }
 .cms-body .slick-initialized .slick-slide {
   display: block;
-}
-.cms-body .slick-next,
-.cms-body .slick-prev {
-  font-size: 0;
-  color: transparent;
-  background-color: transparent;
-  border: none;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  height: 20px;
-  position: absolute;
-  top: 45%;
-  cursor: pointer;
-}
-.cms-body .slick-next:active,
-.cms-body .slick-next:focus,
-.cms-body .slick-prev:active,
-.cms-body .slick-prev:focus {
-  border: none;
-  outline: none;
-}
-.cms-body.cms-ltr .slick-next {
-  background-image: url(//tjwlcdn.com/cms/assets/ver2.0/images/icon-black-arrow-r.png?v=1);
-  right: -20px;
 }
 @media screen and (max-width: 768px) {
   .cms-body .slick-slide img {
@@ -505,7 +307,7 @@
   .offer-card-tag {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #ff8d19;
+  background-color: #095EB9;
   color: #fff;
   text-transform: uppercase;
   font-size: 14px;
@@ -523,6 +325,7 @@
   .offer-card-tag.custom-label {
   background-color: #eb614d;
 }
+
 .cms-body
   .widget-travel-offers
   .offer-box-wrap
@@ -773,15 +576,7 @@
   .insp-tag-line {
   width: 55%;
 }
-.cms-body.cms-tajawal-ae-wrap
-  .inspiration-home-wrap
-  .insp-row
-  .insp-item-wrap:nth-child(2)
-  .insp-img-link-wrap
-  .insp-img-box
-  .insp-tag-line {
-  width: 75%;
-}
+
 .cms-body.cms-tajawal-ae-wrap
   .inspiration-home-wrap
   .insp-row
@@ -805,4 +600,10 @@
   .insp-img-link-wrap
   .insp-img-box {
   min-height: 176px;
+}
+
+.shadow{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
