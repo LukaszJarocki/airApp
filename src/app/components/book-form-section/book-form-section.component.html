@@ -15,6 +15,7 @@
 
         <div class="container">
           <!--NAME ... LAST NAME-->
+          {{selected}}
           <div class="row-icon row">
             <div class="col-sm-6">
               <label for="inputFrom" class="text icon">Name:</label>
@@ -171,13 +172,10 @@
             type="submit"
             class="btn btn-primary"
             [disabled]="visitorDataForm.invalid"
-            (click)="showMyContainer = !showMyContainer"
-            (click)="addPassengerFamilyName(passengerFamilyNameData.value)"
-            (click)="addPassengerName(passengerNameData.value)"
-            (click)="addCityFromValue(cityFromDataValue.value)"
-            (click)="addCityToValue(cityToDataValue.value)"
-            (click)="addDateBord(dateBordValue.value)"
-            (click)="addSelectSeat(seatSelectedData)"
+           (click)="showMyContainer = !showMyContainer"
+
+            (click)="test()"
+
           >
             RESERVE A SEAT
           </button>

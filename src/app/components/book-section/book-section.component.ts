@@ -13,20 +13,17 @@ interface PassengerName {
 export class BookSectionComponent implements OnInit {
   @ViewChild(BookFormSectionComponent) child!: BookFormSectionComponent;
 
-  passengerNameArr = [];
-  passengerFamilyNameArr = [];
-  cityFromArr = [];
-  cityToArr = [];
-  dateBordArr = [];
-  selectedSeatArr = [];
-  seatEconomyArr = [];
+
+  ourObject: any = {};
+
   passengerNameData = '';
   constructor() {}
   @Input()
   passengerName: PassengerName;
 
-  ngOnInit() {}
-  addPassengerName(name: string) {
+  ngOnInit() {
+  }
+/*   addPassengerName(name: string) {
     this.passengerNameArr.push(name);
   }
   addPassengerFamilyName(familyName: string) {
@@ -46,7 +43,16 @@ export class BookSectionComponent implements OnInit {
   }
   addPriceEconomy(dateBord: string) {
     this.seatEconomyArr.push(dateBord);
+    console.log(dateBord);
+  } */
+
+
+  importEvent(element: any){
+    this.ourObject = element
   }
+
+
+
 
   value = '';
 

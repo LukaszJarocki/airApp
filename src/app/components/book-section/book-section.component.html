@@ -24,12 +24,8 @@
         <br />* Please check the latest travel regulations before your fly.
       </p>
       <app-book-form-section
-        (newPassengerNameEvent)="addPassengerName($event)"
-        (newPassengerFamilyNameEvent)="addPassengerFamilyName($event)"
-        (newCityFromEvent)="addCityFrom($event)"
-        (newCityToEvent)="addCityTo($event)"
-        (newDateBord)="addDateBord($event)"
-        (newPriceEvent)="addPriceEconomy($event)"
+
+        (newTestToSend)="importEvent($event)"
       >
       </app-book-form-section>
 
@@ -38,7 +34,9 @@
           <span class="button-text-preve">PREVE</span>
           <span class="circle-preve" aria-hidden="true">
             <span class="icon-preve arrow-preve"></span>
+
           </span>
+
         </button>
         <button type="button" class="button-next" (click)="goNext(progress)">
           <span class="circle-next" aria-hidden="true">
@@ -52,6 +50,7 @@
 
   <app-progress-step>
     <h3>Thank you for taking advantage of our offer</h3>
+
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sint
       consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
@@ -59,23 +58,23 @@
     <div class="btn-container">
       <div>
         <div class="book-info">
-          <img
+<!--           <img
             src="../../../assets/photos/boston3.jpg"
             style="width: 60vw"
-            *ngIf="cityToArr.includes('Boston')"
+            *ngIf="ourObject.cityTo.includes('Boston')"
           />
           <img
             src="../../../assets/photos/londyn3.jpg"
-            *ngIf="cityToArr.includes('London')"
+            *ngIf="ourObject.cityTo.includes('London')"
           />
           <img
             src="../../../assets/photos/pekin3.jpg"
-            *ngIf="cityToArr.includes('Beijing')"
+            *ngIf="ourObject.cityTo.includes('Beijing')"
           />
           <img
             src="../../../assets/photos/tokio3.jpg"
-            *ngIf="cityToArr.includes('Tokyo')"
-          />
+            *ngIf="ourObject.cityTo.includes('Tokyo')"
+          /> -->
           <div class="box">
             <ul class="left">
               <li></li>
@@ -117,9 +116,9 @@
               <span class="airline airlineslip">Long Wings</span>
               <span class="boarding">Boarding pass</span>
               <div class="content">
-                <span class="jfk" *ngFor="let bev of cityFromArr">{{
-                  cityFromArr
-                }}</span>
+                <span class="jfk" >
+                  {{ourObject.cityFrom}}
+                </span>
                 <span class="plane"
                   ><svg
                     clip-rule="evenodd"
@@ -150,13 +149,13 @@
                       />
                     </g></svg
                 ></span>
-                <span class="sfo" *ngFor="let bev of cityToArr">{{
-                  cityToArr
-                }}</span>
+                <span class="sfo" >
+                  {{ourObject.cityTo}}
+                </span>
 
-                <span class="jfk jfkslip" *ngFor="let bev of cityFromArr">{{
-                  cityFromArr
-                }}</span>
+                <span class="jfk jfkslip">
+                  {{ourObject.cityFrom}}
+                </span>
                 <span class="plane planeslip"
                   ><svg
                     clip-rule="evenodd"
@@ -187,34 +186,39 @@
                       />
                     </g></svg
                 ></span>
-                <span class="sfo sfoslip" *ngFor="let bev of cityToArr">{{
-                  cityToArr
-                }}</span>
+                <span class="sfo sfoslip" >
+                  {{ourObject.cityTo}}
+                </span>
                 <div class="sub-content">
                   <span class="watermark">Lufthansa</span>
                   <span class="name"
                     >PASSENGER NAME<br /><span
-                      *ngFor="let bev of passengerNameArr"
-                      >{{ passengerNameArr }},</span
-                    ><span *ngFor="let bev of passengerFamilyNameArr">
-                      {{ passengerFamilyNameArr }}</span
+
+                      >{{ourObject.namePassenger}},</span
+                    ><span >
+                      {{ourObject.familyPassenger}}</span
                     ></span
                   >
                   <span class="flight"
-                    >FLIGHT N&deg;<br /><span>X3-65C3</span></span
+                    >CLASS<br /><span>{{ourObject.classOption}}</span></span
                   >
-                  <span class="gate"
+                  <span class="price"
                     >PRICE<br /><span>
-                      {{seatEconomyArr}}
+                      {{ourObject.economy}}
                       <!-- {{ seatEconomy }}{{seatBusiness}} -->
                     </span></span
                   >
-                  <span class="seat">SEAT<br /><span>45A</span></span>
+                  <span class="seat">SEAT<br /><span>{{ourObject.seat}}</span></span>
                   <span class="boardingtime"
-                    >BOARDING TIME<br /><span *ngFor="let bev of dateBordArr">{{
-                      dateBordArr
-                    }}</span></span
+                    >BOARDING TIME<br /><span >
+                      {{ourObject.dateFly}}
+                    </span></span
                   >
+<!--                   <span class="boardingtime"
+                    >CLASS<br /><span >
+                      {{ourObject.classOption}}
+                    </span></span
+                  > -->
 
                   <span class="flight flightslip"
                     >FLIGHT N&deg;<br /><span>X3-65C3</span></span
@@ -222,10 +226,9 @@
                   <span class="seat seatslip">SEAT<br /><span>45A</span></span>
                   <span class="name nameslip"
                     >PASSENGER NAME<br /><span
-                      *ngFor="let bev of passengerNameArr"
-                      >{{ passengerNameArr }},</span
-                    ><span *ngFor="let bev of passengerFamilyNameArr">
-                      {{ passengerFamilyNameArr }}</span
+                      >{{ourObject.namePassenger}},</span
+                    ><span >
+                      {{ourObject.familyPassenger}}</span
                     ></span
                   >
                 </div>

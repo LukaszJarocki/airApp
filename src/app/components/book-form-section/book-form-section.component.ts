@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AirportDataService } from 'src/app/service/airport-data.service';
 import { ProgressComponent } from '../progress/progress.component';
@@ -9,32 +9,26 @@ import { ProgressComponent } from '../progress/progress.component';
   styleUrls: ['./book-form-section.component.scss'],
 })
 export class BookFormSectionComponent {
+
+  @Output() newTestToSend = new EventEmitter<any>();
+
   visitorDataForm: FormGroup;
   allVisitorsDataArray: any = [];
   showMyContainer: boolean = false;
   dateDepar: any = [];
   passengerName: string = '';
   passengerFamilyName: string = '';
-
-  @Output() newPassengerNameEvent = new EventEmitter<string>();
-  @Output() newPassengerFamilyNameEvent = new EventEmitter<string>();
-  @Output() newCityFromEvent = new EventEmitter<string>();
-  @Output() newCityToEvent = new EventEmitter<string>();
-  @Output() newDateBord = new EventEmitter<string>();
-  @Output() newSelectSeat = new EventEmitter<string>();
-  @Output() newPriceEvent = new EventEmitter<any>();
-
   value: boolean;
   seatEconomy: any = '';
-  seatBusiness: string = '';
+  seatBusiness: any = '';
   selected: string[];
-  selectedOptionClass: string;
+  selectedOptionClass: string = '';
   optionsClass = [
     { class: 'change class', value: 0 },
     { class: 'Economy', value: 1 },
     { class: 'Business', value: 2 },
   ];
-  selectedOptionCityFrom: string;
+  selectedOptionCityFrom: string = '';
   optionsCityFrom = [
     { from: 'change city', value: 'city' },
     { from: 'Katowice', value: 'katowice' },
@@ -42,7 +36,7 @@ export class BookFormSectionComponent {
     { from: 'Gdańsk', value: 'warszawa' },
     { from: 'Poznań', value: 'warszawa' },
   ];
-  selectedOptionCityTo: string;
+  selectedOptionCityTo: string = '';
   optionsCityTo: any[] = [
     { to: 'change city', value: 'city' },
     { to: 'London', value: '1500' },
@@ -124,7 +118,25 @@ export class BookFormSectionComponent {
     });
   }
 
-  addPassengerName(value: string) {
+  test(){
+    const ourObject = {
+      cityFrom: this.selectedOptionCityFrom,
+      cityTo: this.selectedOptionCityTo,
+      namePassenger: this.passengerName,
+      familyPassenger: this.passengerFamilyName,
+      dateFly: this.dateDepar,
+      classOption: this.selectedOptionClass,
+      economy: this.seatEconomy,
+      buissnes: this.seatBusiness,
+      seat: this.selected
+
+    }
+    this.newTestToSend.emit(ourObject)
+    console.log('wysłano', ourObject)
+  }
+
+
+/*   addPassengerName(value: string) {
     this.newPassengerNameEvent.emit(value);
   }
   addPassengerFamilyName(value: string) {
@@ -145,7 +157,7 @@ export class BookFormSectionComponent {
   addPriceValue(seatEco: string) {
     this.newPriceEvent.emit(seatEco);
     console.log(seatEco);
-  }
+  } */
 
   addVisitDetails() {
     const dataForm: any = {
@@ -190,6 +202,7 @@ export class BookFormSectionComponent {
     } else {
       alert('No seats selected!');
     }
+
   }
 
   getVisitorsData() {
