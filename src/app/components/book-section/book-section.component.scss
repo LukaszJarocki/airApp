@@ -608,6 +608,21 @@ button {
     font-size: 17px;
   }
 
+  .seatPlaceNumber {
+    position: absolute;
+    top: 60px;
+    left: 140px;
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .seatPlaceNumber span{
+    color: #555;
+    font-size: 17px;
+  }
+
   .barcode {
     position: absolute;
     left: 8px;
