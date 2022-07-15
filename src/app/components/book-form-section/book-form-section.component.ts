@@ -9,7 +9,6 @@ import { ProgressComponent } from '../progress/progress.component';
   styleUrls: ['./book-form-section.component.scss'],
 })
 export class BookFormSectionComponent {
-
   @Output() newTestToSend = new EventEmitter<any>();
   @Output() newPrice = new EventEmitter<any>();
 
@@ -22,8 +21,8 @@ export class BookFormSectionComponent {
   value: boolean;
   seatEco: any = '';
   seatBus: any = '';
-  seatEconomy: any = '';
-  seatBusiness: any = '';
+  seatEconomy: string;
+  seatBusiness: any;
   selected: string[];
   selectedOptionClass: string = '';
   optionsClass = [
@@ -121,49 +120,6 @@ export class BookFormSectionComponent {
     });
   }
 
-  test(){
-    const ourObject = {
-      cityFrom: this.selectedOptionCityFrom,
-      cityTo: this.selectedOptionCityTo,
-      namePassenger: this.passengerName,
-      familyPassenger: this.passengerFamilyName,
-      dateFly: this.dateDepar,
-      classOption: this.selectedOptionClass,
-      economy: this.seatEconomy,
-      buissnes: this.seatBusiness,
-      seat: this.selected,
-      eco: this.seatEco
-    }
-    this.newTestToSend.emit(ourObject)
-    console.log('wysłano', ourObject)
-  }
-
-  checkSeat(){
-    const ourPrice = {
-      eco: this.seatEconomy,
-      bus: this.seatBusiness,
-    }
-    if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
-
-      this.seatEconomy =
-        this.economyTicketPrice * this.selected.length +
-        this.convFee +
-        this.currency;
-    } else if (
-      this.selected.length > 0 &&
-      this.selectedOptionClass === 'Business'
-    ) {
-      this.seatBusiness =
-        this.BusinessTicketPrice * this.selected.length +
-        this.convFee +
-        this.currency;
-    } else {
-      alert('No seats selected!');
-    }
-
-    this.newPrice.emit(this.seatEconomy)
-    console.log('wysłano', this.seatEconomy)
-  }
 
 
   addVisitDetails() {
@@ -177,9 +133,11 @@ export class BookFormSectionComponent {
       class: this.visitorDataForm.get('class')?.value,
       adults: this.visitorDataForm.get('adults')?.value,
       kids: this.visitorDataForm.get('kids')?.value,
-      selected: this.visitorDataForm.get('selected')?.value
+      selected: this.visitorDataForm.get('selected')?.value,
     };
-
+    if(!dataForm.selected){
+      alert('Proszę wybrać miejsce siedzące')
+    }
     console.log(dataForm);
 
     this.airportDataService.createVisit(dataForm).subscribe(
@@ -194,7 +152,6 @@ export class BookFormSectionComponent {
     );
 
     if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
-
       this.seatEconomy =
         this.economyTicketPrice * this.selected.length +
         this.convFee +
@@ -207,10 +164,27 @@ export class BookFormSectionComponent {
         this.BusinessTicketPrice * this.selected.length +
         this.convFee +
         this.currency;
-    } else {
+    }
+    else {
       alert('No seats selected!');
     }
-    this.seatEco = this.seatEconomy
+
+    setTimeout(() => {
+      const ourObject = {
+        cityFrom: this.selectedOptionCityFrom,
+        cityTo: this.selectedOptionCityTo,
+        namePassenger: this.passengerName,
+        familyPassenger: this.passengerFamilyName,
+        dateFly: this.dateDepar,
+        classOption: this.selectedOptionClass,
+        economy: this.seatEconomy,
+        buissnes: this.seatBusiness,
+        seat: this.selected,
+        eco: this.seatEco,
+      };
+      this.newTestToSend.emit(ourObject);
+      console.log('wysłano', ourObject);
+    }, 200);
   }
 
   getVisitorsData() {

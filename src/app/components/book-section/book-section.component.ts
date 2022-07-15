@@ -47,7 +47,7 @@ export class BookSectionComponent implements OnInit {
 
   importEvent(element: any){
     this.ourObject = element
-    this.ourPrice = element
+    console.log('Otrzymaliśmy', element);
   }
 
 

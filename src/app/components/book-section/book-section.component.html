@@ -208,11 +208,13 @@
                   >
                   <span class="price"
                     >PRICE<br /><span>
-                      <!-- {{seatEconomy}} -->
-                    </span></span
-                  >
-
-                  <span class="boardingtime"
+                      {{ourObject.economy}}
+                    </span></span>
+                    <span *ngIf="ourObject.seatEconomy !== '' else buisnesClass">{{ourObject.seatEconomy}}</span>
+                    <ng-template #buisnesClass>
+                      {{ourObject.seatBusiness}}
+                    </ng-template>
+                    <span class="boardingtime"
                     >BOARDING TIME<br /><span >
                       {{ourObject.dateFly}}
                     </span></span
