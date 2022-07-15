@@ -1,186 +1,129 @@
 <div class="container-form">
   <div class="row">
     <div class="col-sm-5">
-      <form
-        class="bookingBox"
-        [formGroup]="visitorDataForm"
-        (ngSubmit)="addVisitDetails()"
-      >
-        <section class="planePic">
+      <div class="form-section">
+        <div class="planeIcon text-center">
           <img
             src="https://github.com/kkannen/web-workbook/blob/gh-pages/03week/airplane/img/plane-icon.png?raw=true"
-            alt="lil plane pic"
+            alt="Plane icon"
           />
-        </section>
-
-        <div class="container">
+          <span class="tytle-text">Booking form</span>
+        </div>
+        <form
+          class="row g-3 row-form container"
+          [formGroup]="visitorDataForm"
+          (ngSubmit)="addVisitDetails()"
+        >
           <!--NAME ... LAST NAME-->
-          <div class="row-icon row">
-            <div class="col-sm-6">
-              <label for="inputFrom" class="text icon">Name:</label>
-            </div>
-            <div class="col-sm-6">
-              <label for="inputTo" class="text icon">Last name:</label>
-            </div>
+          <div class="col-md-6">
+            <label for="inputFrom" class="text icon">Name:</label>
+            <input
+              type="text"
+              formControlName="passengerName"
+              class="textForm"
+              [(ngModel)]="passengerName"
+              #passengerNameData
+              placeholder="Name"
+              id="passengerName"
+            />
           </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <input
-                type="text"
-                formControlName="passengerName"
-                class="textForm"
-                [(ngModel)]="passengerName"
-                #passengerNameData
-                placeholder="Name"
-                id="passengerName"
-              />
-            </div>
-            <div class="col-sm-6">
-              <input
-                type="text"
-                formControlName="passengerFamilyName"
-                [(ngModel)]="passengerFamilyName"
-                #passengerFamilyNameData
-                class="textForm"
-                placeholder="Family name"
-                id="passengerFamilyName"
-              />
-            </div>
+          <div class="col-md-6">
+            <label for="inputFrom" class="text icon">Family name:</label>
+            <input
+              type="text"
+              formControlName="passengerFamilyName"
+              [(ngModel)]="passengerFamilyName"
+              #passengerFamilyNameData
+              class="textForm"
+              placeholder="Family name"
+              id="passengerFamilyName"
+            />
           </div>
-
           <!--FROM ... TO-->
-          <div class="row-icon row">
-            <div class="col-sm-6">
-              <label for="inputFrom" class="text icon icon-from">Depart:</label>
-            </div>
-            <div class="col-sm-6">
-              <label for="inputTo" class="text icon icon-to">Arrive:</label>
-            </div>
+          <div class="col-md-6">
+            <label for="inputFrom" class="text icon icon-from">Depart:</label>
+            <select
+              id="inputFrom"
+              [(ngModel)]="selectedOptionCityFrom"
+              formControlName="cityFrom"
+              #cityFromDataValue
+              class="textForm"
+              id="cityFrom"
+              [value]="from"
+            >
+              <option *ngFor="let cityFrom of optionsCityFrom">
+                {{ cityFrom.from }}
+              </option>
+            </select>
           </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <!-- <input type="text"
-      #cityFromDataValue
-      id="cityFromData-input"
-      class="textForm"> -->
-              <select
-                id="inputFrom"
-                [(ngModel)]="selectedOptionCityFrom"
-                formControlName="cityFrom"
-                #cityFromDataValue
-                class="textForm"
-                id="cityFrom"
-                [value]="from"
-              >
-                <option *ngFor="let cityFrom of optionsCityFrom">
-                  {{ cityFrom.from }}
-                </option>
-              </select>
-            </div>
-            <div class="col-sm-6">
-              <select
-                [(ngModel)]="selectedOptionCityTo"
-                id="inputTo"
-                #cityToDataValue
-                formControlName="cityTo"
-                class="textForm"
-                [value]="to"
-              >
-                <option *ngFor="let cityTo of optionsCityTo">
-                  {{ cityTo.to }}
-                </option>
-              </select>
-            </div>
+          <div class="col-md-6">
+            <label for="inputTo" class="text icon icon-to">Arrive:</label>
+            <select
+              [(ngModel)]="selectedOptionCityTo"
+              id="inputTo"
+              #cityToDataValue
+              formControlName="cityTo"
+              class="textForm"
+              [value]="to"
+            >
+              <option *ngFor="let cityTo of optionsCityTo">
+                {{ cityTo.to }}
+              </option>
+            </select>
           </div>
           <!--DATA ... CLASS-->
-          <div class="row-icon row">
-            <div class="col-sm-6">
-              <label for="inputFrom" class="text icon icon-text"
-                >Departure date:</label
-              >
-            </div>
-            <div class="col-sm-6">
-              <label for="inputTo" class="text icon icon-luggage">Class:</label>
-            </div>
+          <div class="col-md-6">
+            <label for="inputFrom" class="text icon icon-text"
+              >Departure date:</label
+            >
+            <input
+              type="date"
+              [(ngModel)]="dateDepar"
+              formControlName="dateDepar"
+              #dateBordValue
+              class="textForm"
+              id="inputDate"
+            />
           </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <input
-                type="date"
-                [(ngModel)]="dateDepar"
-                formControlName="dateDepar"
-                #dateBordValue
-                class="textForm"
-                id="inputDate"
-              />
-            </div>
-            <div class="col-sm-6">
-              <select
-                [(ngModel)]="selectedOptionClass"
-                id="inputClass"
-                formControlName="class"
-                class="textForm"
-                [value]="class"
-              >
-                <option *ngFor="let flyClass of optionsClass">
-                  {{ flyClass.class }}
-                </option>
-              </select>
-            </div>
+          <div class="col-md-6">
+            <label for="inputTo" class="text icon icon-luggage">Class:</label>
+            <select
+              [(ngModel)]="selectedOptionClass"
+              id="inputClass"
+              formControlName="class"
+              class="textForm"
+              [value]="class"
+            >
+              <option *ngFor="let flyClass of optionsClass">
+                {{ flyClass.class }}
+              </option>
+            </select>
           </div>
-          <!--ADULT ... KIDS-->
-          <div class="row-icon row">
-            <div class="col-sm-6">
-              <label for="inputFrom " class="text icon icon-adult"
-                >Adult passenger:</label
-              >
-            </div>
-            <div class="col-sm-6">
-              <label for="inputTo" class="text icon icon-kids"
-                >Kids passenger:</label
-              >
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <input
-                type="number"
-                formControlName="adults"
-                class="textForm"
-                id="inputDate"
-              />
-            </div>
-            <div class="col-sm-6">
-              <input
-                type="number"
-                formControlName="kids"
-                class="textForm"
-                id="inputDate"
-              />
-            </div>
-          </div>
-          <div class="row">
+          <div class="col-12 text-center">
             <h3>Please select a seat!</h3>
           </div>
-        </div>
-        <div class="row text-center">
-          <span #seatSelectedData style="color: white;">Price flight: {{ seatEconomy }}{{seatBusiness}}</span>
-        </div>
-        <div class="row-btn row text-center">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            [disabled]="visitorDataForm.invalid"
-           (click)="showMyContainer = !showMyContainer"
-
-            (click)="test()"
-            (click)="checkSeat()"
-
+        <div class="col-12 text-center">
+          <span #seatSelectedData style="color: white"
+            >Price flight: {{ seatEconomy }}{{ seatBusiness }}</span
           >
-            RESERVE A SEAT
-          </button>
         </div>
-      </form>
+          <div class="col-12 text-center">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="visitorDataForm.invalid"
+              (click)="showMyContainer = !showMyContainer"
+              (click)="test()"
+              (click)="checkSeat()"
+            >
+              RESERVE A SEAT
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+
       <!-- <div *ngIf="showMyContainer">
     <div class="book-info">
       <img src="../../../assets/photos/boston.jpg" style="width:500px;" *ngIf="selectedOptionCityTo ==='Boston'">
@@ -260,7 +203,7 @@
   </div>
 </div> -->
     </div>
-    <div class="col-sm-7">
+    <div class="col-sm-7 plane">
       <svg
         version="1.1"
         id="whole_x5F_plane"

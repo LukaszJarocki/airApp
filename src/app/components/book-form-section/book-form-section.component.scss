@@ -1,16 +1,100 @@
 * {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-.container-form {
-  margin-top: 10px;
-  .bookingBox {
+.container-form{
+  margin-top: 50px;
+  .form-section {
+    position: absolute;
     margin-top: 40px;
     border-radius: 5px;
     height: 550px;
     width: 420px;
     background-color: #183a55;
-    .planePic {
+    .planeIcon {
+      position: relative;
+      padding: 5px;
+      background-color: #095eb9;
+      width: 100%;
+      border-radius: 5px 0px 0px 0px;
+    }
+    .row-form {
+      margin-top: 10px;
+    }
+    .textForm {
+      float: left;
+      padding-left: 5px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      height: 40px;
+      width: 165px;
+      color: #095eb9;
+    }
+    ::placeholder{
+      color: #095eb9;
+    }
+    .text {
+      font-size: 0.8rem;
+      color: white;
+    }
+    select option {
+      margin: 40px;
+      background: rgba(0, 0, 0, 0.3);
+      color: black;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    }
+    .tytle-text{
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: yellow;
+    }
+    .btn{
+      background-color: #095eb9;
+    }
+
+  }
+}
+
+
+
+//////SVG/////
+
+svg {
+  max-height: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.occupied {
+  fill: #00ff6c;
+}
+
+.free {
+  fill: transparent;
+}
+.empty-background {
+  fill: transparent;
+}
+
+.noSeat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .selected-seat {
+    margin: 0;
+  }
+}
+
+/* .container-form {
+
+    .planeIcon {
       background-color: #095eb9;
       width: 100%;
       padding-left: 35px;
@@ -592,4 +676,33 @@
       left: 455px;
     }
   }
+
+
+@media (max-width: 768px) {
+  .container-form{
+    position: relative;
+    margin: 0 auto;
+  }
+  .row-box{
+    position: absolute;
+    text-align: center;
+    clear: both;
+  }
+  .bookingBox{
+    margin: 0 auto;
+    position: relative;
+    width: 768px;
+  }
+  svg{
+    position: relative;
+    margin-top: 80px;
+    max-height: 400px;
+    width: 768px;
+  }
+  .input-div{
+    clear: both;
+    position: relative;
+    width: 50px;
+  }
 }
+ */
