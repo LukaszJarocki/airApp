@@ -15,6 +15,7 @@ export class BookSectionComponent implements OnInit {
 
 
   ourObject: any = {};
+  ourPrice: any = {};
 
   passengerNameData = '';
   constructor() {}
@@ -40,15 +41,13 @@ export class BookSectionComponent implements OnInit {
   }
   addSelectSeat(seat: string) {
     this.selectedSeatArr.push(seat);
-  }
-  addPriceEconomy(dateBord: string) {
-    this.seatEconomyArr.push(dateBord);
-    console.log(dateBord);
-  } */
+  }*/
+
 
 
   importEvent(element: any){
     this.ourObject = element
+    this.ourPrice = element
   }
 
 

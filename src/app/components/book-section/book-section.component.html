@@ -26,9 +26,10 @@
       <app-book-form-section
 
         (newTestToSend)="importEvent($event)"
+        (checkSeat)="importEvent($event)"
       >
       </app-book-form-section>
-
+      
       <div class="btn-container-two">
         <button type="button" class="button-preve" progressStepPrev>
           <span class="button-text-preve">PREVE</span>
@@ -204,11 +205,10 @@
                   >
                   <span class="price"
                     >PRICE<br /><span>
-                      {{ourObject.economy}}
-                      <!-- {{ seatEconomy }}{{seatBusiness}} -->
+                      <!-- {{seatEconomy}} -->
                     </span></span
                   >
-                  
+
                   <span class="boardingtime"
                     >BOARDING TIME<br /><span >
                       {{ourObject.dateFly}}

@@ -11,6 +11,7 @@ import { ProgressComponent } from '../progress/progress.component';
 export class BookFormSectionComponent {
 
   @Output() newTestToSend = new EventEmitter<any>();
+  @Output() newPrice = new EventEmitter<any>();
 
   visitorDataForm: FormGroup;
   allVisitorsDataArray: any = [];
@@ -19,6 +20,8 @@ export class BookFormSectionComponent {
   passengerName: string = '';
   passengerFamilyName: string = '';
   value: boolean;
+  seatEco: any = '';
+  seatBus: any = '';
   seatEconomy: any = '';
   seatBusiness: any = '';
   selected: string[];
@@ -128,65 +131,20 @@ export class BookFormSectionComponent {
       classOption: this.selectedOptionClass,
       economy: this.seatEconomy,
       buissnes: this.seatBusiness,
-      seat: this.selected
-
+      seat: this.selected,
+      eco: this.seatEco
     }
     this.newTestToSend.emit(ourObject)
     console.log('wysłano', ourObject)
   }
 
-
-/*   addPassengerName(value: string) {
-    this.newPassengerNameEvent.emit(value);
-  }
-  addPassengerFamilyName(value: string) {
-    this.newPassengerFamilyNameEvent.emit(value);
-  }
-  addCityFromValue(value: string) {
-    this.newCityFromEvent.emit(value);
-  }
-  addCityToValue(value: string) {
-    this.newCityToEvent.emit(value);
-  }
-  addDateBord(value: string) {
-    this.newDateBord.emit(value);
-  }
-  addSelectSeat(selected) {
-    this.newSelectSeat.emit(selected);
-  }
-  addPriceValue(seatEco: string) {
-    this.newPriceEvent.emit(seatEco);
-    console.log(seatEco);
-  } */
-
-  addVisitDetails() {
-    const dataForm: any = {
-      passengerName: this.visitorDataForm.get('passengerName')?.value,
-      passengerFamilyName: this.visitorDataForm.get('passengerFamilyName')
-        ?.value,
-      cityFrom: this.visitorDataForm.get('cityFrom')?.value,
-      cityTo: this.visitorDataForm.get('cityTo')?.value,
-      dateDepar: this.visitorDataForm.get('dateDepar')?.value,
-      class: this.visitorDataForm.get('class')?.value,
-      adults: this.visitorDataForm.get('adults')?.value,
-      kids: this.visitorDataForm.get('kids')?.value,
-      selected: this.visitorDataForm.get('selected')?.value,
-    };
-
-    console.log(dataForm);
-
-    this.airportDataService.createVisit(dataForm).subscribe(
-      (data: any) => {
-        console.log(data);
-        alert('Dane zostały dodane do bazy');
-        this.getVisitorsData(); //resetuje formularz
-      },
-      (err) => {
-        console.log('Wystąpił błąd', err);
-      }
-    );
-
+  checkSeat(){
+    const ourPrice = {
+      eco: this.seatEconomy,
+      bus: this.seatBusiness,
+    }
     if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
+
       this.seatEconomy =
         this.economyTicketPrice * this.selected.length +
         this.convFee +
@@ -203,6 +161,56 @@ export class BookFormSectionComponent {
       alert('No seats selected!');
     }
 
+    this.newPrice.emit(this.seatEconomy)
+    console.log('wysłano', this.seatEconomy)
+  }
+
+
+  addVisitDetails() {
+    const dataForm: any = {
+      passengerName: this.visitorDataForm.get('passengerName')?.value,
+      passengerFamilyName: this.visitorDataForm.get('passengerFamilyName')
+        ?.value,
+      cityFrom: this.visitorDataForm.get('cityFrom')?.value,
+      cityTo: this.visitorDataForm.get('cityTo')?.value,
+      dateDepar: this.visitorDataForm.get('dateDepar')?.value,
+      class: this.visitorDataForm.get('class')?.value,
+      adults: this.visitorDataForm.get('adults')?.value,
+      kids: this.visitorDataForm.get('kids')?.value,
+      selected: this.visitorDataForm.get('selected')?.value
+    };
+
+    console.log(dataForm);
+
+    this.airportDataService.createVisit(dataForm).subscribe(
+      (data: any) => {
+        console.log(data);
+        alert('Dane zostały dodane do bazy');
+        this.getVisitorsData(); //resetuje formularz
+      },
+      (err) => {
+        console.log('Wystąpił błąd', err);
+      }
+    );
+
+    if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
+
+      this.seatEconomy =
+        this.economyTicketPrice * this.selected.length +
+        this.convFee +
+        this.currency;
+    } else if (
+      this.selected.length > 0 &&
+      this.selectedOptionClass === 'Business'
+    ) {
+      this.seatBusiness =
+        this.BusinessTicketPrice * this.selected.length +
+        this.convFee +
+        this.currency;
+    } else {
+      alert('No seats selected!');
+    }
+    this.seatEco = this.seatEconomy
   }
 
   getVisitorsData() {
