@@ -23,27 +23,22 @@
         the world and explore the world with safety.
         <br />* Please check the latest travel regulations before your fly.
       </p>
-      <app-book-form-section
-
-        (newTestToSend)="importEvent($event)"
-        (checkSeat)="importEvent($event)"
-      >
+      <app-book-form-section (newTestToSend)="importEvent($event)">
       </app-book-form-section>
 
       <div class="btn-container-two">
-        <button type="button" class="button-preve" progressStepPrev>
+
+        <!--         <button type="button" class="button-preve" progressStepPrev>
           <span class="button-text-preve">PREVE</span>
           <span class="circle-preve" aria-hidden="true">
             <span class="icon-preve arrow-preve"></span>
-
           </span>
-
-        </button>
-        <button type="button" class="button-next" (click)="goNext(progress)">
-          <span class="circle-next" aria-hidden="true">
-            <span class="icon-next arrow-next"></span>
+        </button> -->
+        <button type="button2" class="button2-next" (click)="goNext(progress)">
+          <span class="circle2-next" aria-hidden="true">
+            <span class="icon2-next arrow2-next"></span>
           </span>
-          <span class="button-text-next">NEXT</span>
+          <span class="button2-text-next">NEXT</span>
         </button>
       </div>
     </form>
@@ -57,14 +52,53 @@
       consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
     </p>
     <div class="btn-container">
+
       <div>
         <div class="book-info">
-<!--           <img
-            src="../../../assets/photos/boston3.jpg"
-            style="width: 10vw"
-            *ngIf="ourObject.cityTo.includes('Boston')"
-          />
           <img
+          src="../../../assets/photos/boston3.jpg"
+          style="width: 100%"
+          *ngIf="ourObject.cityTo == 'Boston'"
+        />
+          <img
+          src="../../../assets/photos/tokio3.jpg"
+          style="width: 100%"
+          *ngIf="ourObject.cityTo == 'Tokyo'"
+        />
+          <img
+          src="../../../assets/photos/londyn3.jpg"
+          style="width: 100%"
+          *ngIf="ourObject.cityTo == 'London'"
+        />
+          <img
+          src="../../../assets/photos/pekin3.jpg"
+          style="width: 100%"
+          *ngIf="ourObject.cityTo == 'Beijing'"
+        />
+          <div *ngIf="ourObject.cityTo == 'Boston'"
+            class="book-information "
+
+          >
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus quas voluptates laborum a voluptatibus aperiam maxime
+              alias eveniet officia labore perferendis quisquam modi beatae,
+              dolor nesciunt atque accusamus recusandae ipsam.
+            </span>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus quas voluptates laborum a voluptatibus aperiam maxime
+              alias eveniet officia labore perferendis quisquam modi beatae,
+              dolor nesciunt atque accusamus recusandae ipsam.
+            </span>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus quas voluptates laborum a voluptatibus aperiam maxime
+              alias eveniet officia labore perferendis quisquam modi beatae,
+              dolor nesciunt atque accusamus recusandae ipsam.
+            </span>
+          </div>
+          <!--      <img
             src="../../../assets/photos/londyn3.jpg"
             style="width: 10vw"
             *ngIf="ourObject.cityTo.includes('London')"
@@ -120,8 +154,8 @@
               <span class="airline airlineslip">Long Wings</span>
               <span class="boarding">Boarding pass</span>
               <div class="content">
-                <span class="jfk" >
-                  {{ourObject.cityFrom}}
+                <span class="jfk">
+                  {{ ourObject.cityFrom }}
                 </span>
                 <span class="plane"
                   ><svg
@@ -153,12 +187,12 @@
                       />
                     </g></svg
                 ></span>
-                <span class="sfo" >
-                  {{ourObject.cityTo}}
+                <span class="sfo">
+                  {{ ourObject.cityTo }}
                 </span>
 
                 <span class="jfk jfkslip">
-                  {{ourObject.cityFrom}}
+                  {{ ourObject.cityFrom }}
                 </span>
                 <span class="plane planeslip"
                   ><svg
@@ -190,51 +224,53 @@
                       />
                     </g></svg
                 ></span>
-                <span class="sfo sfoslip" >
-                  {{ourObject.cityTo}}
+                <span class="sfo sfoslip">
+                  {{ ourObject.cityTo }}
                 </span>
                 <div class="sub-content">
                   <span class="watermark">Lufthansa</span>
                   <span class="name"
                     >PASSENGER NAME<br /><span
-
-                      >{{ourObject.namePassenger}},</span
-                    ><span >
-                      {{ourObject.familyPassenger}}</span
-                    ></span
+                      >{{ ourObject.namePassenger }},</span
+                    ><span> {{ ourObject.familyPassenger }}</span></span
                   >
                   <span class="flight"
-                    >CLASS<br /><span>{{ourObject.classOption}}</span></span
+                    >CLASS<br /><span>{{ ourObject.classOption }}</span></span
                   >
                   <span class="price"
                     >PRICE<br /><span>
-                      {{ourObject.economy}}
-                    </span></span>
-                    <span *ngIf="ourObject.seatEconomy !== '' else buisnesClass">{{ourObject.seatEconomy}}</span>
-                    <ng-template #buisnesClass>
-                      {{ourObject.seatBusiness}}
-                    </ng-template>
-                    <span class="boardingtime"
-                    >BOARDING TIME<br /><span >
-                      {{ourObject.dateFly}}
+                      {{ ourObject.economy }}
+                      {{ ourObject.buissnes }}
+                    </span></span
+                  >
+                  <span
+                    *ngIf="ourObject.seatEconomy !== ''; else buisnesClass"
+                    >{{ ourObject.seatEconomy }}</span
+                  >
+                  <ng-template #buisnesClass>
+                    {{ ourObject.seatBusiness }}
+                  </ng-template>
+                  <span class="boardingtime"
+                    >BOARDING TIME<br /><span>
+                      {{ ourObject.dateFly }}
                     </span></span
                   >
                   <span class="seatPlaceNumber"
-                    >SEAT N&deg; <br /><span >
-                      {{ourObject.seat}}
+                    >SEAT N&deg; <br /><span>
+                      {{ ourObject.seat }}
                     </span></span
                   >
 
                   <span class="flight flightslip"
                     >FLIGHT N&deg;<br /><span>X3-65C3</span></span
                   >
-                  <span class="seat seatslip">SEAT<br /><span>45A</span></span>
+                  <span class="seat seatslip"
+                    >SEAT<br /><span>{{ ourObject.seat }}</span></span
+                  >
                   <span class="name nameslip"
                     >PASSENGER NAME<br /><span
-                      >{{ourObject.namePassenger}},</span
-                    ><span >
-                      {{ourObject.familyPassenger}}</span
-                    ></span
+                      >{{ ourObject.namePassenger }},</span
+                    ><span> {{ ourObject.familyPassenger }}</span></span
                   >
                 </div>
               </div>

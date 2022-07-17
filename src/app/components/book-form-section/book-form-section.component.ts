@@ -9,8 +9,7 @@ import { ProgressComponent } from '../progress/progress.component';
   styleUrls: ['./book-form-section.component.scss'],
 })
 export class BookFormSectionComponent {
-  @Output() newTestToSend = new EventEmitter<any>();
-  @Output() newPrice = new EventEmitter<any>();
+  @Output() newTestToSend = new EventEmitter<any>()
 
   visitorDataForm: FormGroup;
   allVisitorsDataArray: any = [];
@@ -22,8 +21,9 @@ export class BookFormSectionComponent {
   seatEco: any = '';
   seatBus: any = '';
   seatEconomy: string;
-  seatBusiness: any;
+  seatBusiness: string;
   selected: string[];
+  luggage: number = 400;
   selectedOptionClass: string = '';
   optionsClass = [
     { class: 'change class', value: 0 },
@@ -107,6 +107,7 @@ export class BookFormSectionComponent {
       adults: [''],
       kids: [''],
       selected: [''],
+      luggage: [''],
     });
   }
 
@@ -134,9 +135,14 @@ export class BookFormSectionComponent {
       adults: this.visitorDataForm.get('adults')?.value,
       kids: this.visitorDataForm.get('kids')?.value,
       selected: this.visitorDataForm.get('selected')?.value,
+      luggage: this.visitorDataForm.get('luggage')?.value,
     };
-    if(!dataForm.selected){
-      alert('Proszę wybrać miejsce siedzące')
+
+
+
+    if(!this.selected || this.selected.length == 0 ){
+      console.log('Select',this.selected);
+      alert('Please select a seat!')
     }
     console.log(dataForm);
 
@@ -151,9 +157,9 @@ export class BookFormSectionComponent {
       }
     );
 
-    if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
+     if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
       this.seatEconomy =
-        this.economyTicketPrice * this.selected.length +
+        this.economyTicketPrice * this.selected.length + this.luggage + 
         this.convFee +
         this.currency;
     } else if (
@@ -161,7 +167,7 @@ export class BookFormSectionComponent {
       this.selectedOptionClass === 'Business'
     ) {
       this.seatBusiness =
-        this.BusinessTicketPrice * this.selected.length +
+        this.BusinessTicketPrice * this.selected.length + this.luggage +
         this.convFee +
         this.currency;
     }
@@ -194,9 +200,6 @@ export class BookFormSectionComponent {
     });
   }
 
-  goNext(progress: ProgressComponent) {
-    progress.next();
-  }
 
   ////////////CHECK SEATS////////////////////////
 
@@ -223,4 +226,6 @@ export class BookFormSectionComponent {
     });
     return seats;
   }
+
+
 }

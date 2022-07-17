@@ -13,45 +13,18 @@ interface PassengerName {
 export class BookSectionComponent implements OnInit {
   @ViewChild(BookFormSectionComponent) child!: BookFormSectionComponent;
 
-
   ourObject: any = {};
-  ourPrice: any = {};
-
   passengerNameData = '';
   constructor() {}
   @Input()
   passengerName: PassengerName;
 
-  ngOnInit() {
-  }
-/*   addPassengerName(name: string) {
-    this.passengerNameArr.push(name);
-  }
-  addPassengerFamilyName(familyName: string) {
-    this.passengerFamilyNameArr.push(familyName);
-  }
-  addCityFrom(cityFrom: string) {
-    this.cityFromArr.push(cityFrom);
-  }
-  addCityTo(cityTo: string) {
-    this.cityToArr.push(cityTo);
-  }
-  addDateBord(dateBord: string) {
-    this.dateBordArr.push(dateBord);
-  }
-  addSelectSeat(seat: string) {
-    this.selectedSeatArr.push(seat);
-  }*/
+  ngOnInit() {}
 
-
-
-  importEvent(element: any){
-    this.ourObject = element
+  importEvent(element: any) {
+    this.ourObject = element;
     console.log('Otrzymaliśmy', element);
   }
-
-
-
 
   value = '';
 
@@ -62,4 +35,6 @@ export class BookSectionComponent implements OnInit {
   onStateChange(event: any) {
     console.log(event);
   }
+
+
 }
