@@ -33,7 +33,6 @@ import { EmbraerInfoSectionComponent } from './components/embraer-info-section/e
 import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
 import { APIWeatherSectionComponent } from './components/api-weather-section/api-weather-section.component';
 import { ParisAboutComponent } from './components/paris-about/paris-about.component';
-import { TicketComponent } from './components/ticket/ticket.component';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
@@ -57,7 +56,6 @@ import { MatSelectModule } from '@angular/material/select';
     BoeingInfoSectionComponent,
     APIWeatherSectionComponent,
     ParisAboutComponent,
-    TicketComponent,
   ],
   imports: [
     BrowserModule,

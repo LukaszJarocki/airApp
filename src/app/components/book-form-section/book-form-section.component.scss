@@ -2,92 +2,93 @@
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-
-
-.box {
-  width: 100%;
-  justify-content: center;
-  margin-top: 60px;
-  z-index: 100;
-  .form-section{
-    text-align: center;
+.jumbotron {
+  position: relative;
+  .form-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 400px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     width: 60%;
-    margin: 60px;
+    height: 700px;
+    padding-bottom: 100px;
     background-color: rgba(255, 255, 255, 0.142);
+    z-index: 100;
 
-      .planeIcon {
-        padding: 5px;
-        background-color: #095eb9;
-        width: 100%;
-        border-radius: 5px 0px 0px 0px;
-      }
+    .planeIcon {
+      padding: 5px;
+      background-color: #095eb9;
+      width: 100%;
+      border-radius: 5px 0px 0px 0px;
+    }
 
-      .input-wrap {
-        position: relative;
-        margin: 20px;
-      }
+    .input-wrap {
+      position: relative;
+      margin: 20px;
+    }
 
-      .input-wrap input {
-        background: none;
-        color: black;
-        font-size: 18px;
-        padding: 10px;
-        border: none;
-        width: 100%;
-        border-bottom: 1px solid #ccc;
-        border-radius: .30em;
-      }
+    .input-wrap input {
+      background: none;
+      color: black;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      width: 90%;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0.3em;
+    }
 
-      .input-wrap label {
-        position: absolute;
-        color: black;
-        font-size: 16px;
-        font-weight: normal;
-        pointer-events: none;
-        left: 10px;
-        top: 10px;
-        transition: 300ms ease all;
-      }
+    .input-wrap label {
+      position: absolute;
+      color: black;
+      font-size: 16px;
+      font-weight: normal;
+      pointer-events: none;
+      left: 10px;
+      top: 10px;
+      transition: 300ms ease all;
+    }
 
-      input:focus {
-        outline: none;
-      }
-      input:touched {
-        background-color: transparent;
-      }
+    input:focus {
+      outline: none;
+    }
+    input:touched {
+      background-color: transparent;
+    }
 
-      .input-wrap input:focus~label,
-      .input-wrap input:valid ~ label{
-        top: -14px;
-        font-size: 12px;
-        color: #095eb9;
-      }
-      .tytle-text {
-        font-size: 30px;
-        font-weight: bold;
-        color: white;
-      }
-      h3 {
-        margin-top: 20px;
-        font-size: 20px;
-        font-weight: bold;
-        color: yellow;
-      }
-      .btn {
-        background-color: #095eb9;
-      }
+    .input-wrap input:focus ~ label,
+    .input-wrap input:valid ~ label {
+      top: -14px;
+      font-size: 12px;
+      color: #095eb9;
+    }
+    .tytle-text {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: yellow;
+    }
+    .btn {
+      background-color: #095eb9;
+    }
   }
 }
 
 //////////////Select///////////////////
- .select-one {
+.select-one {
   /* Reset Select */
   appearance: none;
   outline: 0;
   border: 0;
   box-shadow: none;
   /* Personalize */
-  padding: 0 1em;
   color: #fff;
   background-color: var(--darkgray);
   background-image: none;
@@ -99,8 +100,9 @@ select {
   outline: 0;
   border: 0;
   box-shadow: none;
-  width: 100%;
-  padding-bottom: -5px;
+  padding-top: 20px;
+  padding-left: 10px;
+  width: 90%;
   /* Personalize */
   color: black;
   background-color: var(--darkgray);
@@ -114,28 +116,39 @@ select {
 /* Custom Select wrapper */
 .select {
   height: 3em;
-  border-radius: .30em;
+  border-radius: 0.3em;
   border-bottom: 1px solid #ccc;
   overflow: hidden;
+  width: 90%;
   color: #c6c6c6;
   font-size: 16px;
   font-weight: normal;
 }
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
+.check-input-style {
+  margin-left: 5px;
   color: black;
-  background-color: #ccc;
-  transition: .25s all ease;
-  pointer-events: none;
+  font-size: 16px;
 }
-/* Transition */
-.select:hover::after {
-  color: #095eb9;
+.check-input-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+.check-input-icon-form {
+  position: absolute;
+  top: 10px;
+  right: 65px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+.check-input-icon-select {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
 }
 
 /////////////DATEPICKER
@@ -151,17 +164,16 @@ select {
   /*.dow {
     border-top: 1px solid #ddd !important;
   }*/
-
 }
 .datepicker:before {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   top: -7px;
   left: 6px;
 }
 .datepicker:after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   top: -6px;
@@ -196,7 +208,13 @@ select {
   color: #ffffff;
   background-color: #095eb9;
   background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#0088cc),
+    to(#0044cc)
+  );
   background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
   background-image: -o-linear-gradient(top, #0088cc, #0044cc);
   background-image: linear-gradient(to bottom, #0088cc, #0044cc);
@@ -252,7 +270,13 @@ select {
   color: #ffffff;
   background-color: #095eb9;
   background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#0088cc),
+    to(#0044cc)
+  );
   background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
   background-image: -o-linear-gradient(top, #0088cc, #0044cc);
   background-image: linear-gradient(to bottom, #0088cc, #0044cc);
@@ -307,41 +331,21 @@ select {
 
 /////////////NUMBER
 ///
-input[type="number"], textarea {
-
-  background-color : transparent;
+input[type="number"],
+textarea {
+  background-color: transparent;
   border: none;
-
 }
-
-/* Other styles*/
-body {
-  color: #fff;
-  background: var(--background-gradient);
-}
-h1 {
-  margin: 0 0 0.25em;
-}
-a {
-  font-weight: bold;
-  color: var(--gray);
-  text-decoration: none;
-  padding: .25em;
-  border-radius: .25em;
-  background: white;
-}
-
-
-
-
 
 //////SVG/////
 
 svg {
+  position: relative;
+  top: 600px;
+  margin: 0 auto;
+  padding-top: -300px;
   transform: rotate(90deg);
-  margin-top: 100px;
   max-height: 800px;
-  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -371,5 +375,4 @@ svg {
 }
 
 @media (max-width: 800px) {
-
 }

@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="box">
-    <div class="form-section row g-3">
+  <div class="jumbotron">
+    <div class="form-section ">
       <div class="planeIcon text-center">
         <img
           src="https://github.com/kkannen/web-workbook/blob/gh-pages/03week/airplane/img/plane-icon.png?raw=true"
@@ -9,7 +9,7 @@
         <span class="tytle-text">Booking form</span>
       </div>
       <form [formGroup]="visitorDataForm" (ngSubmit)="addVisitDetails()">
-        <div class="row">
+
           <!--NAME-->
           <div class="input-wrap col-12 select-one">
             <input
@@ -22,6 +22,7 @@
               required
             />
             <label>Name</label>
+            <img src="../../../assets/icon/user.png" class="check-input-icon-form" alt="" >
           </div>
           <!-- FAMILY NAME-->
           <div class="input-wrap col-12 select-one">
@@ -35,6 +36,7 @@
               required
             />
             <label>Family name</label>
+            <img src="../../../assets/icon/user.png" class="check-input-icon-form" alt="" >
           </div>
 
           <!--FROM-->
@@ -51,6 +53,7 @@
                 {{ cityFrom.from }}
               </option>
             </select>
+            <img src="../../../assets/icon/plane-start.png" class="check-input-icon-select" alt="" >
           </div>
           <!--TO-->
           <div class="input-wrap col-md-12 select">
@@ -66,6 +69,7 @@
                 {{ cityTo.to }}
               </option>
             </select>
+            <img src="../../../assets/icon/plane-end.png" class="check-input-icon-select" alt="" >
           </div>
 
           <!--DATA-->
@@ -84,6 +88,8 @@
           <div class="input-wrap col-12 select-one">
             <input
               type="number"
+              min="1"
+              max="5"
               [(ngModel)]="passenger"
               formControlName="passenger"
               #dateBordValue
@@ -107,8 +113,9 @@
                 {{ flyClass.class }}
               </option>
             </select>
+            <img src="../../../assets/icon/seat (1).png" style="height: 20px;width: 20px; right: 10px; top: 15px" class="check-input-icon-select" alt="" >
           </div>
-          <div class="col-6 ">
+          <div class="col-12 text-center">
             <input
               class="form-check-input"
               [(ngModel)]="luggage"
@@ -117,24 +124,27 @@
               id="luggage"
               formControlName="luggage"
             />
-            <label class="text-check-input" for="defaultCheck1">
-              Additional luggage
-            </label>
-          </div>
-        </div>
 
-        <div class="col-12 text-center announcement">
+            <label class="text-check-input check-input-style" for="defaultCheck1">
+              Additional luggage ( +30kg)
+            </label>
+            <img src="../../../assets/icon/luggage.png" class="check-input-icon" alt="" >
+          </div>
+
+        <div class="col-12 text-center  announcement">
           <h3 *ngIf="!this.selected || this.selected.length == 0">
             Please select a seat!
           </h3>
         </div>
-        <div class="col-12 text-center">
+        <div class="col-12 text-center" style="margin: 30px-0">
           <span #seatSelectedData style="color: white"
             >Price flight: {{ seatEconomy }}{{ seatBusiness }}</span
           >
         </div>
-        <div class="col-12 text-center">
+        <div class="col-12 text-center ">
+
           <button
+
             type="submit"
             #btnAccept
             class="btn btn-primary"
@@ -146,16 +156,19 @@
       </form>
     </div>
   </div>
-  <div class="box-bottom">
+  <div class="box-bottom"
+  style="z-index: 0;"
+  *ngIf="!passenger|| passenger.length !== 0">
     <svg
       version="1.1"
       id="whole_x5F_plane"
+
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
       viewBox="0 0 425 1467.9"
-      style="enable-background: new 0 0 425 1467.9"
+      style="enable-background: new 0 0 300 1467.9; width: 300px"
       xml:space="preserve"
     >
       <style type="text/css">
