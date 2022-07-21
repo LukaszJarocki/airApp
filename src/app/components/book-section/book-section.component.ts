@@ -1,6 +1,9 @@
+import { NavSectionComponent } from './../nav-section/nav-section.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BookFormSectionComponent } from './../book-form-section/book-form-section.component';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProgressComponent } from '../progress/progress.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 interface PassengerName {
   string;
@@ -15,7 +18,9 @@ export class BookSectionComponent implements OnInit {
 
   ourObject: any = {};
   passengerNameData = '';
-  constructor() {}
+  constructor(
+    public dialogRef: MatDialogRef<NavSectionComponent>
+  ) {}
   @Input()
   passengerName: PassengerName;
 
@@ -30,6 +35,15 @@ export class BookSectionComponent implements OnInit {
 
   goNext(progress: ProgressComponent) {
     progress.next();
+    console.log(progress);
+  }
+
+  goPrev(progress: ProgressComponent){
+    progress.prev()
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   onStateChange(event: any) {

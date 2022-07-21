@@ -26,9 +26,11 @@ export class NavSectionComponent {
   openDialog() {
     this.dialogRef.open(BookSectionComponent, {
       width: '70vw',
-      height: '100vh',
+      height: '100%',
       autoFocus: false,
     });
+
+    
   }
   toHome() {
     document

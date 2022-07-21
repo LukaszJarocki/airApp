@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AirportDataService } from 'src/app/service/airport-data.service';
 import { ProgressComponent } from '../progress/progress.component';
@@ -23,16 +23,17 @@ export class BookFormSectionComponent {
   seatEconomy: string;
   seatBusiness: string;
   selected: string[];
+  passenger: any = [];
   luggage: number = 400;
   selectedOptionClass: string = '';
   optionsClass = [
-    { class: 'change class', value: 0 },
+    { class: 'Change class', value: 0 },
     { class: 'Economy', value: 1 },
     { class: 'Business', value: 2 },
   ];
   selectedOptionCityFrom: string = '';
   optionsCityFrom = [
-    { from: 'change city', value: 'city' },
+    { from: 'Change city', value: 'city' },
     { from: 'Katowice', value: 'katowice' },
     { from: 'Warszawa', value: 'warszawa' },
     { from: 'Gdańsk', value: 'warszawa' },
@@ -40,7 +41,7 @@ export class BookFormSectionComponent {
   ];
   selectedOptionCityTo: string = '';
   optionsCityTo: any[] = [
-    { to: 'change city', value: 'city' },
+    { to: 'Change city', value: 'city' },
     { to: 'London', value: '1500' },
     { to: 'Boston', value: '3000' },
     { to: 'Beijing', value: '2700' },
@@ -104,7 +105,7 @@ export class BookFormSectionComponent {
       cityTo: ['', Validators.required],
       dateDepar: ['', Validators.required],
       class: ['', Validators.required],
-      adults: [''],
+      passenger: [''],
       kids: [''],
       selected: [''],
       luggage: [''],
@@ -119,6 +120,7 @@ export class BookFormSectionComponent {
         this.letras.findIndex((l) => l == x.slice(-1))
       ] = 'booked';
     });
+
   }
 
 
@@ -136,6 +138,7 @@ export class BookFormSectionComponent {
       kids: this.visitorDataForm.get('kids')?.value,
       selected: this.visitorDataForm.get('selected')?.value,
       luggage: this.visitorDataForm.get('luggage')?.value,
+      passenger: this.visitorDataForm.get('passenger')?.value,
     };
 
 
@@ -159,7 +162,7 @@ export class BookFormSectionComponent {
 
      if (this.selected.length > 0 && this.selectedOptionClass === 'Economy') {
       this.seatEconomy =
-        this.economyTicketPrice * this.selected.length + this.luggage + 
+        this.economyTicketPrice * this.selected.length + this.luggage +
         this.convFee +
         this.currency;
     } else if (
@@ -182,11 +185,12 @@ export class BookFormSectionComponent {
         namePassenger: this.passengerName,
         familyPassenger: this.passengerFamilyName,
         dateFly: this.dateDepar,
+        datePassenger: this.passenger,
         classOption: this.selectedOptionClass,
         economy: this.seatEconomy,
         buissnes: this.seatBusiness,
         seat: this.selected,
-        eco: this.seatEco,
+        extraLuggage: this.luggage
       };
       this.newTestToSend.emit(ourObject);
       console.log('wysłano', ourObject);
@@ -204,11 +208,11 @@ export class BookFormSectionComponent {
   ////////////CHECK SEATS////////////////////////
 
   click(fila: any, column: any) {
-    if (this.status[fila][column] == 'free' && this.count() < 9)
+    if (this.status[fila][column] == 'free'  && this.count() < this.passenger)
       this.status[fila][column] = 'selected';
     else {
       if (this.status[fila][column] == 'selected')
-        this.status[fila][column] = 'free';
+        this.status[fila][column] = 'free'  ;
     }
     this.selected = this.seats();
   }
@@ -226,6 +230,9 @@ export class BookFormSectionComponent {
     });
     return seats;
   }
+
+///////////////
+
 
 
 }

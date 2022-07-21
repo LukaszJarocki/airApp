@@ -1,24 +1,23 @@
 <app-progress class="form" #progress (stateChange)="onStateChange($event)">
   <app-progress-step>
-    <h3>Book a flight</h3>
-    <p>
+    <h2 class="title">Book a flight</h2>
+    <p class="title-p">
       Book a flight with Long Wings. Find best fares to destinations around the
       world and explore the world with safety.
       <br />* Please check the latest travel regulations before your fly.
     </p>
-    <div class="btn-container">
-      <button type="button" class="button-next" (click)="goNext(progress)">
-        <span class="circle-next" aria-hidden="true">
-          <span class="icon-next arrow-next"></span>
-        </span>
-        <span class="button-text-next">NEXT</span>
-      </button>
+    <div class="btn-container-two" >
+      <div class="carousel__nav">
+        <button  type="submit" class="nav nav--right" (click)="goNext(progress)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+          </svg> </button>      </div>
     </div>
   </app-progress-step>
   <app-progress-step>
     <form>
-      <h3>Book a flight</h3>
-      <p>
+      <h2 class="title">Book a flight</h2>
+      <p class="title-p">
         Book a flight with Long Wings. Find best fares to destinations around
         the world and explore the world with safety.
         <br />* Please check the latest travel regulations before your fly.
@@ -26,267 +25,516 @@
       <app-book-form-section (newTestToSend)="importEvent($event)">
       </app-book-form-section>
 
-      <div class="btn-container-two">
 
-        <!--         <button type="button" class="button-preve" progressStepPrev>
-          <span class="button-text-preve">PREVE</span>
-          <span class="circle-preve" aria-hidden="true">
-            <span class="icon-preve arrow-preve"></span>
-          </span>
-        </button> -->
-        <button type="button2" class="button2-next" (click)="goNext(progress)">
-          <span class="circle2-next" aria-hidden="true">
-            <span class="icon2-next arrow2-next"></span>
-          </span>
-          <span class="button2-text-next">NEXT</span>
-        </button>
+      <div class="btn-container-two" >
+        <div class="carousel__nav">
+          <button  type="submit" class="nav nav--left" (click)="goPrev(progress)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg> </button>
+          <button  type="submit" class="nav nav--right" (click)="goNext(progress)">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg> </button>
+        </div>
       </div>
     </form>
   </app-progress-step>
 
   <app-progress-step>
-    <h3>Thank you for taking advantage of our offer</h3>
+    <h2 class="title">Thank you for taking advantage of our offer</h2>
 
-    <p>
+    <p class="title-p">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sint
       consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
     </p>
     <div class="btn-container">
-
       <div>
         <div class="book-info">
-          <img
-          src="../../../assets/photos/boston3.jpg"
-          style="width: 100%"
-          *ngIf="ourObject.cityTo == 'Boston'"
-        />
-          <img
-          src="../../../assets/photos/tokio3.jpg"
-          style="width: 100%"
-          *ngIf="ourObject.cityTo == 'Tokyo'"
-        />
-          <img
-          src="../../../assets/photos/londyn3.jpg"
-          style="width: 100%"
-          *ngIf="ourObject.cityTo == 'London'"
-        />
-          <img
-          src="../../../assets/photos/pekin3.jpg"
-          style="width: 100%"
-          *ngIf="ourObject.cityTo == 'Beijing'"
-        />
-          <div *ngIf="ourObject.cityTo == 'Boston'"
-            class="book-information "
-
-          >
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quas voluptates laborum a voluptatibus aperiam maxime
-              alias eveniet officia labore perferendis quisquam modi beatae,
-              dolor nesciunt atque accusamus recusandae ipsam.
-            </span>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quas voluptates laborum a voluptatibus aperiam maxime
-              alias eveniet officia labore perferendis quisquam modi beatae,
-              dolor nesciunt atque accusamus recusandae ipsam.
-            </span>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quas voluptates laborum a voluptatibus aperiam maxime
-              alias eveniet officia labore perferendis quisquam modi beatae,
-              dolor nesciunt atque accusamus recusandae ipsam.
-            </span>
-          </div>
-          <!--      <img
-            src="../../../assets/photos/londyn3.jpg"
-            style="width: 10vw"
-            *ngIf="ourObject.cityTo.includes('London')"
-          />
-          <img
-            src="../../../assets/photos/pekin3.jpg"
-            style="width: 10vw"
-            *ngIf="ourObject.cityTo.includes('Beijing')"
+<!--           <img
+            src="../../../assets/photos/boston3.jpg"
+            style="width: 100%"
+            *ngIf="ourObject.cityTo == 'Boston'"
           />
           <img
             src="../../../assets/photos/tokio3.jpg"
-            style="width: 10vw"
-            *ngIf="ourObject.cityTo.includes('Tokyo')"
-          /> -->
-          <div class="box">
-            <ul class="left">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-
-            <ul class="right">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-            <div class="ticket">
-              <span class="airline"
-                ><span style="color: #1b9bff">LO</span>NG WINGS</span
-              >
-              <span class="airline airlineslip">Long Wings</span>
-              <span class="boarding">Boarding pass</span>
-              <div class="content">
-                <span class="jfk">
-                  {{ ourObject.cityFrom }}
-                </span>
-                <span class="plane"
-                  ><svg
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
-                    height="50"
-                    width="50"
-                    image-rendering="optimizeQuality"
-                    shape-rendering="geometricPrecision"
-                    text-rendering="geometricPrecision"
-                    viewBox="0 0 500 500"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g stroke="#222">
-                      <line
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-width="30"
-                        x1="300"
-                        x2="55"
-                        y1="390"
-                        y2="390"
-                      />
-                      <path
-                        d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z"
-                        fill="#222"
-                        stroke-linejoin="round"
-                        stroke-width="10"
-                      />
-                    </g></svg
-                ></span>
-                <span class="sfo">
-                  {{ ourObject.cityTo }}
-                </span>
-
-                <span class="jfk jfkslip">
-                  {{ ourObject.cityFrom }}
-                </span>
-                <span class="plane planeslip"
-                  ><svg
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
-                    height="40"
-                    width="40"
-                    image-rendering="optimizeQuality"
-                    shape-rendering="geometricPrecision"
-                    text-rendering="geometricPrecision"
-                    viewBox="0 0 500 500"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g stroke="#222">
-                      <line
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-width="30"
-                        x1="300"
-                        x2="55"
-                        y1="390"
-                        y2="390"
-                      />
-                      <path
-                        d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z"
-                        fill="#222"
-                        stroke-linejoin="round"
-                        stroke-width="10"
-                      />
-                    </g></svg
-                ></span>
-                <span class="sfo sfoslip">
-                  {{ ourObject.cityTo }}
-                </span>
-                <div class="sub-content">
-                  <span class="watermark">Lufthansa</span>
-                  <span class="name"
-                    >PASSENGER NAME<br /><span
-                      >{{ ourObject.namePassenger }},</span
-                    ><span> {{ ourObject.familyPassenger }}</span></span
-                  >
-                  <span class="flight"
-                    >CLASS<br /><span>{{ ourObject.classOption }}</span></span
-                  >
-                  <span class="price"
-                    >PRICE<br /><span>
-                      {{ ourObject.economy }}
-                      {{ ourObject.buissnes }}
-                    </span></span
-                  >
-                  <span
-                    *ngIf="ourObject.seatEconomy !== ''; else buisnesClass"
-                    >{{ ourObject.seatEconomy }}</span
-                  >
-                  <ng-template #buisnesClass>
-                    {{ ourObject.seatBusiness }}
-                  </ng-template>
-                  <span class="boardingtime"
-                    >BOARDING TIME<br /><span>
-                      {{ ourObject.dateFly }}
-                    </span></span
-                  >
-                  <span class="seatPlaceNumber"
-                    >SEAT N&deg; <br /><span>
-                      {{ ourObject.seat }}
-                    </span></span
-                  >
-
-                  <span class="flight flightslip"
-                    >FLIGHT N&deg;<br /><span>X3-65C3</span></span
-                  >
-                  <span class="seat seatslip"
-                    >SEAT<br /><span>{{ ourObject.seat }}</span></span
-                  >
-                  <span class="name nameslip"
-                    >PASSENGER NAME<br /><span
-                      >{{ ourObject.namePassenger }},</span
-                    ><span> {{ ourObject.familyPassenger }}</span></span
-                  >
-                </div>
-              </div>
-              <div class="barcode"></div>
-              <div class="barcode slip"></div>
+            style="width: 100%"
+            *ngIf="ourObject.cityTo == 'Tokyo'"
+          />
+          <img
+            src="../../../assets/photos/londyn3.jpg"
+            style="width: 100%"
+            *ngIf="ourObject.cityTo == 'London'"
+          />
+          <img
+            src="../../../assets/photos/pekin3.jpg"
+            style="width: 100%"
+            *ngIf="ourObject.cityTo == 'Beijing'"
+          />
+          <div
+            *ngIf="ourObject.cityTo == 'Boston'"
+            class="book-information"
+          ></div> -->
+          <div class="btn-container-two" >
+            <div class="carousel__nav">
+              <button  type="submit" class="nav nav--left" (click)="goPrev(progress)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg></button>
             </div>
           </div>
-          <div class="ticket-h">
-            <h3>Thank you for using our application!</h3>
-            <span
-              >You will soon receive information related to your flight by
-              email</span
-            >
+
+
+          <div class="ticket">
+            <div class="container">
+              <div class="left">
+                <div class="header">
+                  <div>
+                    <a href="" class="navbar-brand"
+                      ><span
+                        ><span class="word">LO</span
+                        ><span class="word-small">NG-wings</span></span
+                      ></a
+                    >
+                  </div>
+                  <div>
+                    <h3>Boarding Pass</h3>
+                    <p>Electronic ticket</p>
+                  </div>
+                </div>
+                <div class="body">
+                  <div class="fromto">
+                    <h1>{{ ourObject.cityFrom }}</h1>
+                    <svg
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 390.206 390.206"
+                      style="enable-background: new 0 0 390.206 390.206"
+                    >
+                      <g>
+                        <path
+                          style="fill: #ffc10d"
+                          d="M246.044,260.687c0,11.895-9.762,21.139-21.139,21.139h-39.564v-10.861
+                                                       c0-5.947-4.848-10.861-10.861-10.861h-21.139c0.517-11.378,9.762-20.622,21.139-20.622h50.424
+                                                       C236.8,239.547,246.044,249.309,246.044,260.687z"
+                        />
+                        <path
+                          style="fill: #ffc10d"
+                          d="M367.968,260.105H267.701c-0.517-16.291-9.762-30.384-23.855-37.366
+                                                       c2.715-2.198,4.331-5.43,4.331-8.663v-5.947c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947
+                                                       c0,1.616,0.517,3.232,1.099,4.331h-20.04c0.517-1.099,1.099-2.715,1.099-4.331v-5.947c0-5.947-4.913-10.861-10.861-10.861
+                                                       c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,1.616,0.517,2.715,1.099,4.331h-13.576c-2.198,0-4.331,0-6.529,0.517
+                                                       c0.517-1.616,1.099-3.232,1.099-4.848v-5.947c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947
+                                                       c0,4.331,2.715,8.145,5.947,9.762c-12.994,7.046-21.657,20.622-21.657,36.331H83.329l-61.802-51.459v-26.57h257.616
+                                                       c25.471,0,48.808,10.861,65.034,28.186H318.19c-5.947,0-10.861,4.848-10.861,10.861c0,5.947,4.848,10.861,10.861,10.861h41.115
+                                                       C363.636,240.646,366.352,250.343,367.968,260.105z"
+                        />
+                      </g>
+                      <g>
+                        <path
+                          style="fill: #194f82"
+                          d="M78.028,196.752c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,5.947,4.848,10.861,10.861,10.861
+                                                       s10.861-4.848,10.861-10.861v-5.947C88.889,201.6,83.976,196.752,78.028,196.752z"
+                        />
+                        <path
+                          style="fill: #194f82"
+                          d="M118.174,196.752c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,5.947,4.848,10.861,10.861,10.861
+                                                       s10.861-4.848,10.861-10.861v-5.947C128.97,201.6,124.121,196.752,118.174,196.752z"
+                        />
+                        <path
+                          style="fill: #194f82"
+                          d="M278.044,196.752c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,5.947,4.848,10.861,10.861,10.861
+                                                       c5.947,0,10.861-4.848,10.861-10.861v-5.947C288.84,201.6,283.992,196.752,278.044,196.752z"
+                        />
+                      </g>
+                      <polygon
+                        style="fill: #56ace0"
+                        points="60.703,106.764 45.511,106.764 45.511,160.42 83.459,160.42 "
+                      />
+                      <path
+                        style="fill: #ffffff"
+                        d="M246.044,261.204c0-11.895-9.762-21.139-21.139-21.139h-50.941c-11.378,0-20.622,9.244-21.139,20.622
+                                                     h21.139c5.947,0,10.861,4.849,10.861,10.861v11.378h40.081C236.865,282.343,246.044,272.582,246.044,261.204z"
+                      />
+                      <path
+                        style="fill: #194f82"
+                        d="M279.661,160.42H106.731L77.446,92.154c-1.616-3.814-5.43-6.529-9.762-6.529H34.651
+                                                     c-5.947,0-10.861,4.848-10.861,10.861v64.453H10.861C4.913,160.937,0,165.786,0,171.798v42.796c0,3.232,1.616,6.529,3.814,8.145
+                                                     l68.267,56.889c2.198,1.616,4.331,2.715,7.046,2.715h84.558v11.378c0,5.947,4.848,10.861,10.861,10.861h50.424
+                                                     c16.291,0,30.319-8.663,37.366-22.238h117.01c5.947,0,10.861-4.848,10.861-10.861C390.206,209.745,340.364,160.42,279.661,160.42z
+                                                     M185.341,282.343v-11.378c0-5.947-4.848-10.861-10.861-10.861h-21.139c0.517-11.378,9.762-20.622,21.139-20.622h50.424
+                                                     c11.895,0,21.139,9.762,21.139,21.139c0,11.895-9.762,21.139-21.139,21.139h-39.564V282.343z M267.701,260.105
+                                                     c-0.517-16.291-9.762-30.319-23.855-37.366c2.715-2.198,4.331-5.43,4.331-8.663v-5.947c0-5.947-4.848-10.861-10.861-10.861
+                                                     c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,1.616,0.517,3.232,1.099,4.331c-1.099,0-2.198,0-2.715,0h-17.325
+                                                     c0.517-1.099,1.099-2.715,1.099-4.331v-5.947c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947
+                                                     c0,1.616,0.517,2.715,1.099,4.331h-13.576c-2.198,0-4.331,0-6.529,0.517c0.517-1.616,1.099-3.232,1.099-4.848v-5.947
+                                                     c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,4.331,2.715,8.145,5.947,9.762
+                                                     c-12.994,7.046-21.657,20.622-21.657,36.331H83.329l-61.802-51.459v-26.57h78.028l0,0l0,0H278.95
+                                                     c25.471,0,48.808,10.861,65.034,28.186h-25.988c-5.947,0-10.861,4.848-10.861,10.861c0,5.947,4.848,10.861,10.861,10.861h41.309
+                                                     c4.331,8.663,7.046,18.424,8.663,28.186H267.701V260.105z M45.511,106.764h15.192l22.756,53.657H45.511V106.764z"
+                      />
+                    </svg>
+                    <h1>{{ ourObject.cityTo }}</h1>
+                  </div>
+                  <div class="info">
+                    <div class="info-container">
+                      <div class="info-container-icon">
+                        <svg viewBox="0 0 129 129" style="width: 50px">
+                          <path
+                            d="m64.3,71.6c18,0 32.6-14.6 32.6-32.6s-14.6-32.5-32.6-32.5-32.6,14.6-32.6,32.5 14.6,32.6 32.6,32.6zm0-56.6c13.2,0 24,10.8 24,24s-10.8,24-24,24-24-10.8-24-24 10.8-24 24-24z"
+                          />
+                          <path
+                            d="m7.9,122.5h113.2c2.4,0 4.3-1.9 4.3-4.3 0-22.5-18.3-40.9-40.9-40.9h-40c-22.5,0-40.9,18.3-40.9,40.9-1.33227e-15,2.4 1.9,4.3 4.3,4.3zm36.6-36.6h40c16.4,0 29.9,12.2 32,28h-104c2.1-15.7 15.6-28 32-28z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="info-container-text">
+                        <p>Passenger Name</p>
+                        <h2>
+                          {{ ourObject.namePassenger }}&nbsp;{{
+                            ourObject.familyPassenger
+                          }}
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="info-container">
+                      <div class="info-container-icon">
+                        <svg viewBox="0 0 100.353 100.353" style="width: 50px">
+                          <g>
+                            <path
+                              d="M32.286,42.441h-9.762c-0.829,0-1.5,0.671-1.5,1.5v9.762c0,0.828,0.671,1.5,1.5,1.5h9.762c0.829,0,1.5-0.672,1.5-1.5
+                                     v-9.762C33.786,43.113,33.115,42.441,32.286,42.441z M30.786,52.203h-6.762v-6.762h6.762V52.203z"
+                            />
+                            <path
+                              d="M55.054,42.441h-9.762c-0.829,0-1.5,0.671-1.5,1.5v9.762c0,0.828,0.671,1.5,1.5,1.5h9.762c0.828,0,1.5-0.672,1.5-1.5
+                                     v-9.762C56.554,43.113,55.882,42.441,55.054,42.441z M53.554,52.203h-6.762v-6.762h6.762V52.203z"
+                            />
+                            <path
+                              d="M77.12,42.441h-9.762c-0.828,0-1.5,0.671-1.5,1.5v9.762c0,0.828,0.672,1.5,1.5,1.5h9.762c0.828,0,1.5-0.672,1.5-1.5v-9.762
+                                     C78.62,43.113,77.948,42.441,77.12,42.441z M75.62,52.203h-6.762v-6.762h6.762V52.203z"
+                            />
+                            <path
+                              d="M32.286,64.677h-9.762c-0.829,0-1.5,0.672-1.5,1.5v9.762c0,0.828,0.671,1.5,1.5,1.5h9.762c0.829,0,1.5-0.672,1.5-1.5
+                                     v-9.762C33.786,65.349,33.115,64.677,32.286,64.677z M30.786,74.439h-6.762v-6.762h6.762V74.439z"
+                            />
+                            <path
+                              d="M55.054,64.677h-9.762c-0.829,0-1.5,0.672-1.5,1.5v9.762c0,0.828,0.671,1.5,1.5,1.5h9.762c0.828,0,1.5-0.672,1.5-1.5
+                                     v-9.762C56.554,65.349,55.882,64.677,55.054,64.677z M53.554,74.439h-6.762v-6.762h6.762V74.439z"
+                            />
+                            <path
+                              d="M77.12,64.677h-9.762c-0.828,0-1.5,0.672-1.5,1.5v9.762c0,0.828,0.672,1.5,1.5,1.5h9.762c0.828,0,1.5-0.672,1.5-1.5v-9.762
+                                     C78.62,65.349,77.948,64.677,77.12,64.677z M75.62,74.439h-6.762v-6.762h6.762V74.439z"
+                            />
+                            <path
+                              d="M89,13.394h-9.907c-0.013,0-0.024,0.003-0.037,0.004V11.4c0-3.268-2.658-5.926-5.926-5.926s-5.926,2.659-5.926,5.926v1.994
+                                     H56.041V11.4c0-3.268-2.658-5.926-5.926-5.926s-5.926,2.659-5.926,5.926v1.994H33.025V11.4c0-3.268-2.658-5.926-5.926-5.926
+                                     s-5.926,2.659-5.926,5.926v1.995c-0.005,0-0.01-0.001-0.015-0.001h-9.905c-0.829,0-1.5,0.671-1.5,1.5V92.64
+                                     c0,0.828,0.671,1.5,1.5,1.5H89c0.828,0,1.5-0.672,1.5-1.5V14.894C90.5,14.065,89.828,13.394,89,13.394z M70.204,11.4
+                                     c0-1.614,1.312-2.926,2.926-2.926s2.926,1.312,2.926,2.926v8.277c0,1.613-1.312,2.926-2.926,2.926s-2.926-1.312-2.926-2.926V11.4z
+                                     M50.115,8.474c1.613,0,2.926,1.312,2.926,2.926v8.277c0,1.613-1.312,2.926-2.926,2.926c-1.614,0-2.926-1.312-2.926-2.926v-4.643
+                                     c0.004-0.047,0.014-0.092,0.014-0.141s-0.01-0.094-0.014-0.141V11.4C47.189,9.786,48.501,8.474,50.115,8.474z M24.173,11.4
+                                     c0-1.614,1.312-2.926,2.926-2.926c1.613,0,2.926,1.312,2.926,2.926v8.277c0,1.613-1.312,2.926-2.926,2.926
+                                     c-1.614,0-2.926-1.312-2.926-2.926V11.4z M87.5,91.14H12.753V16.394h8.405c0.005,0,0.01-0.001,0.015-0.001v3.285
+                                     c0,3.268,2.659,5.926,5.926,5.926s5.926-2.658,5.926-5.926v-3.283h11.164v3.283c0,3.268,2.659,5.926,5.926,5.926
+                                     s5.926-2.658,5.926-5.926v-3.283h11.163v3.283c0,3.268,2.658,5.926,5.926,5.926s5.926-2.658,5.926-5.926V16.39
+                                     c0.013,0,0.024,0.004,0.037,0.004H87.5V91.14z"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <div class="info-container-text">
+                        <p>date</p>
+                        <h2>{{ ourObject.dateFly }}</h2>
+                      </div>
+                    </div>
+                    <div
+                      class="info-container"
+                      *ngIf="ourObject.extraLuggage == '400'"
+                    >
+                      <div class="info-container-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          fill="currentColor"
+                          class="bi bi-handbag"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6h4z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="info-container-text">
+                        <p>luggage</p>
+                        <h2>+ 30 kg</h2>
+                      </div>
+                    </div>
+                    <div class="info-container">
+                      <div class="info-container-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          fill="currentColor"
+                          class="bi bi-star"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="info-container-text">
+                        <p>class</p>
+                        <h2>{{ ourObject.classOption }}</h2>
+                      </div>
+                    </div>
+                    <div class="info-container">
+                      <div class="info-container-icon">
+                        <svg viewBox="0 0 20 19" style="width: 50px">
+                          <title>airline_seat_recline_extra</title>
+                          <g
+                            id="Icons"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                          >
+                            <g
+                              id="Rounded"
+                              transform="translate(-612.000000, -3656.000000)"
+                            >
+                              <g
+                                id="Notification"
+                                transform="translate(100.000000, 3600.000000)"
+                              >
+                                <g
+                                  id="-Round-/-Notification-/-airline_seat_recline_extra"
+                                  transform="translate(510.000000, 54.000000)"
+                                >
+                                  <g>
+                                    <polygon
+                                      id="Path"
+                                      points="0 0 24 0 24 24 0 24"
+                                    ></polygon>
+                                    <path
+                                      d="M5.35,5.64 C4.45,5 4.23,3.76 4.86,2.85 C5.49,1.95 6.74,1.73 7.65,2.36 C8.55,3 8.77,4.24 8.14,5.15 C7.5,6.05 6.26,6.27 5.35,5.64 Z M16,20 C16,19.45 15.55,19 15,19 L8.93,19 C7.45,19 6.19,17.92 5.97,16.46 L4.16,7.78 C4.07,7.33 3.67,7 3.2,7 C2.58,7 2.12,7.57 2.24,8.18 L3.99,16.76 C4.37,19.2 6.47,21 8.94,21 L15,21 C15.55,21 16,20.55 16,20 Z M15.54,15 L11.35,15 L10.32,10.9 C11.6,11.62 12.95,12.18 14.42,12.2 C15,12.21 15.47,11.71 15.47,11.13 C15.47,10.54 14.98,10.09 14.39,10.07 C13.08,10.03 11.76,9.51 10.78,8.74 L9.14,7.47 C8.91,7.29 8.65,7.17 8.38,7.09 C8.06,7 7.72,6.97 7.39,7.03 L7.37,7.03 C6.14,7.25 5.32,8.42 5.53,9.64 L6.88,15.56 C7.16,16.98 8.39,18 9.83,18 L16.68,18 L19.77,20.42 C20.19,20.75 20.79,20.71 21.16,20.34 C21.61,19.89 21.56,19.16 21.06,18.77 L16.77,15.42 C16.42,15.15 15.99,15 15.54,15 Z"
+                                      id="🔹-Icon-Color"
+                                      fill="#1D1D1D"
+                                    ></path>
+                                  </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                      </div>
+                      <div class="info-container-text">
+                        <p>seat</p>
+                        <h2>{{ ourObject.seat }}</h2>
+                      </div>
+                    </div>
+                    <div class="info-container">
+                      <div class="info-container-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="50"
+                          height="50"
+                          fill="currentColor"
+                          class="bi bi-cash-coin"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"
+                          />
+                          <path
+                            d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"
+                          />
+                          <path
+                            d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"
+                          />
+                          <path
+                            d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="info-container-text">
+                        <p>price</p>
+                        <h2>
+                          {{ ourObject.economy }}
+                          {{ ourObject.buissnes }}
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="footer-left">
+                    <h3 style="padding-right: 100px">boarding</h3>
+                    <p>10:25</p>
+                  </div>
+                  <div class="footer-filler"></div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="right-header">
+                  <div>
+                    <a href="" class="navbar-brand"
+                      ><span
+                        ><span class="word">LO</span
+                        ><span class="word-small">NG-wings</span></span
+                      ></a
+                    >
+                  </div>
+                  <div class="ltr">
+                    <div>
+                      <h3>boarding pass</h3>
+                    </div>
+                    <div>
+                      <p>Electronic ticket</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-body">
+                  <div class="fromto" >
+                    <h1 style="font-size: 15px;">{{ ourObject.cityFrom }}</h1>
+                    <svg
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 390.206 390.206"
+                      style="enable-background: new 0 0 390.206 390.206"
+                    >
+                      <g>
+                        <path
+                          style="fill: #ffc10d"
+                          d="M246.044,260.687c0,11.895-9.762,21.139-21.139,21.139h-39.564v-10.861
+                                                       c0-5.947-4.848-10.861-10.861-10.861h-21.139c0.517-11.378,9.762-20.622,21.139-20.622h50.424
+                                                       C236.8,239.547,246.044,249.309,246.044,260.687z"
+                        />
+                        <path
+                          style="fill: #ffc10d"
+                          d="M367.968,260.105H267.701c-0.517-16.291-9.762-30.384-23.855-37.366
+                                                       c2.715-2.198,4.331-5.43,4.331-8.663v-5.947c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947
+                                                       c0,1.616,0.517,3.232,1.099,4.331h-20.04c0.517-1.099,1.099-2.715,1.099-4.331v-5.947c0-5.947-4.913-10.861-10.861-10.861
+                                                       c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,1.616,0.517,2.715,1.099,4.331h-13.576c-2.198,0-4.331,0-6.529,0.517
+                                                       c0.517-1.616,1.099-3.232,1.099-4.848v-5.947c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947
+                                                       c0,4.331,2.715,8.145,5.947,9.762c-12.994,7.046-21.657,20.622-21.657,36.331H83.329l-61.802-51.459v-26.57h257.616
+                                                       c25.471,0,48.808,10.861,65.034,28.186H318.19c-5.947,0-10.861,4.848-10.861,10.861c0,5.947,4.848,10.861,10.861,10.861h41.115
+                                                       C363.636,240.646,366.352,250.343,367.968,260.105z"
+                        />
+                      </g>
+                      <g>
+                        <path
+                          style="fill: #194f82"
+                          d="M78.028,196.752c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,5.947,4.848,10.861,10.861,10.861
+                                                       s10.861-4.848,10.861-10.861v-5.947C88.889,201.6,83.976,196.752,78.028,196.752z"
+                        />
+                        <path
+                          style="fill: #194f82"
+                          d="M118.174,196.752c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,5.947,4.848,10.861,10.861,10.861
+                                                       s10.861-4.848,10.861-10.861v-5.947C128.97,201.6,124.121,196.752,118.174,196.752z"
+                        />
+                        <path
+                          style="fill: #194f82"
+                          d="M278.044,196.752c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,5.947,4.848,10.861,10.861,10.861
+                                                       c5.947,0,10.861-4.848,10.861-10.861v-5.947C288.84,201.6,283.992,196.752,278.044,196.752z"
+                        />
+                      </g>
+                      <polygon
+                        style="fill: #56ace0"
+                        points="60.703,106.764 45.511,106.764 45.511,160.42 83.459,160.42 "
+                      />
+                      <path
+                        style="fill: #ffffff"
+                        d="M246.044,261.204c0-11.895-9.762-21.139-21.139-21.139h-50.941c-11.378,0-20.622,9.244-21.139,20.622
+                                                     h21.139c5.947,0,10.861,4.849,10.861,10.861v11.378h40.081C236.865,282.343,246.044,272.582,246.044,261.204z"
+                      />
+                      <path
+                        style="fill: #194f82"
+                        d="M279.661,160.42H106.731L77.446,92.154c-1.616-3.814-5.43-6.529-9.762-6.529H34.651
+                                                     c-5.947,0-10.861,4.848-10.861,10.861v64.453H10.861C4.913,160.937,0,165.786,0,171.798v42.796c0,3.232,1.616,6.529,3.814,8.145
+                                                     l68.267,56.889c2.198,1.616,4.331,2.715,7.046,2.715h84.558v11.378c0,5.947,4.848,10.861,10.861,10.861h50.424
+                                                     c16.291,0,30.319-8.663,37.366-22.238h117.01c5.947,0,10.861-4.848,10.861-10.861C390.206,209.745,340.364,160.42,279.661,160.42z
+                                                     M185.341,282.343v-11.378c0-5.947-4.848-10.861-10.861-10.861h-21.139c0.517-11.378,9.762-20.622,21.139-20.622h50.424
+                                                     c11.895,0,21.139,9.762,21.139,21.139c0,11.895-9.762,21.139-21.139,21.139h-39.564V282.343z M267.701,260.105
+                                                     c-0.517-16.291-9.762-30.319-23.855-37.366c2.715-2.198,4.331-5.43,4.331-8.663v-5.947c0-5.947-4.848-10.861-10.861-10.861
+                                                     c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,1.616,0.517,3.232,1.099,4.331c-1.099,0-2.198,0-2.715,0h-17.325
+                                                     c0.517-1.099,1.099-2.715,1.099-4.331v-5.947c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947
+                                                     c0,1.616,0.517,2.715,1.099,4.331h-13.576c-2.198,0-4.331,0-6.529,0.517c0.517-1.616,1.099-3.232,1.099-4.848v-5.947
+                                                     c0-5.947-4.848-10.861-10.861-10.861c-5.947,0-10.861,4.848-10.861,10.861v5.947c0,4.331,2.715,8.145,5.947,9.762
+                                                     c-12.994,7.046-21.657,20.622-21.657,36.331H83.329l-61.802-51.459v-26.57h78.028l0,0l0,0H278.95
+                                                     c25.471,0,48.808,10.861,65.034,28.186h-25.988c-5.947,0-10.861,4.848-10.861,10.861c0,5.947,4.848,10.861,10.861,10.861h41.309
+                                                     c4.331,8.663,7.046,18.424,8.663,28.186H267.701V260.105z M45.511,106.764h15.192l22.756,53.657H45.511V106.764z"
+                      />
+                    </svg>
+                    <h1 style="font-size: 15px;">{{ ourObject.cityTo }}</h1>
+                  </div>
+                  <div class="right-info">
+                    <div>
+                      <div class="info-container-text">
+                        <p>passenger name</p>
+                        <h2>
+                          {{ ourObject.namePassenger }}&nbsp;{{
+                            ourObject.familyPassenger
+                          }}
+                        </h2>
+                      </div>
+                      <div class="info-container-text">
+                        <p>date</p>
+                        <h2>{{ ourObject.dateFly }}</h2>
+                      </div>
+                      <div
+                        class="info-container-text"
+                        *ngIf="ourObject.extraLuggage == '400'"
+                      >
+                        <p>Luggage</p>
+                        <h2>+ 30kg</h2>
+                      </div>
+                      <div class="info-container-text">
+                        <p>price</p>
+                        <h2>
+                          {{ ourObject.economy }} {{ ourObject.buissnes }}
+                        </h2>
+                      </div>
+                      <div class="info-container-text">
+                        <p>class</p>
+                        <h2>{{ ourObject.classOption }}</h2>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="info-container-text">
+                        <p>seat</p>
+                        <h2>{{ ourObject.seat }}</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rbottom">
+                  <div class="footerr">
+                    <h3 class="right-footer">boarding</h3>
+                    <div class="footerfiller" style="padding: 25px 100px">
+                      10:25
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+
+<div class="col-12 text-center">
+  <button  type="submit" (click)="onNoClick()" class="closeBtn" >
+    <div class="navbar-brand">
+      <span><span class="word">Thank</span><span class="word-small">YOU</span></span>
+    </div>
+    </button>
+</div>
+
   </app-progress-step>
 </app-progress>

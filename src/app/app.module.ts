@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +11,11 @@ import { HeroSectionComponent } from './components/hero-section/hero-section.com
 import { NavSectionComponent } from './components/nav-section/nav-section.component';
 import { FooterSectionComponent } from './components/footer-section/footer-section.component';
 import { CommonModule } from '@angular/common';
-import { NgbAlertModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbAlertModule,
+  NgbModule,
+  NgbPaginationModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { DestinationSectionComponent } from './components/destination-section/destination-section.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +32,9 @@ import { TestComponent } from './components/test/test.component';
 import { EmbraerInfoSectionComponent } from './components/embraer-info-section/embraer-info-section.component';
 import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
 import { APIWeatherSectionComponent } from './components/api-weather-section/api-weather-section.component';
-
+import { ParisAboutComponent } from './components/paris-about/paris-about.component';
+import { TicketComponent } from './components/ticket/ticket.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,9 @@ import { APIWeatherSectionComponent } from './components/api-weather-section/api
     TestComponent,
     EmbraerInfoSectionComponent,
     BoeingInfoSectionComponent,
-    APIWeatherSectionComponent
+    APIWeatherSectionComponent,
+    ParisAboutComponent,
+    TicketComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,8 +74,9 @@ import { APIWeatherSectionComponent } from './components/api-weather-section/api
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

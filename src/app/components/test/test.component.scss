@@ -1,284 +1,48 @@
-*{
-  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+ /* label color */
+ .input-field label {
+  color: #000;
 }
-.row{
-  margin: 20px;
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
 }
-
-.form-select{
-  border: none;
-  border-bottom: solid 2px black;
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }
-
-.icon-from {
-  padding-left: 25px;
-  background: url("../../../assets/icon/noun-plane-4849684.png") no-repeat left;
-  background-size: 20px;
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }
-.icon-to {
-  padding-left: 25px;
-  background: url("../../../assets/icon/noun-plane-4849688.png") no-repeat left;
-  background-size: 20px;
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }
-.icon-adult {
-  margin-left: 5px;
-  padding-left: 5px;
-  padding-left: 25px;
-  background: url("../../../assets/icon/noun-persons-1416395.png") no-repeat left;
-  background-size: 20px;
-}
-.icon-kids {
-  margin-left: 5px;
-  padding-left: 5px;
-  padding-left: 25px;
-  background: url("../../../assets/icon/children-solid.svg") no-repeat left;
-  background-size: 20px;
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
 }
 
-form h3{
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-form p{
-  text-align: center;
-}
-form .btn{
-  background-color: rgb(36, 109, 226);
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: black;
 }
 
-//////SVG/////
-
-svg{
-  max-height: 800px;
-  width: 100%;
-  display:flex;
-  justify-content: center;
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: black;
 }
 
-.occupied {
-  fill: #00FF6C;
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+  color: black;
 }
 
-.free {
-  fill: transparent;
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+  color: black;
+  background-color: none;
 }
-.empty-background
-{
-fill:transparent
-}
-
-.noSeat{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .selected-seat{
-    margin: 0;
-  }
+input:internal-autofill-selected {
+  background-color: rgb(177, 140, 81) !important;
 }
 
-
-
-///////////card
-///
-///
-.cards {
-  margin: 20px;
-  width: 600px;
-  list-style-type: none;
-}
-
-.cards li {
-  float: left;
-  width: 46%;
-  display: block;
-  margin-right: 2%;
-  margin-bottom: 10px;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-/* End-of-ignore-styles */
-
-.product-card {
-  max-width: 280px;
-  font-size: 12px;
-}
-
-.product-card > a {
-  background: #f2f2f2;
-  color: #333;
-  transition: all 100ms;
-  position: relative;
-  display: block;
-  z-index: 0;
-  padding-bottom: 5px;
-}
-
-.product-card > a:hover {
-  text-decoration: none;
-  box-shadow: 0 1px 3px rgba(0,0,0,.3);
-}
-
-.product-card .product-card-img {
-  display: block;
-  height: auto;
-  max-height: 150px;
-  width: 100%;
-}
-
-.product-card figcaption {
-  display: block;
-  padding: 0 10px;
-}
-
-.product-card .product-card-address {
-  color: #888;
-  line-height: 1.2;
-}
-
-.product-card .product-card-address i {
-  font-size: 14px;
-  margin-right: 2px;
-  line-height: 1.2;
-}
-
-.product-card .product-card-price {
-  display: block;
-  text-align: right;
-}
-
-.product-card .product-card-price .price-savings,
-.product-card .product-card-price .original-price {
-  line-height: 22px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.product-card .product-card-price .price-savings {
-  float: left;
-  color: green;
-  color: #82b548;
-}
-
-.product-card .product-card-price .original-price {
-  color: #aaa;
-  font-size: 14px;
-}
-
-.product-card .product-card-price .amount-price {
-  text-align: right;
-  font-size: 20px;
-  color: #82b548;
-}
-
-.product-card .product-card-price .from {
-  font-size: 12px;
-}
-
-
-////////////
-///
-///
-///
-
-
-
-#bookingBox{
-  margin: 75px;
-  float: left;
-  border-radius: 5px;
-  height: 355px;
-  width: 360px;
-  background-color: #183A55;
-}
-
-#planePic{
-  background-color: #095EB9;
-  float:left;
-  width:100%;
-  padding-left: 35px;
-  border-radius: 5px 0px 0px 0px;
-  margin-bottom: 20px;
-}
-
-
-
-.textForm{
-  float: left;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 15px;
-  padding-left: 10px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  height:45px;
-  width: 135px;
-  background-color: inherit;
-  color: white;
-}
-.text-form-icon{
-  float:left;
-  width:100%;
-}
-
-#passengers{
-  float: left;
-  margin-left: 15px;
-  margin-top: 15px;
-  padding-top: 10px;
-  border: 2px;
-  height: 45px;
-  width: 80px;
-  color: white;
-  font-size: 13px;
-
-
-}
-
-select{
-float: left;
-margin-left: 0px;
-margin-right: 10px;
-margin-top: 15px;
-padding-left: 10px;
-border: 2px solid #ddd;
-border-radius: 4px;
-height:45px;
-width: 54px;
-background-color: inherit;
-color: white;
-}
-
-.radioButtons{
-  float: left;
-  margin-left: 25px;
-  margin-right: 0px;
-  margin-top: 15px;
-  padding-top: 10px;
-  height:45px;
-  width: 135px;
-  background-color: inherit;
-  color: white;
-  font-size: 12px;
-}
-
-.searchFlights{
-  float: left;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 10px;
-  border: 2px solid #0462B9;
-  border-radius: 4px;
-  height:45px;
-  width: 330px;
-  background-color: #0462B9;
-  color: white;
-  text-align: center;
-
-}

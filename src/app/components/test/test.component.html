@@ -1,44 +1,118 @@
-<div class="row flex-column insp-row">
-  <div class="col-md-6 insp-item-wrap rb-inspiration-0" id="the-right-flight-for-you-always-card-1">
-<a href="javascript:void(0);" target="_blank" class="insp-img-link-wrap insp-enable-popup" data-popup-id="rbInspirationPopup0">
-<div class="insp-img-box
-rb-video-widget-wrap" style="background-image: url(//tjwlcdn.com/cms/rb-explore/story-cards/tmantajawal/T-man-en.png?v=1)" data-popup-id="rbInspirationPopup0">
+<div class="row">
+  <form
+    class="col s12"
+    [formGroup]="visitorDataForm"
+    (ngSubmit)="addVisitDetails()"
+  >
+    <div class="row">
 
-                                  <h3 class="insp-hd">
-  The right flight for you - always                                        </h3>
-                                  <div class="insp-tag-line">
-  <p>We have everything in place to make sure you find the perfect flight. t-Man has it all sorted!</p>                                        </div>
-                              <span class="insp-btn" data-popup-id="rbInspirationPopup0">
-Watch t-Man in action                                </span>
-</div>
-</a>
-</div>
-  <div class="col-md-6 insp-item-wrap rb-inspiration-1" id="explore-the-teeming-metropolis-of-tokyo-card-2">
-<a href="en/flights/DXB-TYO/2019-06-11/2019-06-20/Economy/1Adult" target="_blank" class="insp-img-link-wrap " data-popup-id="rbInspirationPopup1">
-<div class="insp-img-box
-" style="background-image: url(//tjwlcdn.com/cms/rb-explore/story-cards/Tokyo-Small-Story-Card-555x180-EN.png)" data-popup-id="rbInspirationPopup1">
+        <mat-form-field class="col-3" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input  matInput
+          formControlName="passengerName"
+          [(ngModel)]="passengerName"
+          #passengerNameData
+          placeholder="Name"
+          id="passengerName"
+          type="text"
+          class="validate">
+        </mat-form-field>
 
-                                  <h3 class="insp-hd">
-  Explore the teeming metropolis of Tokyo                                        </h3>
-                                  <div class="insp-tag-line">
-  <p>Experience the pulse of the futuristic capital city of Japan that's always on the move!</p>                                        </div>
-                              <span class="insp-btn" data-popup-id="rbInspirationPopup1">
-Search flights                                </span>
-</div>
-</a>
-</div>
-  <div class="col-md-6 insp-item-wrap rb-inspiration-2" id="explore-the-lush-indian-ocean-paradise-card-3">
-<a href="en/flights/DXB-MLE/2019-06-11/2019-06-20/Economy/1Adult" target="_blank" class="insp-img-link-wrap " data-popup-id="rbInspirationPopup2">
-<div class="insp-img-box
-" style="background-image: url(//tjwlcdn.com/cms/rb-explore/story-cards/Maldives-Small-Story-Card-AR.png?v=1)" data-popup-id="rbInspirationPopup2">
 
-                                  <h3 class="insp-hd">
-  Explore the lush Indian Ocean paradise!                                        </h3>
-                                  <div class="insp-tag-line">
-  <p>Experience the island luxury &amp; flourishing green of Maldives &amp; return home rejuvenated!</p>                                        </div>
-                              <span class="insp-btn" data-popup-id="rbInspirationPopup2">
-Search flights                                </span>
+      <!-- INPUT -->
+      <mat-form-field class="col-3" appearance="fill">
+        <mat-label>Familly Name</mat-label>
+        <input  matInput
+        class="validate"
+        type="text"
+        formControlName="passengerFamilyName"
+        [(ngModel)]="passengerFamilyName"
+        #passengerFamilyNameData
+        placeholder="Family name"
+        id="passengerFamilyName">
+      </mat-form-field>
+
+
+      <!-- INPUT -->
+      <mat-form-field class="col-3" appearance="fill">
+        <mat-label>Depart</mat-label>
+        <mat-select
+          id="inputFrom"
+          [(ngModel)]="selectedOptionCityFrom"
+          formControlName="cityFrom"
+          #cityFromDataValue
+          id="cityFrom"
+          [value]="from"
+        >
+          <mat-option *ngFor="let cityFrom of optionsCityFrom" [value]="from">{{
+            cityFrom.from
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- INPUT -->
+      <mat-form-field class="col-3" appearance="fill">
+        <mat-label>Arrive</mat-label>
+        <mat-select
+          [(ngModel)]="selectedOptionCityTo"
+          id="inputTo"
+          #cityToDataValue
+          formControlName="cityTo"
+          [value]="to"
+        >
+          <mat-option *ngFor="let cityTo of optionsCityTo" [value]="to">
+            {{ cityTo.to }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    </div>
+    <div class="row">
+
+      <div class="col-3">
+      <input
+        type="date"
+        [(ngModel)]="dateDepar"
+        formControlName="dateDepar"
+        #dateBordValue
+        class="form-control textForm-bottom-row"
+        id="inputDate"
+      />
+      </div>
+
+<!-- INPUT -->
+      <mat-form-field class="col-3" appearance="fill">
+        <mat-label>Passenger</mat-label>
+        <input  matInput
+        formControlName="passenger"
+        [(ngModel)]="passenger"
+        #passengerNameData
+        id="passenger"
+        type="number"
+        class="validate">
+      </mat-form-field>
+      <!-- INPUT -->
+      <mat-form-field class="col-3" appearance="fill">
+        <mat-label>Arrive</mat-label>
+        <mat-select
+        [(ngModel)]="selectedOptionClass"
+        id="inputClass"
+        formControlName="class"
+        class="textForm-bottom-row"
+        [value]="class">
+        >
+          <mat-option *ngFor="let flyClass of optionsClass" [value]="class">
+            {{ flyClass.class }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+
+
+    </div>
+  </form>
+
 </div>
-</a>
-</div>
-</div>
+

@@ -1,79 +1,352 @@
 * {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.container-form{
-  margin-top: 50px;
-  .form-section {
-    position: absolute;
-    margin-top: 40px;
-    border-radius: 5px;
-    height: 550px;
-    width: 420px;
-    background-color: #183a55;
-    .planeIcon {
-      position: relative;
-      padding: 5px;
-      background-color: #095eb9;
-      width: 100%;
-      border-radius: 5px 0px 0px 0px;
-    }
-    .row-form {
-      margin-top: 10px;
-    }
-    .textForm {
-      float: left;
-      padding-left: 5px;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-      height: 40px;
-      width: 165px;
-      color: #095eb9;
-    }
-    ::placeholder{
-      color: #095eb9;
-    }
-    .text {
-      font-size: 0.8rem;
-      color: white;
-    }
-    .text-check-input{
-      margin-left: 10px;
-      font-size: 0.8rem;
-      color: white;
-    }
-    select option {
-      margin: 40px;
-      background: rgba(0, 0, 0, 0.3);
-      color: black;
-      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-    }
-    .tytle-text{
-      font-size: 30px;
-      font-weight: bold;
-      color: white;
-    }
-    h3 {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: yellow;
-    }
-    .btn{
-      background-color: #095eb9;
-    }
 
+
+
+.box {
+  width: 100%;
+  justify-content: center;
+  margin-top: 60px;
+  z-index: 100;
+  .form-section{
+    text-align: center;
+    width: 60%;
+    margin: 60px;
+    background-color: rgba(255, 255, 255, 0.142);
+
+      .planeIcon {
+        padding: 5px;
+        background-color: #095eb9;
+        width: 100%;
+        border-radius: 5px 0px 0px 0px;
+      }
+
+      .input-wrap {
+        position: relative;
+        margin: 20px;
+      }
+
+      .input-wrap input {
+        background: none;
+        color: black;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        border-radius: .30em;
+      }
+
+      .input-wrap label {
+        position: absolute;
+        color: black;
+        font-size: 16px;
+        font-weight: normal;
+        pointer-events: none;
+        left: 10px;
+        top: 10px;
+        transition: 300ms ease all;
+      }
+
+      input:focus {
+        outline: none;
+      }
+      input:touched {
+        background-color: transparent;
+      }
+
+      .input-wrap input:focus~label,
+      .input-wrap input:valid ~ label{
+        top: -14px;
+        font-size: 12px;
+        color: #095eb9;
+      }
+      .tytle-text {
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+      }
+      h3 {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: yellow;
+      }
+      .btn {
+        background-color: #095eb9;
+      }
   }
 }
+
+//////////////Select///////////////////
+ .select-one {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  width: 100%;
+  padding-bottom: -5px;
+  /* Personalize */
+  color: black;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+.select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  height: 3em;
+  border-radius: .30em;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: normal;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  color: black;
+  background-color: #ccc;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #095eb9;
+}
+
+/////////////DATEPICKER
+///
+.datepicker {
+  top: 0;
+  left: 0;
+  padding: 4px;
+  margin-top: 1px;
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  /*.dow {
+    border-top: 1px solid #ddd !important;
+  }*/
+
+}
+.datepicker:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -7px;
+  left: 6px;
+}
+.datepicker:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  left: 7px;
+}
+.datepicker > div {
+  display: none;
+}
+.datepicker table {
+  width: 100%;
+  margin: 0;
+}
+.datepicker td,
+.datepicker th {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+}
+.datepicker td.day:hover {
+  background: #291919;
+  cursor: pointer;
+}
+.datepicker td.day.disabled {
+  color: #854141;
+}
+.datepicker td.old,
+.datepicker td.new {
+  color: #999999;
+}
+.datepicker td.active,
+.datepicker td.active:hover {
+  color: #ffffff;
+  background-color: #095eb9;
+  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color: #095eb9 #095eb9 #002a80;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0044cc;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td.active:hover,
+.datepicker td.active:hover:hover,
+.datepicker td.active:focus,
+.datepicker td.active:hover:focus,
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active,
+.datepicker td.active.disabled,
+.datepicker td.active:hover.disabled,
+.datepicker td.active[disabled],
+.datepicker td.active:hover[disabled] {
+  color: #ffffff;
+  background-color: #095eb9;
+  *background-color: #095eb9;
+}
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active {
+  background-color: #003399 \9;
+}
+.datepicker td span {
+  display: block;
+  width: 47px;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 2px;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.datepicker td span:hover {
+  background: #eeeeee;
+}
+.datepicker td span.active {
+  color: #ffffff;
+  background-color: #095eb9;
+  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color: #0044cc #0044cc #002a80;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0044cc;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td span.active:hover,
+.datepicker td span.active:focus,
+.datepicker td span.active:active,
+.datepicker td span.active.active,
+.datepicker td span.active.disabled,
+.datepicker td span.active[disabled] {
+  color: #ffffff;
+  background-color: #0044cc;
+  *background-color: #003bb3;
+}
+.datepicker td span.active:active,
+.datepicker td span.active.active {
+  background-color: #003399 \9;
+}
+.datepicker td span.old {
+  color: #999999;
+}
+.datepicker th.switch {
+  width: 145px;
+}
+.datepicker th.next,
+.datepicker th.prev {
+  font-size: 21px;
+}
+.datepicker thead tr:first-child th {
+  cursor: pointer;
+}
+.datepicker thead tr:first-child th:hover {
+  background: #eeeeee;
+}
+.input-append.date .add-on i,
+.input-prepend.date .add-on i {
+  display: block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+/////////////NUMBER
+///
+input[type="number"], textarea {
+
+  background-color : transparent;
+  border: none;
+
+}
+
+/* Other styles*/
+body {
+  color: #fff;
+  background: var(--background-gradient);
+}
+h1 {
+  margin: 0 0 0.25em;
+}
+a {
+  font-weight: bold;
+  color: var(--gray);
+  text-decoration: none;
+  padding: .25em;
+  border-radius: .25em;
+  background: white;
+}
+
+
 
 
 
 //////SVG/////
 
 svg {
-  max-height: 1000px;
+  transform: rotate(90deg);
+  margin-top: 100px;
+  max-height: 800px;
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.bussines-class {
+  fill: #0a86ec;
 }
 
 .occupied {
@@ -97,3 +370,6 @@ svg {
   }
 }
 
+@media (max-width: 800px) {
+
+}
