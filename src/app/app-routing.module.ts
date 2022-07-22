@@ -4,12 +4,14 @@ import { AboutSectionComponent } from './components/about-section/about-section.
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookSectionComponent } from './components/book-section/book-section.component';
 
 const routes: Routes = [
   { path: 'home', component: HeroSectionComponent },
   { path: 'about', component: AboutSectionComponent },
   { path: 'offer', component: OfferSectionComponent },
-  { path: 'destination', component: DestinationSectionComponent }
+  { path: 'destination', component: DestinationSectionComponent },
+  { path: 'ticket', component: BookSectionComponent }
 ];
 
 @NgModule({

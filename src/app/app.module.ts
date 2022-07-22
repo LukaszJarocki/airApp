@@ -34,6 +34,10 @@ import { BoeingInfoSectionComponent } from './components/boeing-info-section/boe
 import { APIWeatherSectionComponent } from './components/api-weather-section/api-weather-section.component';
 import { ParisAboutComponent } from './components/paris-about/paris-about.component';
 import { MatSelectModule } from '@angular/material/select';
+import { BostonAboutComponent } from './components/boston-about/boston-about.component';
+import { LondonAboutComponent } from './components/london-about/london-about.component';
+import { TokyoAboutComponent } from './components/tokyo-about/tokyo-about.component';
+import { BeijingAboutComponent } from './components/beijing-about/beijing-about.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,10 @@ import { MatSelectModule } from '@angular/material/select';
     BoeingInfoSectionComponent,
     APIWeatherSectionComponent,
     ParisAboutComponent,
+    BostonAboutComponent,
+    LondonAboutComponent,
+    TokyoAboutComponent,
+    BeijingAboutComponent
   ],
   imports: [
     BrowserModule,

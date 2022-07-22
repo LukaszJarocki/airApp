@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, Input, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AirportDataService } from 'src/app/service/airport-data.service';
 import { ProgressComponent } from '../progress/progress.component';
 
@@ -96,7 +97,8 @@ export class BookFormSectionComponent {
 
   constructor(
     private airportDataService: AirportDataService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.visitorDataForm = this.fb.group({
       passengerName: ['', Validators.required],
@@ -229,6 +231,10 @@ export class BookFormSectionComponent {
       });
     });
     return seats;
+  }
+
+  toStepTree() {
+    this.router.navigate(['/BookSectionComponent#treeStep']);
   }
 
 ///////////////
