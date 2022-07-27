@@ -50,5 +50,10 @@ export class BookSectionComponent implements OnInit {
     console.log(event);
   }
 
-
+  toTicket() {
+    document
+      .getElementById('ticket')
+      .scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    console.log(this.toTicket);
+  }
 }

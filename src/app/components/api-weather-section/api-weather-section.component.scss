@@ -1,25 +1,3 @@
-.bg {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
-a,
-a:visited {
-  color: gray;
-  text-decoration: none;
-}
-
-a:hover {
-  color: darkgray;
-}
-
 /********** WEATHER SECTION **********/
 
 .flexbox-container {
@@ -52,6 +30,9 @@ a:hover {
 
 .circle:hover {
   opacity: 1;
+}
+p{
+  margin: 25px 0;
 }
 
 .location {
@@ -119,7 +100,7 @@ input:valid ~ label {
 .bar {
   position: relative;
   display: block;
-  width: 300px;
+  width: 200px;
 }
 .bar:before,
 .bar:after {
@@ -191,4 +172,75 @@ input:focus ~ .highlight {
     width: 0;
     background: transparent;
   }
+}
+
+@media (max-width: 800px) {
+  .flexbox-container {
+    position: relative;
+    top: 30vh;
+  }
+
+  .container {
+    height: 50%;
+  }
+
+  .circle {
+    background: white;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: background 1s;
+    opacity: 0.5;
+  }
+
+  .circle:hover {
+    opacity: 1;
+  }
+  p{
+    margin: 10px 0;
+  }
+
+  .location {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.5rem;
+    color: black;
+  }
+  .condition {
+    font-size: 0.6rem;
+    color: black;
+    text-transform: uppercase;
+    margin: -10px;
+  }
+
+  .temp {
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  input {
+    font-size: 1rem;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+    width: 80px;
+    border: none;
+    color: white;
+    border-bottom: 2px solid #000000;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 80px;
+}
+
+.group {
+  position: relative;
+    top: 30vh;
+}
 }

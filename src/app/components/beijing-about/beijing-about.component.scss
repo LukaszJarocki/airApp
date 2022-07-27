@@ -71,14 +71,12 @@ h3{
 
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
   $easing: cubic-bezier(0.4, 0, 0.2, 1);
-
   position: absolute;
   top: 50px;
   right: 100px;
-
   display: inline-block;
+  color: white;
   padding: 0.5em 2em;
-
   cursor: pointer;
   overflow: hidden;
 

@@ -25,12 +25,12 @@ export class NavSectionComponent {
 
   openDialog() {
     this.dialogRef.open(BookSectionComponent, {
-      width: '70vw',
+      width: '100vw',
       height: '100%',
       autoFocus: false,
     });
 
-    
+
   }
   toHome() {
     document

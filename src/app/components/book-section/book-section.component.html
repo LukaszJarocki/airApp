@@ -1,68 +1,14 @@
 <app-progress class="form" #progress (stateChange)="onStateChange($event)">
   <app-progress-step>
-    <h2 class="title">Book a flight</h2>
-    <p class="title-p">
-      Book a flight with Long Wings. Find best fares to destinations around the
-      world and explore the world with safety.
-      <br />* Please check the latest travel regulations before your fly.
-    </p>
-    <div class="btn-container-two">
-      <div class="carousel__btn">
-        <button type="submit" class="btn btn--right" (click)="goNext(progress)">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-arrow-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </app-progress-step>
-  <app-progress-step>
-    <form>
+    <div class="container-one">
       <h2 class="title">Book a flight</h2>
       <p class="title-p">
-        Book a flight with Long Wings. Find best fares to destinations around
-        the world and explore the world with safety.
+        Book a flight with Long Wings. Find best fares to destinations around the
+        world and explore the world with safety.
         <br />* Please check the latest travel regulations before your fly.
       </p>
-      <app-book-form-section (newTestToSend)="importEvent($event)">
-      </app-book-form-section>
-
-      <div class="btn-container-two">
-        <div class="carousel__btn">
-          <button
-            type="submit"
-            class="btn btn--left"
-            (click)="goPrev(progress)"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              class="bi bi-arrow-left"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-              />
-            </svg>
-          </button>
-          <button
-            type="submit"
-            class="btn btn--right"
-            (click)="goNext(progress)"
-          >
+      <div class="btn-container-one text-center">
+          <button type="button" class="btn btn-outline-dark" (click)="goNext(progress)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -78,31 +24,81 @@
             </svg>
           </button>
         </div>
-      </div>
+    </div>
+
+  </app-progress-step>
+  <app-progress-step>
+    <form>
+      <h2 class="title">Book a flight</h2>
+      <p class="title-p">
+        Book a flight with Long Wings. Find best fares to destinations around
+        the world and explore the world with safety.
+        <br />* Please check the latest travel regulations before your fly.
+      </p>
+      <app-book-form-section (newTestToSend)="importEvent($event)">
+      </app-book-form-section>
+        <div class="row text-center btn-container-two">
+          <div class="col-6 text-left">
+            <button type="button" class="btn btn-one btn-outline-dark" (click)="goPrev(progress)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-arrow-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" class="btn btn-two btn-outline-dark" (click)="goNext(progress)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
     </form>
   </app-progress-step>
 
   <app-progress-step>
-    <div class="step-tree" id="StepTree">
+    <div class="step-three" id="StepThree">
       <h2 class="title">Thank you for choosing our airline!</h2>
       <div class="btn-container">
         <div>
           <div class="book-info">
+            <div class="info-place">
+              <div *ngIf="ourObject.cityTo == 'Boston'"  >
+                <app-boston-about></app-boston-about>
+              </div>
+              <div *ngIf="ourObject.cityTo == 'London'"  >
+                <app-london-about></app-london-about>
+              </div>
+              <div *ngIf="ourObject.cityTo == 'Beijing'"  >
+                <app-beijing-about></app-beijing-about>
+              </div>
+              <div *ngIf="ourObject.cityTo == 'Tokyo'"  >
+                <app-tokyo-about></app-tokyo-about>
+              </div>
+            </div>
 
-            <div *ngIf="ourObject.cityTo == 'Boston'"  >
-              <app-boston-about></app-boston-about>
-            </div>
-            <div *ngIf="ourObject.cityTo == 'London'"  >
-              <app-london-about></app-london-about>
-            </div>
-            <div *ngIf="ourObject.cityTo == 'Beijing'"  >
-              <app-beijing-about></app-beijing-about>
-            </div>
-            <div *ngIf="ourObject.cityTo == 'Tokyo'"  >
-              <app-tokyo-about></app-tokyo-about>
-            </div>
-
-            <div class="ticket"  >
+            <div class="ticket" id="ticket" >
               <div class="container" >
                 <div class="left">
                   <div class="header">
@@ -114,9 +110,13 @@
                         ></a
                       >
                     </div>
-                    <div>
-                      <h3>Boarding Pass</h3>
-                      <p>Electronic ticket</p>
+                    <div class="ltr">
+                      <div>
+                        <h3>boarding pass</h3>
+                      </div>
+                      <div>
+                        <p>Electronic ticket</p>
+                      </div>
                     </div>
                   </div>
                   <div class="body">
@@ -397,7 +397,7 @@
                   </div>
                 </div>
                 <div class="right">
-                  <div class="right-header">
+                  <div class="header">
                     <div>
                       <a href="" class="navbar-brand"
                         ><span
@@ -415,7 +415,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="right-body">
+                  <div class="body">
                     <div class="fromto">
                       <h1 style="font-size: 15px">{{ ourObject.cityFrom }}</h1>
                       <svg
@@ -489,7 +489,7 @@
                       </svg>
                       <h1 style="font-size: 15px">{{ ourObject.cityTo }}</h1>
                     </div>
-                    <div class="right-info">
+                    <div class="info">
                       <div>
                         <div class="info-container-text-right">
                           <p>passenger name</p>
@@ -516,7 +516,7 @@
                             {{ ourObject.economy }} {{ ourObject.buissnes }}
                           </h2>
                         </div>
-        
+
                         <div class="info-container-text-right">
                           <p>class</p>
                           <h2>{{ ourObject.classOption }}</h2>
@@ -545,14 +545,17 @@
         </div>
       </div>
 
-      <div class="col-12 text-center">
-        <button type="submit" (click)="onNoClick()" class="closeBtn">
+      <div class="col-12 close-container text-center">
+
+        <button type="submit" (click)="onNoClick()" class="closeBtn text-center">
           <div class="navbar-brand">
             <span
               ><span class="word">Thank</span
               ><span class="word-small">YOU</span></span
             >
           </div>
+
+
         </button>
       </div>
     </div>

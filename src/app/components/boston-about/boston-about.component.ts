@@ -11,10 +11,5 @@ export class BostonAboutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  toTicket() {
-    document
-      .getElementById('ticket')
-      .scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-    console.log(this.toTicket);
-  }
+
 }

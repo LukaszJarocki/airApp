@@ -233,9 +233,7 @@ export class BookFormSectionComponent {
     return seats;
   }
 
-  toStepTree() {
-    this.router.navigate(['/BookSectionComponent#treeStep']);
-  }
+ 
 
 ///////////////
 
