@@ -3,7 +3,7 @@
     <div class="form-section ">
       <div class="planeIcon text-center">
         <img
-          src="https://github.com/kkannen/web-workbook/blob/gh-pages/03week/airplane/img/plane-icon.png?raw=true"
+          src="../../../assets/icon/plane-icon.png"
           alt="Plane icon"
         />
         <span class="tytle-text">Booking form</span>
@@ -131,6 +131,18 @@
             <img src="../../../assets/icon/luggage.png" class="check-input-icon" alt="" >
           </div>
 
+          <div class="col-12 text-center " style="margin:30px 0;">
+
+            <button
+
+              type="submit"
+              #btnAccept
+              class="btn btn-primary"
+              [disabled]="visitorDataForm.invalid"
+            >
+              RESERVE A SEAT
+            </button>
+          </div>
         <div class="col-12 text-center  announcement">
           <h3 *ngIf="!this.selected || this.selected.length == 0">
             Please select a seat!
@@ -140,18 +152,6 @@
           <span #seatSelectedData style="color: white"
             >Price flight: {{ seatEconomy }}{{ seatBusiness }}</span
           >
-        </div>
-        <div class="col-12 text-center ">
-
-          <button
-
-            type="submit"
-            #btnAccept
-            class="btn btn-primary"
-            [disabled]="visitorDataForm.invalid"
-          >
-            RESERVE A SEAT
-          </button>
         </div>
       </form>
     </div>

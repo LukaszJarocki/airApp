@@ -1,9 +1,8 @@
 import { NavSectionComponent } from './../nav-section/nav-section.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BookFormSectionComponent } from './../book-form-section/book-form-section.component';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ProgressComponent } from '../progress/progress.component';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 interface PassengerName {
   string;
@@ -43,7 +42,12 @@ export class BookSectionComponent implements OnInit {
   }
 
   onNoClick(): void {
+
+
+
     this.dialogRef.close();
+
+
   }
 
   onStateChange(event: any) {

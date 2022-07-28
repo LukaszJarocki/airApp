@@ -1,6 +1,6 @@
 <app-progress class="form" #progress (stateChange)="onStateChange($event)">
   <app-progress-step>
-    <div class="container-one">
+    <div class="container-header">
       <h2 class="title">Book a flight</h2>
       <p class="title-p">
         Book a flight with Long Wings. Find best fares to destinations around the
@@ -29,12 +29,15 @@
   </app-progress-step>
   <app-progress-step>
     <form>
-      <h2 class="title">Book a flight</h2>
-      <p class="title-p">
-        Book a flight with Long Wings. Find best fares to destinations around
-        the world and explore the world with safety.
-        <br />* Please check the latest travel regulations before your fly.
-      </p>
+      <div class="container-header">
+        <h2 class="title">Book a flight</h2>
+        <p class="title-p">
+          Book a flight with Long Wings. Find best fares to destinations around
+          the world and explore the world with safety.
+          <br />* Please check the latest travel regulations before your fly.
+        </p>
+      </div>
+
       <app-book-form-section (newTestToSend)="importEvent($event)">
       </app-book-form-section>
         <div class="row text-center btn-container-two">
@@ -78,8 +81,11 @@
   </app-progress-step>
 
   <app-progress-step>
-    <div class="step-three" id="StepThree">
+    <div class="step-three container-header" id="StepThree">
       <h2 class="title">Thank you for choosing our airline!</h2>
+      <a  (click)="onNoClick()" class="closeBtn">
+        <img src="../../../assets/icon/cross.png" alt="">
+      </a>
       <div class="btn-container">
         <div>
           <div class="book-info">
@@ -530,14 +536,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="rbottom">
-                    <div class="footerr">
-                      <h3 class="right-footer">boarding</h3>
-                      <div class="footerfiller" style="padding: 25px 100px">
-                        10:25
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -545,19 +544,10 @@
         </div>
       </div>
 
-      <div class="col-12 close-container text-center">
-
-        <button type="submit" (click)="onNoClick()" class="closeBtn text-center">
-          <div class="navbar-brand">
-            <span
-              ><span class="word">Thank</span
-              ><span class="word-small">YOU</span></span
-            >
-          </div>
 
 
-        </button>
-      </div>
+
+
     </div>
   </app-progress-step>
 </app-progress>
