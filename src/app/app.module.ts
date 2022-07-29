@@ -28,11 +28,9 @@ import { BookSectionComponent } from './components/book-section/book-section.com
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { OfferSectionComponent } from './components/offer-section/offer-section.component';
 import { AirbusInfoSectionComponent } from './components/airbus-info-section/airbus-info-section.component';
-import { TestComponent } from './components/test/test.component';
 import { EmbraerInfoSectionComponent } from './components/embraer-info-section/embraer-info-section.component';
 import { BoeingInfoSectionComponent } from './components/boeing-info-section/boeing-info-section.component';
 import { APIWeatherSectionComponent } from './components/api-weather-section/api-weather-section.component';
-import { ParisAboutComponent } from './components/paris-about/paris-about.component';
 import { MatSelectModule } from '@angular/material/select';
 import { BostonAboutComponent } from './components/boston-about/boston-about.component';
 import { LondonAboutComponent } from './components/london-about/london-about.component';
@@ -55,11 +53,9 @@ import { BeijingAboutComponent } from './components/beijing-about/beijing-about.
     AboutSectionComponent,
     OfferSectionComponent,
     AirbusInfoSectionComponent,
-    TestComponent,
     EmbraerInfoSectionComponent,
     BoeingInfoSectionComponent,
     APIWeatherSectionComponent,
-    ParisAboutComponent,
     BostonAboutComponent,
     LondonAboutComponent,
     TokyoAboutComponent,

@@ -1,9 +1,9 @@
 * {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 .jumbotron {
   position: relative;
+  /* -------------------------------------FORM SECTION----------------------------------- */
   .form-section {
     position: absolute;
     top: 50%;
@@ -16,19 +16,16 @@
     padding-bottom: 100px;
     background-color: rgba(255, 255, 255, 0.142);
     z-index: 100;
-
     .planeIcon {
       padding: 5px;
       background-color: #095eb9;
       width: 100%;
       border-radius: 5px 0px 0px 0px;
     }
-
     .input-wrap {
       position: relative;
       margin: 20px;
     }
-
     .input-wrap input {
       background: none;
       color: black;
@@ -39,7 +36,6 @@
       border-bottom: 1px solid #ccc;
       border-radius: 0.3em;
     }
-
     .input-wrap label {
       position: absolute;
       color: black;
@@ -50,7 +46,6 @@
       top: 10px;
       transition: 300ms ease all;
     }
-
     input:focus {
       outline: none;
     }
@@ -80,8 +75,7 @@
     }
   }
 }
-
-//////////////Select///////////////////
+/* -------------------------------------SELECT INPUT----------------------------------- */
 .select-one {
   /* Reset Select */
   appearance: none;
@@ -150,9 +144,7 @@ select {
   height: 30px;
   margin-left: 5px;
 }
-
-/////////////DATEPICKER
-///
+/* -------------------------------------DATEPICKER----------------------------------- */
 .datepicker {
   top: 0;
   left: 0;
@@ -329,16 +321,14 @@ select {
   height: 16px;
 }
 
-/////////////NUMBER
-///
+/* -------------------------------------NUMBER INPUT----------------------------------- */
+
 input[type="number"],
 textarea {
   background-color: transparent;
   border: none;
 }
-
-//////SVG/////
-
+/* -------------------------------------SVG----------------------------------- */
 svg {
   position: relative;
   top: 450px;
@@ -374,8 +364,8 @@ svg {
   }
 }
 
+/* -------------------------------------RWD----------------------------------- */
 @media (max-width: 800px) {
-
   .jumbotron {
     position: relative;
     .form-section {

@@ -17,9 +17,7 @@ export class BookSectionComponent implements OnInit {
 
   ourObject: any = {};
   passengerNameData = '';
-  constructor(
-    public dialogRef: MatDialogRef<NavSectionComponent>
-  ) {}
+  constructor(public dialogRef: MatDialogRef<NavSectionComponent>) {}
   @Input()
   passengerName: PassengerName;
 
@@ -37,27 +35,15 @@ export class BookSectionComponent implements OnInit {
     console.log(progress);
   }
 
-  goPrev(progress: ProgressComponent){
-    progress.prev()
+  goPrev(progress: ProgressComponent) {
+    progress.prev();
   }
 
   onNoClick(): void {
-
-
-
     this.dialogRef.close();
-
-
   }
 
   onStateChange(event: any) {
     console.log(event);
-  }
-
-  toTicket() {
-    document
-      .getElementById('ticket')
-      .scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-    console.log(this.toTicket);
   }
 }

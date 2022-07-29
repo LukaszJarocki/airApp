@@ -9,8 +9,7 @@
         <span class="tytle-text">Booking form</span>
       </div>
       <form [formGroup]="visitorDataForm" (ngSubmit)="addVisitDetails()">
-
-          <!--NAME-->
+<!-----------------------------------NAME INPUT------------------------------->
           <div class="input-wrap col-12 select-one">
             <input
               type="text"
@@ -19,12 +18,11 @@
               [(ngModel)]="passengerName"
               #passengerNameData
               id="passengerName"
-              required
-            />
+              required            />
             <label>Name</label>
-            <img src="../../../assets/icon/user.png" class="check-input-icon-form" alt="" >
+            <img src="../../../assets/icon/user.png" class="check-input-icon-form" >
           </div>
-          <!-- FAMILY NAME-->
+<!-----------------------------------FAMILY NAME INPUT------------------------------->
           <div class="input-wrap col-12 select-one">
             <input
               type="text"
@@ -33,13 +31,11 @@
               #passengerFamilyNameData
               class="textForm"
               id="passengerFamilyName"
-              required
-            />
+              required/>
             <label>Family name</label>
-            <img src="../../../assets/icon/user.png" class="check-input-icon-form" alt="" >
+            <img src="../../../assets/icon/user.png" class="check-input-icon-form">
           </div>
-
-          <!--FROM-->
+<!-----------------------------------FROM INPUT------------------------------->
           <div class="input-wrap col-12 select">
             <select
               type="text"
@@ -47,15 +43,14 @@
               [(ngModel)]="selectedOptionCityFrom"
               #cityFromDataValue
               id="cityFrom"
-              [value]="from"
-            >
+              [value]="from">
               <option *ngFor="let cityFrom of optionsCityFrom">
                 {{ cityFrom.from }}
               </option>
             </select>
-            <img src="../../../assets/icon/plane-start.png" class="check-input-icon-select" alt="" >
+            <img src="../../../assets/icon/plane-start.png" class="check-input-icon-select">
           </div>
-          <!--TO-->
+<!-----------------------------------TO INPUT------------------------------->
           <div class="input-wrap col-md-12 select">
             <select
               type="text"
@@ -63,16 +58,14 @@
               [(ngModel)]="selectedOptionCityTo"
               #cityToDataValue
               id="inputTo"
-              [value]="to"
-            >
+              [value]="to">
               <option *ngFor="let cityTo of optionsCityTo">
                 {{ cityTo.to }}
               </option>
             </select>
-            <img src="../../../assets/icon/plane-end.png" class="check-input-icon-select" alt="" >
+            <img src="../../../assets/icon/plane-end.png" class="check-input-icon-select">
           </div>
-
-          <!--DATA-->
+<!-----------------------------------DATA INPUT------------------------------->
           <div class="input-wrap col-12 select-one">
             <input
               type="date"
@@ -80,11 +73,9 @@
               formControlName="dateDepar"
               #dateBordValue
               class="textForm-bottom-row datepicker"
-              id="inputDate"
-            />
+              id="inputDate"/>
           </div>
-
-          <!--NUM PASSENGER-->
+<!-----------------------------------NUMBER OF PASSENGER INPUT------------------------------->
           <div class="input-wrap col-12 select-one">
             <input
               type="number"
@@ -95,26 +86,26 @@
               #dateBordValue
               class="textForm-bottom-row"
               id="inputDate"
-              placeholder="0"
-            />
+              placeholder="0"/>
             <label>Passenger volume</label>
           </div>
-
-          <!-- CLASS-->
+<!-----------------------------------CLASS INPUT------------------------------->
           <div class="input-wrap col-12 select">
             <select
               [(ngModel)]="selectedOptionClass"
               id="inputClass"
               formControlName="class"
               class="textForm-bottom-row"
-              [value]="class"
-            >
+              [value]="class">
               <option *ngFor="let flyClass of optionsClass">
                 {{ flyClass.class }}
               </option>
             </select>
-            <img src="../../../assets/icon/seat (1).png" style="height: 20px;width: 20px; right: 10px; top: 15px" class="check-input-icon-select" alt="" >
+            <img src="../../../assets/icon/seat (1).png"
+            style="height: 20px;width: 20px; right: 10px; top: 15px"
+            class="check-input-icon-select">
           </div>
+<!-----------------------------------LUGGAGE CHECKBOX------------------------------->
           <div class="col-12 text-center">
             <input
               class="form-check-input"
@@ -122,55 +113,52 @@
               type="checkbox"
               value=""
               id="luggage"
-              formControlName="luggage"
-            />
-
+              formControlName="luggage"/>
             <label class="text-check-input check-input-style" for="defaultCheck1">
               Additional luggage ( +30kg)
             </label>
-            <img src="../../../assets/icon/luggage.png" class="check-input-icon" alt="" >
+            <img src="../../../assets/icon/luggage.png" class="check-input-icon">
           </div>
-
-          <div class="col-12 text-center " style="margin:30px 0;">
-
+<!-----------------------------------RESERVATION BUTTON------------------------------->
+          <div class="col-12 text-center "
+          style="margin-top:20px;
+                margin-bottom: 60px;">
             <button
-
               type="submit"
               #btnAccept
               class="btn btn-primary"
-              [disabled]="visitorDataForm.invalid"
-            >
+              [disabled]="visitorDataForm.invalid">
               RESERVE A SEAT
             </button>
           </div>
+<!-----------------------------------NG IF SECTION------------------------------->
         <div class="col-12 text-center  announcement">
           <h3 *ngIf="!this.selected || this.selected.length == 0">
             Please select a seat!
           </h3>
         </div>
+<!-----------------------------------PRICE FLY------------------------------->
         <div class="col-12 text-center" style="margin-bottom: 15px">
           <span #seatSelectedData style="color: white"
-            >Price flight: {{ seatEconomy }}{{ seatBusiness }}</span
-          >
+            >Price flight: {{ seatEconomy }}{{ seatBusiness }}</span>
         </div>
       </form>
     </div>
   </div>
+<!-----------------------------------SVG------------------------------->
   <div class="box-bottom"
   style="z-index: 0;"
   *ngIf="!passenger|| passenger.length !== 0">
     <svg
       version="1.1"
       id="whole_x5F_plane"
-
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
       viewBox="0 0 425 1467.9"
       style="enable-background: new 0 0 300 1467.9; width: 300px"
-      xml:space="preserve"
-    >
+      xml:space="preserve">
       <style type="text/css">
         .st0 {
           clip-path: url(#SVGID_15_);

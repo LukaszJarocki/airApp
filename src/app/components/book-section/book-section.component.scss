@@ -44,7 +44,7 @@ body {
 }
 
 
-///////////card///////////////////
+/* -------------------------------------CARD----------------------------------- */
 .container {
   display: flex;
   justify-content: center;
@@ -180,17 +180,15 @@ color: black;
   bottom: 10px;
 }
 
-///////////////CLOSE ///////////
-
-  .closeBtn {
-    position:fixed;
-right: 10px;
-top: 10px;
-width: 20px;
+/* -------------------------------------CLOSE BUTTON----------------------------------- */
+.closeBtn {
+  position:fixed;
+  right: 10px;
+  top: 10px;
+  width: 20px;
   }
 
-
-/////////////BUTTONS
+/* -------------------------------------BUTTONS----------------------------------- */
 .btn-container-one {
   text-align: center;
   .btn {
@@ -205,17 +203,9 @@ width: 20px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   z-index: 500;
-  .btn-one {
-    margin-right: 160px;
-    z-index: 500;
-  }
-  .btn-two {
-    margin-left: 160px;
-    z-index: 500;
-  }
 }
 
-/////////////RWD////////////
+/* -------------------------------------RWD----------------------------------- */
 
 @media (max-width: 800px) {
   .container-header{
@@ -241,19 +231,11 @@ width: 20px;
 }
 .btn-container-two {
   position: absolute;
-  top: 880px;
-  left: 44%;
+  top: 815px;
+  left: 50%;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   z-index: 500;
-  .btn-one {
-    margin-right: 80px;
-    z-index: 500;
-  }
-  .btn-two {
-    margin-left: 80px;
-    z-index: 500;
-  }
 }
 
 

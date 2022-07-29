@@ -30,24 +30,21 @@ export class BookFormSectionComponent {
   optionsClass = [
     { class: 'Change class', value: 0 },
     { class: 'Economy', value: 1 },
-    { class: 'Business', value: 2 },
-  ];
+    { class: 'Business', value: 2 },];
   selectedOptionCityFrom: string = '';
   optionsCityFrom = [
     { from: 'Change city', value: 'city' },
     { from: 'Katowice', value: 'katowice' },
     { from: 'Warszawa', value: 'warszawa' },
     { from: 'Gdańsk', value: 'warszawa' },
-    { from: 'Poznań', value: 'warszawa' },
-  ];
+    { from: 'Poznań', value: 'warszawa' },];
   selectedOptionCityTo: string = '';
   optionsCityTo: any[] = [
     { to: 'Change city', value: 'city' },
     { to: 'London', value: '1500' },
     { to: 'Boston', value: '3000' },
     { to: 'Beijing', value: '2700' },
-    { to: 'Tokyo', value: '4000' },
-  ];
+    { to: 'Tokyo', value: '4000' },];
   filas = [
     { y: 250, x: [154.8, 175.2, 195.5, 0, 0, 0] },
     { y: 281.9, x: [154.8, 175.2, 195.5, 245.1, 265.5, 285.8] },
@@ -74,8 +71,7 @@ export class BookFormSectionComponent {
     { y: 1030.4, x: [154.8, 175.2, 195.5, 245.1, 265.5, 285.8] },
     { y: 1062.3, x: [154.8, 175.2, 195.5, 245.1, 265.5, 285.8] },
     { y: 1094.2, x: [154.8, 175.2, 195.5, 245.1, 265.5, 285.8] },
-    { y: 1126.1, x: [154.8, 175.2, 195.5, 245.1, 265.5, 285.8] },
-  ];
+    { y: 1126.1, x: [154.8, 175.2, 195.5, 245.1, 265.5, 285.8] },];
   letras = ['A', 'B', 'C', 'D', 'E', 'F'];
   status: any = this.filas.map((x) => [
     'free',
@@ -83,8 +79,7 @@ export class BookFormSectionComponent {
     'free',
     'free',
     'free',
-    'free',
-  ]);
+    'free',]);
 
   economyTicketPrice: number = 1000;
   BusinessTicketPrice: number = 2000;
@@ -98,8 +93,7 @@ export class BookFormSectionComponent {
   constructor(
     private airportDataService: AirportDataService,
     private fb: FormBuilder,
-    private router: Router
-  ) {
+    private router: Router) {
     this.visitorDataForm = this.fb.group({
       passengerName: ['', Validators.required],
       passengerFamilyName: ['', Validators.required],
@@ -113,7 +107,7 @@ export class BookFormSectionComponent {
       luggage: [''],
     });
   }
-
+  /* -------------------------------------ngOnInit----------------------------------- */
   ngOnInit() {
     this.getVisitorsData();
     const booked = ['1A', '2D', '5D', '7A', '15F', '26B'];
@@ -122,11 +116,9 @@ export class BookFormSectionComponent {
         this.letras.findIndex((l) => l == x.slice(-1))
       ] = 'booked';
     });
-
   }
 
-
-
+/* -------------------------------------addVisitDetails----------------------------------- */
   addVisitDetails() {
     const dataForm: any = {
       passengerName: this.visitorDataForm.get('passengerName')?.value,
@@ -142,8 +134,6 @@ export class BookFormSectionComponent {
       luggage: this.visitorDataForm.get('luggage')?.value,
       passenger: this.visitorDataForm.get('passenger')?.value,
     };
-
-
 
     if(!this.selected || this.selected.length == 0 ){
       console.log('Select',this.selected);
@@ -206,8 +196,7 @@ export class BookFormSectionComponent {
     });
   }
 
-
-  ////////////CHECK SEATS////////////////////////
+  /* -------------------------------------CHECK SEAT----------------------------------- */
 
   click(fila: any, column: any) {
     if (this.status[fila][column] == 'free'  && this.count() < this.passenger)
@@ -233,10 +222,11 @@ export class BookFormSectionComponent {
     return seats;
   }
 
- 
+/* -------------------------------------GO NEXT----------------------------------- */
 
-///////////////
-
-
+goNext(progress: ProgressComponent) {
+  progress.next();
+  console.log(progress);
+}
 
 }

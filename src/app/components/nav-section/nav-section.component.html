@@ -1,8 +1,7 @@
 <nav
   class="navbar"
   (scroll)="onscroll()"
-  [ngClass]="navbarfixed ? 'fixed' : 'nav'"
->
+  [ngClass]="navbarfixed ? 'fixed' : 'nav'">
   <div class="container-nav">
     <input type="checkbox" id="check" />
     <label for="check" class="checkbtn">
@@ -10,17 +9,18 @@
         <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
       </svg>
     </label>
+    <!-----------------------------------LOGO------------------------------->
     <a href="" class="navbar-brand"
       ><span><span class="word">LO</span><span class="word-small">NG-wings</span></span></a
     >
+    <!-----------------------------------MENU LIST------------------------------->
     <ul class="ul-list">
-      <li>
-        <a (click)="toHome()" routerLink="/home"   routerLinkActive="active">Home</a>
-      </li>
+      <li><a (click)="toHome()" routerLink="/home"   routerLinkActive="active">Home</a></li>
       <li><a (click)="toAbout()" routerLink="/about" routerLinkActive="active">About</a></li>
       <li><a (click)="toOffer()" routerLink="/offer" routerLinkActive="active">Offer</a></li>
       <li><a (click)="toDestination()" routerLink="/destination" routerLinkActive="active">Destination</a></li>
       <li>
+        <!-----------------------------------BOOKING BUTTON------------------------------->
         <button type="button" class="learn-more" (click)="openDialog()">
           <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>

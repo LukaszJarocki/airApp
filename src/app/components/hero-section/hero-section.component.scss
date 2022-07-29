@@ -9,7 +9,6 @@ header {
   background-size: cover;
   margin-top: -80px;
 }
-
 .flex-item {
   position: absolute;
   left: 50px;
@@ -21,7 +20,6 @@ header .dark-window {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.281);
 }
-
 header .intro-text .intro-lead-in {
   padding-top: 300px;
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -29,7 +27,6 @@ header .intro-text .intro-lead-in {
   font-style: italic;
   line-height: 22px;
 }
-
 header .intro-text .intro-heading {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -40,6 +37,8 @@ header .intro-text .intro-heading {
   line-height: 80px;
 }
 
+/* -------------------------------------RWD----------------------------------- */
+
 @media (max-width: 768px) {
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -47,7 +46,6 @@ header .intro-text .intro-heading {
     font-style: italic;
     line-height: 20px;
   }
-
   header .intro-text .intro-heading {
     margin-bottom: 40px;
     text-transform: uppercase;
@@ -56,5 +54,4 @@ header .intro-text .intro-heading {
     font-weight: 700;
     line-height: 45px;
   }
-
 }

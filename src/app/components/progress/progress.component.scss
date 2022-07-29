@@ -7,7 +7,6 @@
   grid-row-gap: 120px;
   justify-content: center;
   grid-template-columns: min-content;
-
   .step-progress {
     margin-top: 120px;
     padding: 0;
@@ -15,7 +14,6 @@
     grid-row: 1 / 2;
     align-self: center;
   }
-
   .step-content {
     margin-top: 40px;
     position: relative;
@@ -24,18 +22,15 @@
     grid-column: 1 / -1;
   }
 }
-
 .container {
   display: inline-flex;
   padding: 130px;
   position: relative;
-
   svg#checkbox {
     width: 48px;
     height: 48px;
     stroke: #1b9bff;
     stroke-width: 6;
-
     .circle {
       stroke-dasharray: 320;
       stroke-dashoffset: 320;
@@ -43,7 +38,6 @@
       transition: stroke-dashoffset 0.5s,
         fill 0.5s 0.3s cubic-bezier(0.45, 0, 0.55, 1);
     }
-
     .check {
       stroke-dasharray: 70;
       stroke-dashoffset: 70;
@@ -53,12 +47,10 @@
     }
   }
 }
-
 .check-box {
   display: flex;
   align-items: center;
   position: relative;
-
   .info {
     position: absolute;
     bottom: -60px;
@@ -78,17 +70,14 @@
       border-radius: 20px;
       transition: background-color 0.1s ease-in-out;
     }
-
     span.progress-info.in-progress {
       background-color: #ffffff;
       color: rgb(0, 0, 0);
     }
-
     span.progress-info.completed {
       background-color: #095eb9;
       color: rgb(0, 0, 0);
     }
-
     span.step {
       margin-left: 10px;
       text-transform: uppercase;
@@ -99,7 +88,6 @@
     }
   }
 }
-
 .progress-line {
   width: 250px;
   margin: 0 10px;
@@ -108,28 +96,24 @@
   display: inline-block;
   background: #959595;
   border-radius: 10px;
-
   .progress-percent {
     height: inherit;
     width: 0%;
     transition: all 0.5s 0.5s cubic-bezier(0.45, 0, 0.55, 1);
   }
 }
-
 .progress-line.active {
   .progress-percent {
     background: #ffffff;
     width: 50%;
   }
 }
-
 .progress-line.complete {
   .progress-percent {
     width: 100%;
     background: #095eb9;
   }
 }
-
 .check-box.active {
   svg#checkbox {
     .circle {
@@ -143,17 +127,16 @@
       stroke-dashoffset: 0;
       fill: #095eb9;
     }
-
     .check {
       stroke-dashoffset: 0;
     }
   }
 }
 
+/* -------------------------------------RWD----------------------------------- */
 
 @media (max-width: 800px) {
   .container {
     display: none;
-
 }
 }
