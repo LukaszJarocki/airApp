@@ -1,53 +1,46 @@
-<!-- Site footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-6">
         <h6>About</h6>
         <p class="text-justify">
-          LongWings is the flag carrier airline of the United
-          Kingdom. It is headquartered in London, England, near its main hub at
-          Heathrow Airport. The airline is the first largest UK based
-          carrier, based on fleet size and passengers carried. LongWings is the first
-          passenger airline to have generated more than US$1 billion on a single
-          air route in a year (from 1 April 2017, to 31 March 2018, on the New
-          York-JFK - London-Heathrow route). LW was created in 1974 after a
-          LongWings Board was established by the British government to
-          manage the two nationalised airline corporations, British Overseas
-          Airways Corporation and British European Airways, and two regional
-          airlines, Cambrian Airways and Northeast Airlines.
+          LongWings is the flag carrier airline of the United Kingdom. It is
+          headquartered in London, England, near its main hub at Heathrow
+          Airport. The airline is the first largest UK based carrier, based on
+          fleet size and passengers carried. LongWings is the first passenger
+          airline to have generated more than US$1 billion on a single air route
+          in a year (from 1 April 2017, to 31 March 2018, on the New York-JFK -
+          London-Heathrow route). LW was created in 1974 after a LongWings Board
+          was established by the British government to manage the two
+          nationalised airline corporations, British Overseas Airways
+          Corporation and British European Airways, and two regional airlines,
+          Cambrian Airways and Northeast Airlines.
         </p>
       </div>
-
+<!-----------------------------------OFFER LIST------------------------------->
       <div class="col-xs-6 col-md-3">
         <h6>Categories</h6>
         <ul class="footer-links">
           <li><a href="">Plane</a></li>
-          <li>
-            <a href=""
-              >Hotel</a
-            >
-          </li>
-          <li>
-            <a href=""
-              >Cars</a
-            >
-          </li>
+          <li><a href="">Hotel</a></li>
+          <li><a href="">Cars</a></li>
         </ul>
       </div>
-
-      <div class="col-xs-6 col-md-3">
+<!-----------------------------------MENU LIST------------------------------->
+      <div class="col-xs-6 col-md-2">
         <h6>Quick Links</h6>
         <ul class="footer-links">
-          <li><a href="http://scanfcode.com/about/">Home</a></li>
-          <li><a href="http://scanfcode.com/about/">Our fleet</a></li>
-          <li><a href="http://scanfcode.com/contact/">Offers</a></li>
-          <li>
-            <a href="http://scanfcode.com/contribute-at-scanfcode/"
-              >Destination</a
-            >
-          </li>
+          <li><a (click)="toHome()" routerLink="/home"   routerLinkActive="active">Home</a></li>
+          <li><a (click)="toAbout()" routerLink="/about" routerLinkActive="active">About</a></li>
+          <li><a (click)="toOffer()" routerLink="/offer" routerLinkActive="active">Offer</a></li>
+          <li><a (click)="toDestination()" routerLink="/destination" routerLinkActive="active">Destination</a></li>
         </ul>
+      </div>
+<!-----------------------------------ARROW TO TOP------------------------------->
+      <div class="col-xs-6 col-md-1 arrow-icon">
+        <svg (click)="onActive()" xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+        </svg>
       </div>
     </div>
     <hr />
@@ -60,21 +53,13 @@
           <a href="#">LongWings</a>.
         </p>
       </div>
-
+<!-----------------------------------SOCIAL LINKS------------------------------->
       <div class="col-md-4 col-sm-6 col-xs-12">
         <ul class="social-icons">
-          <li>
-            <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-          </li>
-          <li>
-            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-          </li>
-          <li>
-            <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-          </li>
-          <li>
-            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-          </li>
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a> </li>
+          <li> <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
         </ul>
       </div>
     </div>

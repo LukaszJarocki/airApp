@@ -1,196 +1,155 @@
-<div class="container-form">
-  <div class="row">
-    <div class="col-sm-5">
-      <form
-  class="bookingBox"
-  [formGroup]="visitorDataForm"
-  (ngSubmit)="addVisitDetails()"
->
-  <section class="planePic">
-    <img
-      src="https://github.com/kkannen/web-workbook/blob/gh-pages/03week/airplane/img/plane-icon.png?raw=true"
-      alt="lil plane pic"
-    />
-  </section>
-
 <div class="container">
-   <!--FROM ... TO-->
-   <div class="row-icon row">
-    <div class="col-sm-6">
-      <label for="inputFrom" class="text icon icon-from">Depart:</label>
-    </div>
-    <div class="col-sm-6">
-      <label for="inputTo" class="text icon icon-to">Arrive:</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <select
-        id="inputFrom"
-        [(ngModel)]="selectedOptionCityFrom"
-        formControlName="cityFrom"
-        class="textForm"
-        [value]="from"
-      >
-        <option *ngFor="let cityFrom of optionsCityFrom">
-          {{ cityFrom.from }}
-        </option>
-      </select>
-    </div>
-    <div class="col-sm-6">
-      <select
-        [(ngModel)]="selectedOptionCityTo"
-        id="inputTo"
-        formControlName="cityTo"
-        class="textForm"
-        [value]="to"
-      >
-        <option *ngFor="let cityTo of optionsCityTo">{{ cityTo.to }}</option>
-      </select>
-    </div>
-  </div>
-    <!--DATA ... CLASS-->
-    <div class="row-icon row">
-      <div class="col-sm-6">
-        <label for="inputFrom" class="text icon icon-text">Departure date:</label>
-      </div>
-      <div class="col-sm-6">
-        <label for="inputTo" class="text icon icon-luggage">Class:</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <input
-          type="date"
-          formControlName="dateDepar"
-          class="textForm"
-          id="inputDate"
+  <div class="jumbotron">
+    <div class="form-section ">
+      <div class="planeIcon text-center">
+        <img
+          src="../../../assets/icon/plane-icon.png"
+          alt="Plane icon"
         />
+        <span class="tytle-text">Booking form</span>
       </div>
-      <div class="col-sm-6">
-        <select
-          [(ngModel)]="selectedOptionClass"
-          id="inputClass"
-          formControlName="class"
-          class="textForm"
-          [value]="class"
-        >
-          <option *ngFor="let flyClass of optionsClass">
-            {{ flyClass.class }}
-          </option>
-        </select>
-      </div>
-    </div>
-    <!--ADULT ... KIDS-->
-    <div class="row-icon row">
-      <div class="col-sm-6">
-        <label for="inputFrom " class="text icon icon-adult">Adult passenger:</label>
-      </div>
-      <div class="col-sm-6">
-        <label for="inputTo" class="text icon icon-kids">Kids passenger:</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <input
-        type="number"
-        formControlName="adults"
-        class="textForm"
-        id="inputDate"
-      />
-      </div>
-      <div class="col-sm-6">
-        <input
-        type="number"
-        formControlName="kids"
-        class="textForm"
-        id="inputDate"
-      />
-      </div>
-    </div>
-</div>
-<div class="row-btn row text-center">
-  <button
-  type="submit"
-  class="btn btn-primary"
-  [disabled]="visitorDataForm.invalid"
-  (click)="showMyContainer = !showMyContainer"
->
-  RESERVE A SEAT
-</button>
-</div>
-
-</form>
-<div *ngIf="showMyContainer">
-  <div class="book-info">
-    <div class="box">
-      <ul class="left">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-
-      <ul class="right">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="ticket">
-        <span class="airline"><span style="color: #1B9BFF;">LO</span>NG WINGS</span>
-        <span class="airline airlineslip">Long Wings</span>
-        <span class="boarding">Boarding pass</span>
-        <div class="content">
-          <span class="jfk">{{selectedOptionCityFrom}}</span>
-          <span class="plane"><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-          <span class="sfo">{{selectedOptionCityTo}}</span>
-
-          <span class="jfk jfkslip">{{selectedOptionCityFrom}}</span>
-          <span class="plane planeslip"><svg clip-rule="evenodd" fill-rule="evenodd" height="40" width="40" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-          <span class="sfo sfoslip">{{selectedOptionCityTo}}</span>
-          <div class="sub-content">
-            <span class="watermark">Lufthansa</span>
-            <span class="name">PASSENGER NAME<br><span>Rex, Anonasaurus</span></span>
-            <span class="flight">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-            <span class="gate">GATE<br><span>11B</span></span>
-            <span class="seat">SEAT<br><span>45A</span></span>
-            <span class="boardingtime">BOARDING TIME<br><span>8:25PM ON AUGUST 2013</span></span>
-
-             <span class="flight flightslip">FLIGHT N&deg;<br><span>X3-65C3</span></span>
-              <span class="seat seatslip">SEAT<br><span>45A</span></span>
-             <span class="name nameslip">PASSENGER NAME<br><span>Rex, Anonasaurus</span></span>
+      <form [formGroup]="visitorDataForm" (ngSubmit)="addVisitDetails()">
+<!-----------------------------------NAME INPUT------------------------------->
+          <div class="input-wrap col-12 select-one">
+            <input
+              type="text"
+              formControlName="passengerName"
+              class="textForm"
+              [(ngModel)]="passengerName"
+              #passengerNameData
+              id="passengerName"
+              required            />
+            <label>Name</label>
+            <img src="../../../assets/icon/user.png" class="check-input-icon-form" >
           </div>
+<!-----------------------------------FAMILY NAME INPUT------------------------------->
+          <div class="input-wrap col-12 select-one">
+            <input
+              type="text"
+              formControlName="passengerFamilyName"
+              [(ngModel)]="passengerFamilyName"
+              #passengerFamilyNameData
+              class="textForm"
+              id="passengerFamilyName"
+              required/>
+            <label>Family name</label>
+            <img src="../../../assets/icon/user.png" class="check-input-icon-form">
+          </div>
+<!-----------------------------------FROM INPUT------------------------------->
+          <div class="input-wrap col-12 select">
+            <select
+              type="text"
+              formControlName="cityFrom"
+              [(ngModel)]="selectedOptionCityFrom"
+              #cityFromDataValue
+              id="cityFrom"
+              [value]="from">
+              <option *ngFor="let cityFrom of optionsCityFrom">
+                {{ cityFrom.from }}
+              </option>
+            </select>
+            <img src="../../../assets/icon/plane-start.png" class="check-input-icon-select">
+          </div>
+<!-----------------------------------TO INPUT------------------------------->
+          <div class="input-wrap col-md-12 select">
+            <select
+              type="text"
+              formControlName="cityTo"
+              [(ngModel)]="selectedOptionCityTo"
+              #cityToDataValue
+              id="inputTo"
+              [value]="to">
+              <option *ngFor="let cityTo of optionsCityTo">
+                {{ cityTo.to }}
+              </option>
+            </select>
+            <img src="../../../assets/icon/plane-end.png" class="check-input-icon-select">
+          </div>
+<!-----------------------------------DATA INPUT------------------------------->
+          <div class="input-wrap col-12 select-one">
+            <input
+              type="date"
+              [(ngModel)]="dateDepar"
+              formControlName="dateDepar"
+              #dateBordValue
+              class="textForm-bottom-row datepicker"
+              id="inputDate"/>
+          </div>
+<!-----------------------------------NUMBER OF PASSENGER INPUT------------------------------->
+          <div class="input-wrap col-12 select-one">
+            <input
+              type="number"
+              min="1"
+              max="5"
+              [(ngModel)]="passenger"
+              formControlName="passenger"
+              #dateBordValue
+              class="textForm-bottom-row"
+              id="inputDate"
+              placeholder="0"/>
+            <label>Passenger volume</label>
+          </div>
+<!-----------------------------------CLASS INPUT------------------------------->
+          <div class="input-wrap col-12 select">
+            <select
+              [(ngModel)]="selectedOptionClass"
+              id="inputClass"
+              formControlName="class"
+              class="textForm-bottom-row"
+              [value]="class">
+              <option *ngFor="let flyClass of optionsClass">
+                {{ flyClass.class }}
+              </option>
+            </select>
+            <img src="../../../assets/icon/seat (1).png"
+            style="height: 20px;width: 20px; right: 10px; top: 15px"
+            class="check-input-icon-select">
+          </div>
+<!-----------------------------------LUGGAGE CHECKBOX------------------------------->
+          <div class="col-12 text-center">
+            <input
+              class="form-check-input"
+              [(ngModel)]="luggage"
+              type="checkbox"
+              value=""
+              id="luggage"
+              formControlName="luggage"/>
+            <label class="text-check-input check-input-style" for="defaultCheck1">
+              Additional luggage ( +30kg)
+            </label>
+            <img src="../../../assets/icon/luggage.png" class="check-input-icon">
+          </div>
+<!-----------------------------------RESERVATION BUTTON------------------------------->
+          <div class="col-12 text-center "
+          style="margin-top:20px;
+                margin-bottom: 60px;">
+            <button
+              type="submit"
+              #btnAccept
+              class="btn btn-primary"
+              [disabled]="visitorDataForm.invalid">
+              RESERVE A SEAT
+            </button>
+          </div>
+<!-----------------------------------NG IF SECTION------------------------------->
+        <div class="col-12 text-center  announcement">
+          <h3 *ngIf="!this.selected || this.selected.length == 0">
+            Please select a seat!
+          </h3>
         </div>
-        <div class="barcode"></div>
-        <div class="barcode slip"></div>
-      </div>
+<!-----------------------------------PRICE FLY------------------------------->
+        <div class="col-12 text-center" style="margin-bottom: 15px">
+          <span #seatSelectedData style="color: white"
+            >Price flight: {{ seatEconomy }}{{ seatBusiness }}</span>
+        </div>
+      </form>
     </div>
   </div>
-</div>
-    </div>
-    <div class="col-sm-7">
-      <svg
+<!-----------------------------------SVG------------------------------->
+  <div class="box-bottom"
+  style="z-index: 0;"
+  *ngIf="!passenger|| passenger.length !== 0">
+    <svg
       version="1.1"
       id="whole_x5F_plane"
       xmlns="http://www.w3.org/2000/svg"
@@ -198,9 +157,8 @@
       x="0px"
       y="0px"
       viewBox="0 0 425 1467.9"
-      style="enable-background: new 0 0 425 1467.9"
-      xml:space="preserve"
-    >
+      style="enable-background: new 0 0 300 1467.9; width: 300px"
+      xml:space="preserve">
       <style type="text/css">
         .st0 {
           clip-path: url(#SVGID_15_);
@@ -249,7 +207,7 @@
         }
 
         .st11 {
-          fill: #2db4d0;
+          fill: #095eb9;
         }
 
         .st12 {
@@ -516,7 +474,7 @@
 
         .st70 {
           clip-path: url(#SVGID_210_);
-          fill: #ffffff;
+          fill: #095eb9;
         }
 
         .st71 {
@@ -737,6 +695,12 @@
         }
 
         .free {
+          fill: #ffffff;
+          stroke: #050404;
+          stroke-width: 0.25;
+          stroke-miterlimit: 10;
+        }
+        .buissnes {
           fill: #ffffff;
           stroke: #050404;
           stroke-width: 0.25;
@@ -1287,13 +1251,7 @@
               <clipPath id="SVGID_62_" class="st19">
                 <use xlink:href="#SVGID_60_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="174.7"
-                y="146"
-                class="st20"
-                width="5.3"
-                height="9.2"
-              />
+              <rect x="174.7" y="146" class="st20" width="5.3" height="9.2" />
             </g>
           </g>
           <g>
@@ -1334,13 +1292,7 @@
               <clipPath id="SVGID_68_" class="st21">
                 <use xlink:href="#SVGID_66_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="176.3"
-                y="146"
-                class="st22"
-                width="5.3"
-                height="9.2"
-              />
+              <rect x="176.3" y="146" class="st22" width="5.3" height="9.2" />
             </g>
           </g>
           <g>
@@ -1431,13 +1383,7 @@
               <clipPath id="SVGID_80_" class="st25">
                 <use xlink:href="#SVGID_78_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="174.2"
-                y="139.8"
-                class="st26"
-                width="7.7"
-                height="7.8"
-              />
+              <rect x="174.2" y="139.8" class="st26" width="7.7" height="7.8" />
             </g>
           </g>
           <g>
@@ -1478,13 +1424,7 @@
               <clipPath id="SVGID_86_" class="st27">
                 <use xlink:href="#SVGID_84_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="173.9"
-                y="142.8"
-                class="st28"
-                width="8.5"
-                height="7.8"
-              />
+              <rect x="173.9" y="142.8" class="st28" width="8.5" height="7.8" />
             </g>
           </g>
           <g>
@@ -1525,13 +1465,7 @@
               <clipPath id="SVGID_92_" class="st29">
                 <use xlink:href="#SVGID_90_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="174.9"
-                y="136.8"
-                class="st30"
-                width="6.7"
-                height="6.7"
-              />
+              <rect x="174.9" y="136.8" class="st30" width="6.7" height="6.7" />
             </g>
           </g>
           <g>
@@ -1766,13 +1700,7 @@
               <clipPath id="SVGID_122_" class="st39">
                 <use xlink:href="#SVGID_120_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="183.8"
-                y="139.8"
-                class="st40"
-                width="7.8"
-                height="9.7"
-              />
+              <rect x="183.8" y="139.8" class="st40" width="7.8" height="9.7" />
             </g>
           </g>
           <g>
@@ -1813,13 +1741,7 @@
               <clipPath id="SVGID_128_" class="st41">
                 <use xlink:href="#SVGID_126_" style="overflow: visible" />
               </clipPath>
-              <rect
-                x="184.5"
-                y="136.8"
-                class="st42"
-                width="6.7"
-                height="6.7"
-              />
+              <rect x="184.5" y="136.8" class="st42" width="6.7" height="6.7" />
             </g>
           </g>
           <g>
@@ -1866,10 +1788,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_132_">
-                    <use
-                      xlink:href="#SVGID_131_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_131_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -1892,16 +1811,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_135_">
-                    <use
-                      xlink:href="#SVGID_133_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_133_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_136_" class="st44">
-                    <use
-                      xlink:href="#SVGID_134_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_134_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -1926,10 +1839,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_138_">
-                    <use
-                      xlink:href="#SVGID_137_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_137_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -1950,16 +1860,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_141_">
-                    <use
-                      xlink:href="#SVGID_139_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_139_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_142_" class="st46">
-                    <use
-                      xlink:href="#SVGID_140_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_140_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="160.8"
@@ -1982,10 +1886,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_144_">
-                    <use
-                      xlink:href="#SVGID_143_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_143_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2006,16 +1907,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_147_">
-                    <use
-                      xlink:href="#SVGID_145_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_145_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_148_" class="st48">
-                    <use
-                      xlink:href="#SVGID_146_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_146_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="162.4"
@@ -2038,10 +1933,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_150_">
-                    <use
-                      xlink:href="#SVGID_149_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_149_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2064,16 +1956,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_153_">
-                    <use
-                      xlink:href="#SVGID_151_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_151_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_154_" class="st50">
-                    <use
-                      xlink:href="#SVGID_152_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_152_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -2098,10 +1984,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_156_">
-                    <use
-                      xlink:href="#SVGID_155_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_155_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2122,16 +2005,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_159_">
-                    <use
-                      xlink:href="#SVGID_157_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_157_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_160_" class="st52">
-                    <use
-                      xlink:href="#SVGID_158_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_158_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="160.4"
@@ -2154,10 +2031,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_162_">
-                    <use
-                      xlink:href="#SVGID_161_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_161_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2178,16 +2052,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_165_">
-                    <use
-                      xlink:href="#SVGID_163_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_163_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_166_" class="st54">
-                    <use
-                      xlink:href="#SVGID_164_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_164_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="160"
@@ -2210,10 +2078,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_168_">
-                    <use
-                      xlink:href="#SVGID_167_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_167_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2234,16 +2099,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_171_">
-                    <use
-                      xlink:href="#SVGID_169_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_169_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_172_" class="st56">
-                    <use
-                      xlink:href="#SVGID_170_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_170_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="161.1"
@@ -2266,10 +2125,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_174_">
-                    <use
-                      xlink:href="#SVGID_173_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_173_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2292,16 +2148,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_177_">
-                    <use
-                      xlink:href="#SVGID_175_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_175_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_178_" class="st58">
-                    <use
-                      xlink:href="#SVGID_176_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_176_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -2326,10 +2176,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_180_">
-                    <use
-                      xlink:href="#SVGID_179_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_179_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2350,16 +2197,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_183_">
-                    <use
-                      xlink:href="#SVGID_181_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_181_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_184_" class="st60">
-                    <use
-                      xlink:href="#SVGID_182_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_182_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="170.5"
@@ -2382,10 +2223,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_186_">
-                    <use
-                      xlink:href="#SVGID_185_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_185_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2406,16 +2244,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_189_">
-                    <use
-                      xlink:href="#SVGID_187_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_187_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_190_" class="st62">
-                    <use
-                      xlink:href="#SVGID_188_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_188_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="172.1"
@@ -2438,10 +2270,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_192_">
-                    <use
-                      xlink:href="#SVGID_191_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_191_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2464,16 +2293,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_195_">
-                    <use
-                      xlink:href="#SVGID_193_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_193_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_196_" class="st64">
-                    <use
-                      xlink:href="#SVGID_194_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_194_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -2498,10 +2321,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_198_">
-                    <use
-                      xlink:href="#SVGID_197_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_197_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2522,16 +2342,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_201_">
-                    <use
-                      xlink:href="#SVGID_199_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_199_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_202_" class="st66">
-                    <use
-                      xlink:href="#SVGID_200_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_200_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="170"
@@ -2554,10 +2368,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_204_">
-                    <use
-                      xlink:href="#SVGID_203_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_203_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2578,16 +2389,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_207_">
-                    <use
-                      xlink:href="#SVGID_205_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_205_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_208_" class="st68">
-                    <use
-                      xlink:href="#SVGID_206_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_206_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="170.7"
@@ -2610,10 +2415,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_210_">
-                    <use
-                      xlink:href="#SVGID_209_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_209_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="166.8"
@@ -2645,10 +2447,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_212_">
-                    <use
-                      xlink:href="#SVGID_211_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_211_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2671,16 +2470,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_215_">
-                    <use
-                      xlink:href="#SVGID_213_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_213_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_216_" class="st71">
-                    <use
-                      xlink:href="#SVGID_214_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_214_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -2705,10 +2498,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_218_">
-                    <use
-                      xlink:href="#SVGID_217_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_217_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2729,16 +2519,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_221_">
-                    <use
-                      xlink:href="#SVGID_219_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_219_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_222_" class="st73">
-                    <use
-                      xlink:href="#SVGID_220_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_220_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="245.1"
@@ -2761,10 +2545,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_224_">
-                    <use
-                      xlink:href="#SVGID_223_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_223_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2785,16 +2566,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_227_">
-                    <use
-                      xlink:href="#SVGID_225_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_225_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_228_" class="st75">
-                    <use
-                      xlink:href="#SVGID_226_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_226_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="246.7"
@@ -2817,10 +2592,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_230_">
-                    <use
-                      xlink:href="#SVGID_229_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_229_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2842,16 +2614,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_233_">
-                    <use
-                      xlink:href="#SVGID_231_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_231_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_234_" class="st77">
-                    <use
-                      xlink:href="#SVGID_232_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_232_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -2876,10 +2642,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_236_">
-                    <use
-                      xlink:href="#SVGID_235_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_235_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2900,16 +2663,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_239_">
-                    <use
-                      xlink:href="#SVGID_237_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_237_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_240_" class="st79">
-                    <use
-                      xlink:href="#SVGID_238_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_238_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="244.7"
@@ -2932,10 +2689,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_242_">
-                    <use
-                      xlink:href="#SVGID_241_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_241_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -2956,16 +2710,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_245_">
-                    <use
-                      xlink:href="#SVGID_243_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_243_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_246_" class="st81">
-                    <use
-                      xlink:href="#SVGID_244_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_244_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="244.3"
@@ -2988,10 +2736,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_248_">
-                    <use
-                      xlink:href="#SVGID_247_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_247_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3012,16 +2757,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_251_">
-                    <use
-                      xlink:href="#SVGID_249_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_249_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_252_" class="st83">
-                    <use
-                      xlink:href="#SVGID_250_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_250_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="245.3"
@@ -3044,10 +2783,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_254_">
-                    <use
-                      xlink:href="#SVGID_253_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_253_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3070,16 +2806,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_257_">
-                    <use
-                      xlink:href="#SVGID_255_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_255_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_258_" class="st85">
-                    <use
-                      xlink:href="#SVGID_256_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_256_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -3104,10 +2834,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_260_">
-                    <use
-                      xlink:href="#SVGID_259_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_259_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3128,16 +2855,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_263_">
-                    <use
-                      xlink:href="#SVGID_261_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_261_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_264_" class="st87">
-                    <use
-                      xlink:href="#SVGID_262_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_262_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="254.7"
@@ -3160,10 +2881,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_266_">
-                    <use
-                      xlink:href="#SVGID_265_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_265_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3184,16 +2902,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_269_">
-                    <use
-                      xlink:href="#SVGID_267_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_267_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_270_" class="st89">
-                    <use
-                      xlink:href="#SVGID_268_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_268_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="256.3"
@@ -3216,10 +2928,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_272_">
-                    <use
-                      xlink:href="#SVGID_271_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_271_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3242,16 +2951,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_275_">
-                    <use
-                      xlink:href="#SVGID_273_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_273_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_276_" class="st91">
-                    <use
-                      xlink:href="#SVGID_274_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_274_" style="overflow: visible" />
                   </clipPath>
 
                   <rect
@@ -3276,10 +2979,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_278_">
-                    <use
-                      xlink:href="#SVGID_277_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_277_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3300,16 +3000,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_281_">
-                    <use
-                      xlink:href="#SVGID_279_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_279_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_282_" class="st93">
-                    <use
-                      xlink:href="#SVGID_280_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_280_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="254.3"
@@ -3332,10 +3026,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_284_">
-                    <use
-                      xlink:href="#SVGID_283_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_283_" style="overflow: visible" />
                   </clipPath>
                 </g>
                 <g>
@@ -3356,16 +3047,10 @@
                     />
                   </defs>
                   <clipPath id="SVGID_287_">
-                    <use
-                      xlink:href="#SVGID_285_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_285_" style="overflow: visible" />
                   </clipPath>
                   <clipPath id="SVGID_288_" class="st95">
-                    <use
-                      xlink:href="#SVGID_286_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_286_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="255"
@@ -3388,10 +3073,7 @@
                     />
                   </defs>
                   <clipPath id="SVGID_292_">
-                    <use
-                      xlink:href="#SVGID_290_"
-                      style="overflow: visible"
-                    />
+                    <use xlink:href="#SVGID_290_" style="overflow: visible" />
                   </clipPath>
                   <rect
                     x="251.1"
@@ -3685,10 +3367,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_318_">
-                      <use
-                        xlink:href="#SVGID_317_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_317_" style="overflow: visible" />
                     </clipPath>
                     <g class="st108">
                       <rect
@@ -3720,10 +3399,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_320_">
-                      <use
-                        xlink:href="#SVGID_319_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_319_" style="overflow: visible" />
                     </clipPath>
                     <g class="st109">
                       <rect
@@ -3775,10 +3451,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_322_">
-                      <use
-                        xlink:href="#SVGID_321_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_321_" style="overflow: visible" />
                     </clipPath>
                     <g class="st111">
                       <rect
@@ -3809,10 +3482,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_324_">
-                      <use
-                        xlink:href="#SVGID_323_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_323_" style="overflow: visible" />
                     </clipPath>
                     <g class="st112">
                       <rect
@@ -3866,10 +3536,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_326_">
-                      <use
-                        xlink:href="#SVGID_325_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_325_" style="overflow: visible" />
                     </clipPath>
                     <g class="st113">
                       <rect
@@ -3901,10 +3568,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_328_">
-                      <use
-                        xlink:href="#SVGID_327_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_327_" style="overflow: visible" />
                     </clipPath>
                     <g class="st114">
                       <rect
@@ -3956,10 +3620,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_330_">
-                      <use
-                        xlink:href="#SVGID_329_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_329_" style="overflow: visible" />
                     </clipPath>
                     <g class="st115">
                       <rect
@@ -3991,10 +3652,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_332_">
-                      <use
-                        xlink:href="#SVGID_331_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_331_" style="overflow: visible" />
                     </clipPath>
                     <g class="st116">
                       <rect
@@ -4080,10 +3738,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_334_">
-                      <use
-                        xlink:href="#SVGID_333_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_333_" style="overflow: visible" />
                     </clipPath>
                     <g class="st117">
                       <rect
@@ -4115,10 +3770,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_336_">
-                      <use
-                        xlink:href="#SVGID_335_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_335_" style="overflow: visible" />
                     </clipPath>
                     <g class="st118">
                       <rect
@@ -4170,10 +3822,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_338_">
-                      <use
-                        xlink:href="#SVGID_337_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_337_" style="overflow: visible" />
                     </clipPath>
                     <g class="st119">
                       <rect
@@ -4204,10 +3853,7 @@
                       />
                     </defs>
                     <clipPath id="SVGID_340_">
-                      <use
-                        xlink:href="#SVGID_339_"
-                        style="overflow: visible"
-                      />
+                      <use xlink:href="#SVGID_339_" style="overflow: visible" />
                     </clipPath>
                     <g class="st120">
                       <rect
@@ -4611,10 +4257,7 @@
       v-5.2h2.3V389.5z M227.2,392.1h0.6c0.3,0,0.5-0.1,0.7-0.2s0.2-0.3,0.2-0.6c0-0.3-0.1-0.5-0.2-0.6c-0.1-0.1-0.4-0.2-0.6-0.2h-0.6
       L227.2,392.1L227.2,392.1z"
           />
-          <path
-            class="st110"
-            d="M235.5,394.6H232v-5.2h1.3v4.1h2.2V394.6z"
-          />
+          <path class="st110" d="M235.5,394.6H232v-5.2h1.3v4.1h2.2V394.6z" />
           <path
             class="st110"
             d="M238.9,392.7c0,0.3,0.1,0.5,0.2,0.7c0.2,0.2,0.4,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.2-0.2,0.2-0.4,0.2-0.7v-3.2
@@ -4670,9 +4313,7 @@
       <ng-container *ngFor="let fila of filas; let i = index">
         <ng-container *ngFor="let x of fila.x; let j = index">
           <g
-            [style.cursor]="
-              status[i][j] != 'booked' ? 'pointer' : 'default'
-            "
+            [style.cursor]="status[i][j] != 'booked' ? 'pointer' : 'default'"
             *ngIf="x"
             (click)="click(i, j)"
           >
@@ -4699,10 +4340,5 @@
         </ng-container>
       </ng-container>
     </svg>
-    </div>
   </div>
 </div>
-
-
-
-

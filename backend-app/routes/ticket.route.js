@@ -1,8 +1,8 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
-const visitorDataController = require('../controllers/visitorDataController')
+const visitorDataController = require('../controllers/visitorDataController');
 
 router.post('/', ticketDataController.createTicketData);
-router.get('/', ticketDataController.getAllTicketData)
+router.get('/', ticketDataController.getAllTicketData);
 
 module.exports = router;

@@ -13,107 +13,33 @@
   box-sizing: border-box;
   z-index: 500;
 }
-
-body { font-family:Arial, Helvetica, sans-serif }
-  nav {
-      background: rgba(0, 0, 0, 0.5);
-      height: 80px;
-      width: 100%;
-
-  }
-  .container{
-    padding: 0px 0px 0 50px;
-    width: 100%;
-  }
-  .navbar-brand {
-    color: #fff;
-    padding: 0 20px 0px 20px;
-    height: 60px;
-    line-height: 60px;
-    text-align: left;
-    font-size: 20px;
-    text-transform: uppercase
-
-      }
-      nav ul{
-          float: right;
-          margin-right:0px;
-      }
-          nav ul li{
-              display: inline-block;
-              line-height:80px;
-              margin: 0 0px;
-          }
-              nav ul li a{
-                  color: white;
-                  font-size: 17px;
-                  padding: 30px 30px;
-              }
-                  a.active,a:hover{
-                      background-color: #095EB9;
-                      transition: .5s;
-                  }
-  .checkbtn{
-      font-size: 30px;
-      color: white;
-      float: right;
-      line-height: 80px;
-      margin-right: 0px;
-      cursor: pointer;
-      display: none;
-  }
-      #check{
-         display: none;
-      }
-
-/*--------------------------*/
-/*----- MEDIA QUERRY -----*/
-/*--------------------------*/
-
-@media (max-width: 952px){
-  label.logo{
-      font-size: 30px;
-      padding-left: 50px;
-  }
-  nav ul li a{
-      font-size: 16px;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+  background: rgba(0, 0, 0, 0.5);
+  height: 80px;
+  width: 100%;
+}
+.container-nav {
+  padding: 0px 0px 0 50px;
+  width: 100%;
+  margin-right: 60px;
+  margin-left: 60px;
 }
 
-@media (max-width: 858px){
-  .checkbtn{
-      display: block;
-  }
-  ul{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      top: 80px;
-      left: -100%;
-      top: 80px;
-      transition: all .5s;
-      text-align: center;
-      background-color: #2c3e50;
-  }
-      nav ul li{
-          display: block;
-          margin: 50px 0;
-          line-height: 30px;
-          justify-content: end;
-      }
-          nav ul li a{
-              font-size: 20px;
-          }
-              a:hover,a.active{
-                  background: none;
-                  color: #095EB9;
-              }
+/* -------------------------------------LOGO----------------------------------- */
 
-      #check:checked ~ ul{
-          left: 0;
-      }
+.navbar-brand {
+  color: #fff;
+  margin-top: 80px;
+  padding: 0 20px 0px 20px;
+  height: 60px;
+  line-height: 60px;
+  text-align: left;
+  font-size: 20px;
+  text-transform: uppercase;
 }
-
 .navbar-brand .word {
   color: #095eb9;
   background-color: #fff;
@@ -121,15 +47,48 @@ body { font-family:Arial, Helvetica, sans-serif }
   font-size: 25px;
   font-weight: bold;
 }
-.word-small{
+.word-small {
   color: white;
   font-size: 15px;
 }
+/* -------------------------------------MENU LIST----------------------------------- */
 
+nav ul {
+  float: right;
+  margin-right: 60px;
+  margin-right: 0px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 0px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 30px 30px;
+}
+a.active,
+a:hover {
+  background-color: #095eb9;
+  transition: 0.5s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 0px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
 
+/* -------------------------------------NG IF OPTION----------------------------------- */
 
-
-.fixed{
+.fixed {
   position: fixed;
   width: 100%;
   transition: 0.2s linear;
@@ -139,23 +98,23 @@ body { font-family:Arial, Helvetica, sans-serif }
   z-index: 500;
 }
 
-.nav-color{
+.nav-color {
   color: white;
 }
 
+/* -------------------------------------BUTTON HAMBURGER----------------------------------- */
 
-/////button////
 
 $bg: #f3f8fa;
 $white: #fff;
 $black: #282936;
-
-@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
   transition: $property $duration $ease;
 }
-
-
-
 button {
   position: relative;
   display: inline-block;
@@ -166,13 +125,14 @@ button {
   text-decoration: none;
   background: transparent;
   padding: 0;
+  margin-left: 20px;
   font-size: inherit;
   font-family: inherit;
   &.learn-more {
     width: 12rem;
     height: auto;
     .circle {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: relative;
       display: block;
       margin: 0;
@@ -181,21 +141,21 @@ button {
       background: $black;
       border-radius: 1.625rem;
       .icon {
-        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
         background: $white;
         &.arrow {
-          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
           left: 0.625rem;
           width: 1.125rem;
           height: 0.125rem;
           background: none;
           &::before {
             position: absolute;
-            content: '';
+            content: "";
             top: -0.25rem;
             right: 0.0625rem;
             width: 0.625rem;
@@ -208,7 +168,7 @@ button {
       }
     }
     .button-text {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: absolute;
       top: 0;
       left: 0;
@@ -228,8 +188,8 @@ button {
       width: 100%;
       .icon {
         &.arrow {
-        background: #095EB9;
-        transform: translate(1rem, 0);
+          background: #095eb9;
+          transform: translate(1rem, 0);
         }
       }
     }
@@ -239,12 +199,14 @@ button {
   }
 }
 
+/* -------------------------------------MENU----------------------------------- */
+
 @supports (display: grid) {
   body {
     display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.625rem;
-  grid-template-areas: ". main main ." ". main main .";
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: ". main main ." ". main main .";
   }
 
   #container {
@@ -254,4 +216,59 @@ button {
   }
 }
 
+/* -------------------------------------MENU LIST----------------------------------- */
 
+@media (max-width: 952px) {
+  .container-nav{
+    margin: 0;
+    padding: 5px 0;
+  }
+  svg{
+    margin-right: 30px;
+  }
+  label.logo {
+    font-size: 20px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  svg{
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 80px;
+    left: -100%;
+    top: 80px;
+    transition: all 0.5s;
+    text-align: center;
+    background-color: #2c3e50;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+    justify-content: end;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #095eb9;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}

@@ -3,30 +3,26 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AirportDataService {
+  url: string = 'http://localhost:4700/api/visitorData';
 
-  url:string= "http://localhost:4700/api/visitorData"
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   createVisit(visitData: any): Observable<any> {
-    return this.http.post(this.url, visitData)
+    return this.http.post(this.url, visitData);
   }
 
   getAllVisitors(): Observable<any> {
-    return this.http.get(this.url)
+    return this.http.get(this.url);
   }
 
   editVisitorData(visitDataEdit: any): Observable<any> {
-    return this.http.put(this.url+"/"+visitDataEdit._id , visitDataEdit)
+    return this.http.put(this.url + '/' + visitDataEdit._id, visitDataEdit);
   }
 
   deleteVisitorData(itemToRemove: any): Observable<any> {
-    return this.http.delete(this.url+"/"+itemToRemove)
+    return this.http.delete(this.url + '/' + itemToRemove);
   }
-
 }

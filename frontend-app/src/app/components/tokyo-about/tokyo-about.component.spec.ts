@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoSectionComponent } from './info-section.component';
+import { TokyoAboutComponent } from './tokyo-about.component';
 
-describe('InfoSectionComponent', () => {
-  let component: InfoSectionComponent;
-  let fixture: ComponentFixture<InfoSectionComponent>;
+describe('TokyoAboutComponent', () => {
+  let component: TokyoAboutComponent;
+  let fixture: ComponentFixture<TokyoAboutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InfoSectionComponent ]
+      declarations: [ TokyoAboutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfoSectionComponent);
+    fixture = TestBed.createComponent(TokyoAboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AirbusSchemaComponent } from './airbus-schema.component';
+import { BostonAboutComponent } from './boston-about.component';
 
-describe('AirbusSchemaComponent', () => {
-  let component: AirbusSchemaComponent;
-  let fixture: ComponentFixture<AirbusSchemaComponent>;
+describe('BostonAboutComponent', () => {
+  let component: BostonAboutComponent;
+  let fixture: ComponentFixture<BostonAboutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AirbusSchemaComponent ]
+      declarations: [ BostonAboutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AirbusSchemaComponent);
+    fixture = TestBed.createComponent(BostonAboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

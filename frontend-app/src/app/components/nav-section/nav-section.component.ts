@@ -12,10 +12,11 @@ export class NavSectionComponent {
   navbarcolor: boolean = false;
   constructor(private dialogRef: MatDialog) {}
 
-  @HostListener('window:scroll', ['$event']) onscroll() {
+  @HostListener('window:scroll', ['$event'])
+  onscroll() {
     if (window.scrollY > 100) {
       this.navbarfixed = true;
-      this.navbarcolor = true
+      this.navbarcolor = true;
     } else {
       this.navbarfixed = false;
       this.navbarcolor = false;
@@ -24,10 +25,31 @@ export class NavSectionComponent {
 
   openDialog() {
     this.dialogRef.open(BookSectionComponent, {
-      width: '70vw',
-      height: '100vh',
+      width: '100vw',
+      height: '100%',
       autoFocus: false,
-
     });
+
+
   }
+  toHome() {
+    document
+      .getElementById('home')
+      .scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    console.log(this.toHome);
+  }
+  toAbout() {
+    document
+      .getElementById('about')
+      .scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+  }
+  toOffer() {
+    document.getElementById('offer').scrollIntoView();
+  }
+  toDestination() {
+    document
+      .getElementById('destination')
+      .scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+  }
+
 }

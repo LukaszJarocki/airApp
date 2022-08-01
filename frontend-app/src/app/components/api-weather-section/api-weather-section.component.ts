@@ -25,8 +25,9 @@ export class APIWeatherSectionComponent implements OnInit {
   private getWeatherData(cityName: string) {
     this.weatherService.getWeatherData(cityName).subscribe({
       next: (response) => {
-        this.weatherData = response;
         console.log(response);
+        this.weatherData = response;
+        console.log(this.weatherData);
       },
     });
   }
